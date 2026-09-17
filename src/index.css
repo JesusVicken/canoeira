@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-terracotta-50: #FDF9F6;
+    --color-terracotta-100: #F6ECE5;
+    --color-terracotta-300: #D9A482;
+    --color-terracotta-500: #A85D30;
+    --color-terracotta-600: #7A4421;
+    --color-terracotta-700: #623417;
+    --color-terracotta-800: #4B2710;
+    --color-terracotta-900: #291407;
+    --color-terracotta-950: #19100B;
+
+    --color-cyan-glow: #00F5D4;
+    --color-cyan-light: #66FFEA;
+    --color-cyan-dim: rgba(0, 245, 212, 0.15);
+
+    --color-sand: #ECE5D8;
+    --color-sand-muted: #B8AC9A;
+  }
+}
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-syne: 'Syne', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --color-terracotta: #7A4421;
+  --color-terracotta-dark: #623417;
+  --color-terracotta-deep: #19100B;
+  --color-cyan-brand: #00F5D4;
+  --color-cyan-light: #66FFEA;
+  --color-sand: #ECE5D8;
+  --color-sand-muted: #B8AC9A;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #19100B;
+}
+::-webkit-scrollbar-thumb {
+  background: #7A4421;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00F5D4;
+}
+
+/* Custom Cursor Styling */
+@media (pointer: fine) {
+  body {
+    cursor: default;
+  }
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(36, 22, 16, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(236, 229, 216, 0.08);
+}
+
+.glass-panel-cyan {
+  background: rgba(0, 245, 212, 0.06);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 245, 212, 0.25);
+}
+
+.glass-pill {
+  background: rgba(122, 68, 33, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 245, 212, 0.2);
+}
+
+/* Glowing text shadow for brand cyan */
+.text-shadow-cyan {
+  text-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
+}
+
+.text-stroke-cyan {
+  -webkit-text-stroke: 1px #00F5D4;
+  color: transparent;
+}
+
+.text-stroke-sand {
+  -webkit-text-stroke: 1px rgba(236, 229, 216, 0.3);
+  color: transparent;
+}
+
+/* Shimmer gradient animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,245,212,0.2) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Marquee continuous scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Ripple water keyframes */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 4s ease-in-out infinite;
+}
