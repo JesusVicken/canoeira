@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Compass, Shield, Heart, MapPin, Feather, Sparkles } from 'lucide-react';
+import { Play, Pause, MapPin } from 'lucide-react';
 
 export const BrandStoryVideoSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -43,7 +43,7 @@ export const BrandStoryVideoSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Video Player Framework */}
+        {/* Video Player Framework using canoeira2.mp4 */}
         <div className="relative rounded-3xl overflow-hidden glass-panel border border-[#ECE5D8]/15 shadow-2xl group max-w-5xl mx-auto">
           <div className="relative aspect-video w-full overflow-hidden bg-[#241610]">
             <video
@@ -54,7 +54,8 @@ export const BrandStoryVideoSection: React.FC = () => {
               playsInline
               className="w-full h-full object-cover filter brightness-90 contrast-105 transition-transform duration-700 group-hover:scale-105"
             >
-              <source src="/assets/canoeira.mp4" type="video/mp4" />
+              <source src="/assets/canoeira2.mp4" type="video/mp4" />
+              <source src="/assets/cahnoeira2.mp4" type="video/mp4" />
             </video>
 
             {/* Gradient Overlays */}
@@ -72,9 +73,8 @@ export const BrandStoryVideoSection: React.FC = () => {
             {/* Bottom Floating Caption inside Video */}
             <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none">
               <div className="flex items-center gap-3 glass-pill px-4 py-2 rounded-full border border-[#00F5D4]/30">
-                <MapPin className="w-4 h-4 text-[#00F5D4]" />
                 <span className="font-syne text-xs uppercase tracking-widest text-[#ECE5D8]">
-                  Litoral Brasileiro • Origem Oceânica
+                  USE CANOEIRA
                 </span>
               </div>
             </div>

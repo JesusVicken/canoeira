@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ShieldCheck, ArrowRight, Gift, Clock, Star, Check } from 'lucide-react';
+import { Sparkles, ShieldCheck, ArrowRight, Clock, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface VIPWaitlistSectionProps {
@@ -15,20 +15,20 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
 
   const perks = [
     {
-      title: '15% OFF no Lote 0',
-      desc: 'Desconto exclusivo válido para a primeira semana de lançamento.',
+      title: '10% de Desconto na Primeira Compra',
+      desc: 'Cupom exclusivo garantido para membros inscritos no pré-lançamento.',
     },
     {
-      title: 'Acesso Antecipado 24h',
-      desc: 'Receba o link secreto da loja antes da abertura para o público geral.',
+      title: 'Acesso Antecipado ao Drop Novo',
+      desc: 'Receba o link secreto de compras 24h antes do público geral.',
     },
     {
       title: 'Kit Exclusivo de Adesivos',
       desc: 'Adesivos vinílicos impermeáveis para sua canoa, remo ou garrafa.',
     },
     {
-      title: 'Frete Grátis Nacional',
-      desc: 'Frete grátis na primeira compra acima de R$ 250.',
+      title: 'Frete Grátis na Primeira Compra',
+      desc: 'Frete grátis nacional garantido para a primeira remessa.',
     },
   ];
 
@@ -63,18 +63,18 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00F5D4]/15 border border-[#00F5D4]/30 w-fit">
                 <Sparkles className="w-3.5 h-3.5 text-[#00F5D4]" />
                 <span className="font-syne text-[11px] uppercase tracking-widest text-[#00F5D4]">
-                  Vagas Limitadas • Lote VIP 0
+                  Lote VIP 0 • Vagas Limitadas
                 </span>
               </div>
 
-              <h2 className="font-serif text-4xl sm:text-5xl font-medium tracking-tight leading-tight">
-                Garanta sua vaga na <br />
-                <span className="italic text-[#00F5D4]">primeira remada.</span>
+              <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight leading-tight">
+                Garanta sua vaga nas <br />
+                <span className="italic text-[#00F5D4]">primeiras peças do nosso drop novo.</span>
               </h2>
 
               <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light leading-relaxed">
-                As primeiras peças da Canoeira serão produzidas em tiragem limitada numerada. 
-                Cadastre-se para garantir prioridade de estoque e descontos exclusivos.
+                As primeiras peças da Canoeira serão produzidas em tiragem exclusiva. 
+                Cadastre-se para garantir 10% OFF no seu primeiro pedido e prioridade de estoque.
               </p>
 
               {/* Perks Grid */}
@@ -153,7 +153,7 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
                     data-cursor="SUBMIT"
                     className="w-full py-4 mt-2 rounded-xl bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] transition-all shadow-[0_0_20px_rgba(0,245,212,0.4)] cursor-pointer"
                   >
-                    <span>Confirmar Minha Vaga VIP</span>
+                    <span>Garantir 10% OFF no Drop</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
 
@@ -181,7 +181,7 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
                   </p>
 
                   <div className="p-3 rounded-xl bg-[#19100B] border border-[#00F5D4]/30 text-[11px] font-syne uppercase tracking-wider text-[#00F5D4]">
-                    Cupom Reservado: CANOEIRAVIP15
+                    Cupom Reservado: CANOEIRAVIP10
                   </div>
                 </motion.div>
               )}

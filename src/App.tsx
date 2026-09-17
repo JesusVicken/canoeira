@@ -5,7 +5,9 @@ import { CustomCursor } from './components/CustomCursor';
 import { HeaderNavbar } from './components/HeaderNavbar';
 import { HeroSection } from './components/HeroSection';
 import { BrandManifesto } from './components/BrandManifesto';
+import { ClothesVideoShowcase } from './components/ClothesVideoShowcase';
 import { CollectionTeaser } from './components/CollectionTeaser';
+import { LookbookGallery } from './components/LookbookGallery';
 import { BrandStoryVideoSection } from './components/BrandStoryVideoSection';
 import { VIPWaitlistSection } from './components/VIPWaitlistSection';
 import { InstagramShowcase } from './components/InstagramShowcase';
@@ -50,7 +52,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#19100B] text-[#ECE5D8] selection:bg-[#00F5D4] selection:text-[#19100B] font-sans">
+    <div className="relative min-h-screen bg-[#19100B] text-[#ECE5D8] selection:bg-[#00F5D4] selection:text-[#19100B] font-sans overflow-x-hidden">
       {/* Custom Awwwards Cursor */}
       <CustomCursor />
 
@@ -60,10 +62,12 @@ export const App: React.FC = () => {
       {/* Main Page Content */}
       <HeaderNavbar onVIPClick={scrollToVIP} />
 
-      <main>
+      <main className="w-full overflow-x-hidden">
         <HeroSection onSubscribeSuccess={handleSubscribeSuccess} />
         <BrandManifesto />
+        <ClothesVideoShowcase />
         <CollectionTeaser />
+        <LookbookGallery />
         <BrandStoryVideoSection />
         <VIPWaitlistSection onSubscribeSuccess={handleSubscribeSuccess} />
         <InstagramShowcase />

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Eye, Bell, Sparkles, CheckCircle2, ShieldCheck, X, ArrowRight } from 'lucide-react';
+import { Bell, Sparkles, CheckCircle2, ShieldCheck, X, ArrowRight, Eye } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface ProductItem {
@@ -9,9 +9,9 @@ interface ProductItem {
   category: string;
   line: string;
   badge: string;
+  image: string;
   specs: string[];
   description: string;
-  colorScheme: string;
   gradient: string;
 }
 
@@ -21,47 +21,47 @@ export const CollectionTeaser: React.FC = () => {
 
   const products: ProductItem[] = [
     {
-      id: 'maresia-uv50',
-      name: 'Camisa Solar UV50+ Maresia Pro',
+      id: 'blusao-uv50',
+      name: 'Camisa Solar UV50+ Canoeira',
       category: 'Vestuário Técnico',
       line: 'Linha Sol & Maré',
-      badge: 'Drop 01 • Lote VIP',
+      badge: 'Lançamento • Lote VIP',
+      image: '/assets/canoieraBlusa.jpeg',
       specs: ['Proteção FPU50+ Vitalícia', 'Tecido Ultra Breathable', 'Costuras Antiatrito Zero Touch'],
-      description: 'Desenvolvida com poliamida de alta tenacidade e dióxido de titânio fundido às fibras para bloquear 98% dos raios UVA e UVB. Ideal para remadas de longa distância sob sol forte.',
-      colorScheme: 'Ciano Terracota',
+      description: 'Desenvolvida com poliamida de alta tenacidade e dióxido de titânio fundido às fibras para bloquear 98% dos raios UVA e UVB. Modelagem perfeita para remadas intensas no mar.',
       gradient: 'from-[#7A4421]/60 via-[#241610] to-[#00F5D4]/20',
-    },
-    {
-      id: 'shorts-expedicao',
-      name: 'Shorts de Remada Expedição 4-Way',
-      category: 'Bermudas',
-      line: 'Linha Performance',
-      badge: 'Drop 01 • Lote VIP',
-      specs: ['Elasticidade 360° Flex', 'Bolso Estanque com Zíper YKK', 'Tratamento Hidrofóbico'],
-      description: 'Corte ergonômico acima do joelho que garante liberdade total no assento da canoa havaiana. Tecido ultraleve que seca em minutos ao sair da água.',
-      colorScheme: 'Terracota Profundo',
-      gradient: 'from-[#623417]/80 via-[#19100B] to-[#7A4421]/40',
     },
     {
       id: 'bone-solsticio',
       name: 'Boné Caiçara Solstício Hydro',
       category: 'Acessórios',
       line: 'Linha Alma Caiçara',
-      badge: 'Drop 01 • Lote VIP',
+      badge: 'Lançamento • Lote VIP',
+      image: '/assets/canoeiraBone.jpeg',
       specs: ['Aba Antirreflexo Solar', 'Ajuste Micrométrico Neoprene', 'Flutuável na Água'],
       description: 'Projetado para não afundar se cair no mar durante a remada. Material de secagem rápida com faixa interna de absorção de suor.',
-      colorScheme: 'Preto Marinho & Ciano',
       gradient: 'from-[#241610] via-[#7A4421]/40 to-[#00F5D4]/30',
     },
     {
-      id: 'bolsa-estanque-20l',
-      name: 'Bolsa Estanque Waterproof 20L',
-      category: 'Equipamentos',
+      id: 'lifestyle-mar',
+      name: 'Regata & Vestuário Alma Solar',
+      category: 'Lifestyle Praiano',
+      line: 'Linha Expedição',
+      badge: 'Lote VIP 0',
+      image: '/assets/canoieraHero.jpeg',
+      specs: ['Toque de Algodão Orgânico', 'Secagem Rápida Hydro', 'Modelagem Anatômica'],
+      description: 'Perfeita para a transição entre a água e o pós-remada. Conforto térmico absoluto com estilo minimalista elegante.',
+      gradient: 'from-[#623417]/80 via-[#19100B] to-[#7A4421]/40',
+    },
+    {
+      id: 'shorts-expedicao',
+      name: 'Bermuda & Equipamento de Remada',
+      category: 'Performance',
       line: 'Linha Travessia',
       badge: 'Edição Limitada',
-      specs: ['Lona PVC 500D Termoselada', 'Fecho Roll-Top 100% Vedado', 'Alças Anatômicas Acolchoadas'],
-      description: 'Seu equipamento seco em qualquer condição. Capacidade perfeita para roupas de troca, celular, carteira e suplementos em remadas longas.',
-      colorScheme: 'Cyan Solar',
+      image: '/assets/canoeira.jpeg',
+      specs: ['Elasticidade 360° Flex', 'Bolso Estanque com Zíper YKK', 'Tratamento Hidrofóbico'],
+      description: 'Corte ergonômico acima do joelho que garante liberdade total no assento da canoa havaiana e SUP.',
       gradient: 'from-[#00F5D4]/20 via-[#19100B] to-[#7A4421]/60',
     },
   ];
@@ -90,20 +90,21 @@ export const CollectionTeaser: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-2 font-syne text-xs uppercase tracking-widest text-[#00F5D4] mb-3">
               <span className="w-8 h-[1px] bg-[#00F5D4]" />
-              <span>Prévia Exclusiva de Produtos</span>
+              <span>Site de Pré-Lançamento</span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-6xl font-medium tracking-tight">
-              Lote 01 <span className="italic text-[#00F5D4]">Em Breve</span>
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
+              Site com todas as novidades <br />
+              <span className="italic text-[#00F5D4]">em breve...</span>
             </h2>
           </div>
 
           <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/70 max-w-md font-light">
-            Conheça as primeiras peças desenvolvidas para o lançamento oficial. 
-            Membros cadastrados no VIP terão preferência absoluta de estoque.
+            Confira as fotos oficiais das primeiras peças em desenvolvimento. 
+            Inscreva-se no VIP para ser notificado com prioridade no lançamento.
           </p>
         </div>
 
-        {/* Product Cards Grid */}
+        {/* Product Cards Grid with Real Product Photos */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.map((product) => {
             const isNotified = notifiedItems[product.id];
@@ -112,12 +113,12 @@ export const CollectionTeaser: React.FC = () => {
                 key={product.id}
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
-                data-cursor="QUICK VIEW"
+                data-cursor="AMPLIAR FOTO"
                 onClick={() => setSelectedProduct(product)}
-                className="group relative rounded-3xl glass-panel border border-[#ECE5D8]/10 overflow-hidden hover:border-[#00F5D4]/50 transition-all duration-500 cursor-pointer flex flex-col justify-between p-8 min-h-[420px]"
+                className="group relative rounded-3xl glass-panel border border-[#ECE5D8]/10 overflow-hidden hover:border-[#00F5D4]/50 transition-all duration-500 cursor-pointer flex flex-col justify-between p-6 sm:p-8 min-h-[460px]"
               >
                 {/* Dynamic Gradient Card Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-40 group-hover:opacity-70 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-30 group-hover:opacity-60 transition-opacity duration-500`} />
 
                 {/* Top Badge & Category */}
                 <div className="relative z-10 flex items-center justify-between">
@@ -129,14 +130,18 @@ export const CollectionTeaser: React.FC = () => {
                   </span>
                 </div>
 
-                {/* Center Visual Mockup Box */}
-                <div className="relative z-10 my-8 flex flex-col items-center justify-center text-center">
-                  <div className="w-20 h-20 rounded-full bg-[#7A4421]/40 border border-[#00F5D4]/30 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-[#00F5D4] transition-all duration-500 shadow-[0_0_20px_rgba(0,245,212,0.2)]">
-                    <Sparkles className="w-8 h-8 text-[#00F5D4]" />
+                {/* Product Photo Showcase */}
+                <div className="relative z-10 my-6 w-full h-56 rounded-2xl overflow-hidden border border-[#ECE5D8]/10 group-hover:border-[#00F5D4]/40 transition-colors shadow-xl">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover object-center filter brightness-95 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#19100B] via-transparent to-transparent opacity-80" />
+                  
+                  <div className="absolute top-3 right-3 p-2 rounded-full bg-[#19100B]/80 backdrop-blur-md text-[#00F5D4] border border-[#00F5D4]/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Eye className="w-4 h-4" />
                   </div>
-                  <span className="font-syne text-xs uppercase tracking-widest text-[#ECE5D8]/50">
-                    {product.line}
-                  </span>
                 </div>
 
                 {/* Bottom Details */}
@@ -180,7 +185,7 @@ export const CollectionTeaser: React.FC = () => {
                     </button>
 
                     <span className="font-syne text-xs uppercase tracking-widest text-[#00F5D4] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                      Ver detalhes <ArrowRight className="w-3.5 h-3.5" />
+                      Ver foto ampliada <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
                 </div>
@@ -190,7 +195,7 @@ export const CollectionTeaser: React.FC = () => {
         </div>
       </div>
 
-      {/* Detail Modal Overlay */}
+      {/* Detail & Full Size Photo Modal */}
       <AnimatePresence>
         {selectedProduct && (
           <motion.div
@@ -198,62 +203,79 @@ export const CollectionTeaser: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedProduct(null)}
-            className="fixed inset-0 z-50 bg-[#19100B]/90 backdrop-blur-xl p-4 sm:p-8 flex items-center justify-center overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#19100B]/95 backdrop-blur-xl p-4 sm:p-8 flex items-center justify-center overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-2xl rounded-3xl glass-panel border border-[#00F5D4]/30 p-6 sm:p-10 shadow-2xl text-[#ECE5D8]"
+              className="relative w-full max-w-3xl rounded-3xl glass-panel border border-[#00F5D4]/40 p-6 sm:p-10 shadow-2xl text-[#ECE5D8]"
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProduct(null)}
-                className="absolute top-6 right-6 p-2 rounded-full bg-[#7A4421]/40 text-[#ECE5D8] hover:text-[#00F5D4] transition-colors"
+                className="absolute top-6 right-6 p-2.5 rounded-full bg-[#7A4421]/60 text-[#ECE5D8] hover:text-[#00F5D4] transition-colors z-20"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="flex items-center gap-2 font-syne text-xs uppercase tracking-widest text-[#00F5D4] mb-2">
-                <span>{selectedProduct.line}</span>
-                <span>•</span>
-                <span>{selectedProduct.badge}</span>
-              </div>
-
-              <h3 className="font-serif text-3xl sm:text-4xl text-[#ECE5D8] mb-4">
-                {selectedProduct.name}
-              </h3>
-
-              <p className="font-sans text-base text-[#ECE5D8]/80 font-light leading-relaxed mb-6">
-                {selectedProduct.description}
-              </p>
-
-              <div className="space-y-3 mb-8">
-                <h4 className="font-syne text-xs font-bold uppercase tracking-widest text-[#00F5D4]">
-                  Especificações Técnicas
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {selectedProduct.specs.map((spec, i) => (
-                    <div key={i} className="p-3 rounded-xl bg-[#241610] border border-[#ECE5D8]/10 text-xs font-sans flex items-center gap-2">
-                      <ShieldCheck className="w-4 h-4 text-[#00F5D4]" />
-                      <span>{spec}</span>
-                    </div>
-                  ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                {/* Image View */}
+                <div className="relative rounded-2xl overflow-hidden border border-[#00F5D4]/30 shadow-2xl aspect-square bg-[#241610]">
+                  <img
+                    src={selectedProduct.image}
+                    alt={selectedProduct.name}
+                    className="w-full h-full object-cover object-center"
+                  />
+                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#19100B]/80 backdrop-blur-md border border-[#00F5D4]/40 text-[#00F5D4] font-syne text-[10px] uppercase tracking-widest">
+                    Foto Oficial
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-[#ECE5D8]/10">
-                <button
-                  onClick={() => {
-                    handleNotifyMe(selectedProduct.id);
-                    setSelectedProduct(null);
-                  }}
-                  className="w-full py-4 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] transition-all"
-                >
-                  <Bell className="w-4 h-4" />
-                  <span>Notificar Lançamento Deste Item</span>
-                </button>
+                {/* Details */}
+                <div className="flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 font-syne text-xs uppercase tracking-widest text-[#00F5D4] mb-2">
+                      <span>{selectedProduct.line}</span>
+                      <span>•</span>
+                      <span>{selectedProduct.badge}</span>
+                    </div>
+
+                    <h3 className="font-serif text-3xl sm:text-4xl text-[#ECE5D8] mb-4">
+                      {selectedProduct.name}
+                    </h3>
+
+                    <p className="font-sans text-sm text-[#ECE5D8]/80 font-light leading-relaxed mb-6">
+                      {selectedProduct.description}
+                    </p>
+
+                    <div className="space-y-3 mb-6">
+                      <h4 className="font-syne text-xs font-bold uppercase tracking-widest text-[#00F5D4]">
+                        Destaques da Peça
+                      </h4>
+                      <div className="flex flex-col gap-2">
+                        {selectedProduct.specs.map((spec, i) => (
+                          <div key={i} className="p-2.5 rounded-xl bg-[#241610] border border-[#ECE5D8]/10 text-xs font-sans flex items-center gap-2">
+                            <ShieldCheck className="w-4 h-4 text-[#00F5D4]" />
+                            <span>{spec}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      handleNotifyMe(selectedProduct.id);
+                      setSelectedProduct(null);
+                    }}
+                    className="w-full py-4 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] transition-all"
+                  >
+                    <Bell className="w-4 h-4" />
+                    <span>Quero ser avisado no lançamento</span>
+                  </button>
+                </div>
               </div>
             </motion.div>
           </motion.div>

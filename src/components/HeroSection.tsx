@@ -14,7 +14,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
   const [subscribed, setSubscribed] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  // Countdown timer target (30 days from now or fixed target date)
+  // Countdown timer target
   const [timeLeft, setTimeLeft] = useState({
     days: 28,
     hours: 14,
@@ -57,7 +57,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
     e.preventDefault();
     if (!email || !email.includes('@')) return;
 
-    // Trigger confetti
     confetti({
       particleCount: 120,
       spread: 70,
@@ -70,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-between pt-28 pb-12 px-4 sm:px-8 overflow-hidden bg-[#19100B]">
+    <section className="relative min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-8 sm:pb-12 px-4 sm:px-8 overflow-hidden bg-[#19100B]">
       {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -89,11 +88,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
         <div className="absolute inset-0 bg-gradient-to-t from-[#19100B] via-[#19100B]/60 to-[#19100B]/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#7A4421]/40 via-transparent to-[#19100B]/80" />
 
-        {/* Radial Cyan Glow in center bottom */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#00F5D4]/10 rounded-full blur-[140px] pointer-events-none" />
+        {/* Radial Cyan Glow */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] h-[300px] sm:h-[400px] bg-[#00F5D4]/10 rounded-full blur-[140px] pointer-events-none" />
 
         {/* Video Control Buttons floating at bottom right */}
-        <div className="absolute bottom-8 right-8 z-20 hidden md:flex items-center gap-2 bg-[#241610]/70 backdrop-blur-md p-1.5 rounded-full border border-[#ECE5D8]/10">
+        <div className="absolute bottom-6 right-4 sm:bottom-8 sm:right-8 z-20 flex items-center gap-2 bg-[#241610]/70 backdrop-blur-md p-1.5 rounded-full border border-[#ECE5D8]/10">
           <button
             onClick={toggleVideoPlay}
             data-cursor={isVideoPlaying ? 'PAUSE' : 'PLAY'}
@@ -114,16 +113,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full my-auto flex flex-col items-start gap-8 pt-8">
+      <div className="relative z-10 max-w-7xl mx-auto w-full my-auto flex flex-col items-start gap-6 sm:gap-8 pt-6 sm:pt-8">
         {/* Pre-launch Pill Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill border border-[#00F5D4]/30"
+          className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full glass-pill border border-[#00F5D4]/30"
         >
           <span className="w-2 h-2 rounded-full bg-[#00F5D4] animate-pulse" />
-          <span className="font-syne text-xs uppercase tracking-widest text-[#00F5D4]">
+          <span className="font-syne text-[10px] sm:text-xs uppercase tracking-widest text-[#00F5D4]">
             Pré-Lançamento Exclusivo • Est. 2025
           </span>
         </motion.div>
@@ -135,13 +134,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-4xl"
         >
-          <h1 className="font-serif text-5xl sm:text-7xl lg:text-9xl font-semibold tracking-tight text-[#ECE5D8] leading-[0.95]">
+          <h1 className="font-serif text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tight text-[#ECE5D8] leading-[0.98]">
             Sinta a maré<span className="text-[#00F5D4]">.</span> <br />
             <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#ECE5D8] via-[#00F5D4] to-[#ECE5D8]">
               Vista o sol.
             </span>
           </h1>
-          <p className="mt-6 font-sans text-base sm:text-xl text-[#ECE5D8]/80 max-w-2xl font-light leading-relaxed">
+          <p className="mt-4 sm:mt-6 font-sans text-sm sm:text-lg md:text-xl text-[#ECE5D8]/80 max-w-2xl font-light leading-relaxed">
             Nascida no litoral e moldada pela essência da canoa e dos esportes aquáticos. 
             Uma marca de vestuário e acessórios solares feita para quem vive em harmonia com a natureza.
           </p>
@@ -152,7 +151,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="w-full max-w-2xl flex flex-col gap-6"
+          className="w-full max-w-2xl flex flex-col gap-4 sm:gap-6"
         >
           {/* Form */}
           {!subscribed ? (
@@ -162,18 +161,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Seu melhor e-mail para o Lote VIP..."
+                  placeholder="Seu e-mail para o Lote VIP..."
                   required
-                  className="w-full px-5 py-4 rounded-full bg-[#241610]/80 border border-[#ECE5D8]/20 text-[#ECE5D8] placeholder-[#ECE5D8]/40 focus:outline-none focus:border-[#00F5D4] focus:ring-2 focus:ring-[#00F5D4]/30 backdrop-blur-md transition-all font-sans text-sm"
+                  className="w-full px-5 py-3.5 sm:py-4 rounded-full bg-[#241610]/80 border border-[#ECE5D8]/20 text-[#ECE5D8] placeholder-[#ECE5D8]/40 focus:outline-none focus:border-[#00F5D4] focus:ring-2 focus:ring-[#00F5D4]/30 backdrop-blur-md transition-all font-sans text-sm min-h-[48px]"
                 />
               </div>
 
               <button
                 type="submit"
                 data-cursor="JOIN VIP"
-                className="group px-8 py-4 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] transition-all duration-300 shadow-[0_0_25px_rgba(0,245,212,0.4)] hover:scale-105 active:scale-95 cursor-pointer"
+                className="group px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] transition-all duration-300 shadow-[0_0_25px_rgba(0,245,212,0.4)] hover:scale-105 active:scale-95 cursor-pointer min-h-[48px]"
               >
-                <span>Garantir 15% OFF</span>
+                <span>Garantir 10% OFF</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </form>
@@ -189,17 +188,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
                   Presença Confirmada no Lote VIP 0!
                 </h4>
                 <p className="text-xs text-[#ECE5D8]/80 font-sans mt-0.5">
-                  Você receberá o link secreto de acesso 24h antes do lançamento oficial.
+                  Você receberá o cupom de 10% OFF e o link de acesso antes do lançamento oficial.
                 </p>
               </div>
             </motion.div>
           )}
 
           {/* Perks tags */}
-          <div className="flex flex-wrap items-center gap-4 font-syne text-[11px] text-[#ECE5D8]/60 uppercase tracking-widest">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 font-syne text-[10px] sm:text-[11px] text-[#ECE5D8]/60 uppercase tracking-widest">
             <span className="flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-[#00F5D4]" />
-              Acesso Antecipado VIP
+              10% OFF no Lançamento
             </span>
             <span className="text-[#00F5D4]">•</span>
             <span className="flex items-center gap-1.5">
@@ -213,43 +212,43 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
       </div>
 
       {/* Bottom Bar: Countdown + Scroll Indicator */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full pt-8 border-t border-[#ECE5D8]/10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="relative z-10 max-w-7xl mx-auto w-full pt-6 sm:pt-8 border-t border-[#ECE5D8]/10 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
         {/* Countdown */}
-        <div className="flex items-center gap-4 sm:gap-8">
-          <span className="font-syne text-xs uppercase tracking-widest text-[#ECE5D8]/50 hidden sm:inline-block">
+        <div className="flex items-center gap-3 sm:gap-8">
+          <span className="font-syne text-[10px] sm:text-xs uppercase tracking-widest text-[#ECE5D8]/50 hidden sm:inline-block">
             Contagem Regressiva Lançamento:
           </span>
 
-          <div className="flex items-center gap-3 font-serif">
+          <div className="flex items-center gap-2.5 sm:gap-3 font-serif">
             <div className="flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl font-bold text-[#00F5D4]">
+              <span className="text-xl sm:text-3xl font-bold text-[#00F5D4]">
                 {String(timeLeft.days).padStart(2, '0')}
               </span>
-              <span className="font-syne text-[9px] uppercase tracking-widest text-[#ECE5D8]/50">Dias</span>
+              <span className="font-syne text-[8px] sm:text-[9px] uppercase tracking-widest text-[#ECE5D8]/50">Dias</span>
             </div>
-            <span className="text-[#00F5D4] text-xl font-light">:</span>
+            <span className="text-[#00F5D4] text-lg sm:text-xl font-light">:</span>
 
             <div className="flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl font-bold text-[#ECE5D8]">
+              <span className="text-xl sm:text-3xl font-bold text-[#ECE5D8]">
                 {String(timeLeft.hours).padStart(2, '0')}
               </span>
-              <span className="font-syne text-[9px] uppercase tracking-widest text-[#ECE5D8]/50">Horas</span>
+              <span className="font-syne text-[8px] sm:text-[9px] uppercase tracking-widest text-[#ECE5D8]/50">Horas</span>
             </div>
-            <span className="text-[#ECE5D8]/40 text-xl font-light">:</span>
+            <span className="text-[#ECE5D8]/40 text-lg sm:text-xl font-light">:</span>
 
             <div className="flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl font-bold text-[#ECE5D8]">
+              <span className="text-xl sm:text-3xl font-bold text-[#ECE5D8]">
                 {String(timeLeft.minutes).padStart(2, '0')}
               </span>
-              <span className="font-syne text-[9px] uppercase tracking-widest text-[#ECE5D8]/50">Min</span>
+              <span className="font-syne text-[8px] sm:text-[9px] uppercase tracking-widest text-[#ECE5D8]/50">Min</span>
             </div>
-            <span className="text-[#ECE5D8]/40 text-xl font-light">:</span>
+            <span className="text-[#ECE5D8]/40 text-lg sm:text-xl font-light">:</span>
 
             <div className="flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl font-bold text-[#00F5D4] animate-pulse">
+              <span className="text-xl sm:text-3xl font-bold text-[#00F5D4] animate-pulse">
                 {String(timeLeft.seconds).padStart(2, '0')}
               </span>
-              <span className="font-syne text-[9px] uppercase tracking-widest text-[#ECE5D8]/50">Seg</span>
+              <span className="font-syne text-[8px] sm:text-[9px] uppercase tracking-widest text-[#ECE5D8]/50">Seg</span>
             </div>
           </div>
         </div>
@@ -258,11 +257,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
         <a
           href="#manifesto"
           data-cursor="EXPLORE"
-          className="flex items-center gap-3 font-syne text-xs uppercase tracking-widest text-[#ECE5D8]/60 hover:text-[#00F5D4] transition-colors"
+          className="flex items-center gap-2 sm:gap-3 font-syne text-[10px] sm:text-xs uppercase tracking-widest text-[#ECE5D8]/60 hover:text-[#00F5D4] transition-colors"
         >
           <span>Role para explorar</span>
-          <div className="w-8 h-8 rounded-full border border-[#ECE5D8]/20 flex items-center justify-center animate-bounce">
-            <Waves className="w-4 h-4 text-[#00F5D4]" />
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#ECE5D8]/20 flex items-center justify-center animate-bounce">
+            <Waves className="w-3.5 h-3.5 text-[#00F5D4]" />
           </div>
         </a>
       </div>

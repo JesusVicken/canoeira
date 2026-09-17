@@ -1,34 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, ExternalLink, Heart, MessageCircle, Sun, Waves } from 'lucide-react';
+import { Instagram, ExternalLink, Heart, MessageCircle } from 'lucide-react';
 
 export const InstagramShowcase: React.FC = () => {
   const posts = [
     {
       id: 'post-1',
-      title: 'Remada ao amanhecer',
-      caption: 'A calmaria antes da tempestade de energia. ☀️🚣‍♂️ #usecanoeira',
+      title: 'Camisa Solar Canoeira',
+      caption: 'Proteção UV50+ projetada para o sol do meio-dia e a maré. ☀️ #usecanoeira',
       likes: '482',
       comments: '34',
-      gradient: 'from-[#7A4421] to-[#241610]',
+      image: '/assets/canoieraBlusa.jpeg',
       tag: '@usecanoeira',
     },
     {
       id: 'post-2',
-      title: 'Detalhes da coleção Maresia',
-      caption: 'Proteção UV50+ projetada para o sol do meio-dia. #almasolar',
+      title: 'Boné Caiçara Hydro',
+      caption: 'Aba antirreflexo e tecido flutuável de alta performance. #almasolar',
       likes: '621',
       comments: '58',
-      gradient: 'from-[#00F5D4]/30 to-[#19100B]',
+      image: '/assets/canoeiraBone.jpeg',
       tag: '@usecanoeira',
     },
     {
       id: 'post-3',
-      title: 'Travessia de Canoa Havaiana',
-      caption: 'Sintonia da equipe na água. O ritmo não para! 🌊 #vaabrasil',
+      title: 'Travessia ao Amanhecer',
+      caption: 'Sintonia da equipe na água. O ritmo da canoa não para! 🌊 #vaabrasil',
       likes: '890',
       comments: '72',
-      gradient: 'from-[#623417] to-[#7A4421]',
+      image: '/assets/canoieraHero.jpeg',
       tag: '@usecanoeira',
     },
     {
@@ -37,7 +37,7 @@ export const InstagramShowcase: React.FC = () => {
       caption: 'Onde o mar encontra a terra, a Canoeira se faz presente.',
       likes: '512',
       comments: '41',
-      gradient: 'from-[#241610] to-[#00F5D4]/20',
+      image: '/assets/canoeira.jpeg',
       tag: '@usecanoeira',
     },
   ];
@@ -69,7 +69,7 @@ export const InstagramShowcase: React.FC = () => {
           </a>
         </div>
 
-        {/* Posts Grid */}
+        {/* Posts Grid with Real Photos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {posts.map((post, i) => (
             <motion.a
@@ -81,41 +81,41 @@ export const InstagramShowcase: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              data-cursor="SEE POST"
+              data-cursor="VER NO INSTAGRAM"
               className="group relative rounded-2xl glass-panel border border-[#ECE5D8]/10 overflow-hidden hover:border-[#00F5D4]/50 transition-all duration-500 flex flex-col justify-between p-6 aspect-square"
             >
-              {/* Card Art Canvas */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient} opacity-60 group-hover:opacity-90 transition-opacity duration-500`} />
+              {/* Image Background */}
+              <img
+                src={post.image}
+                alt={post.title}
+                className="absolute inset-0 w-full h-full object-cover filter brightness-75 group-hover:scale-110 group-hover:brightness-90 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#19100B] via-[#19100B]/40 to-transparent" />
 
               {/* Top Tag */}
               <div className="relative z-10 flex items-center justify-between">
-                <span className="font-syne text-xs font-bold text-[#00F5D4]">
+                <span className="font-syne text-xs font-bold text-[#00F5D4] px-2.5 py-1 rounded-full bg-[#19100B]/80 backdrop-blur-md border border-[#00F5D4]/30">
                   {post.tag}
                 </span>
-                <Instagram className="w-4 h-4 text-[#ECE5D8]/70 group-hover:text-[#00F5D4] transition-colors" />
-              </div>
-
-              {/* Center Icon */}
-              <div className="relative z-10 flex flex-col items-center justify-center text-center my-auto">
-                <div className="w-14 h-14 rounded-full bg-[#19100B]/60 border border-[#00F5D4]/30 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:border-[#00F5D4] transition-all">
-                  {i % 2 === 0 ? <Sun className="w-6 h-6 text-[#00F5D4]" /> : <Waves className="w-6 h-6 text-[#00F5D4]" />}
+                <div className="p-2 rounded-full bg-[#19100B]/80 backdrop-blur-md border border-[#ECE5D8]/20">
+                  <Instagram className="w-4 h-4 text-[#00F5D4]" />
                 </div>
-                <h4 className="font-serif text-lg text-[#ECE5D8] group-hover:text-[#00F5D4] transition-colors">
-                  {post.title}
-                </h4>
               </div>
 
               {/* Bottom Caption & Stats */}
-              <div className="relative z-10 pt-3 border-t border-[#ECE5D8]/10">
+              <div className="relative z-10 pt-3 border-t border-[#ECE5D8]/20">
+                <h4 className="font-serif text-lg text-[#ECE5D8] group-hover:text-[#00F5D4] transition-colors mb-1">
+                  {post.title}
+                </h4>
                 <p className="font-sans text-xs text-[#ECE5D8]/80 line-clamp-1 mb-2 font-light">
                   {post.caption}
                 </p>
-                <div className="flex items-center gap-4 text-[11px] font-syne text-[#ECE5D8]/60">
+                <div className="flex items-center gap-4 text-[11px] font-syne text-[#ECE5D8]/80">
                   <span className="flex items-center gap-1">
-                    <Heart className="w-3 h-3 text-[#00F5D4]" /> {post.likes}
+                    <Heart className="w-3 h-3 text-[#00F5D4] fill-[#00F5D4]" /> {post.likes}
                   </span>
                   <span className="flex items-center gap-1">
-                    <MessageCircle className="w-3 h-3" /> {post.comments}
+                    <MessageCircle className="w-3 h-3 text-[#ECE5D8]" /> {post.comments}
                   </span>
                 </div>
               </div>
