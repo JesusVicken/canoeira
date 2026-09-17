@@ -1,23 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Pause, Volume2, VolumeX, Maximize2, Sparkles, Shirt, ShieldCheck, ArrowRight, X } from 'lucide-react';
+import { Volume2, VolumeX, Maximize2, Sparkles, Shirt, ShieldCheck, ArrowRight, X } from 'lucide-react';
 
 export const ClothesVideoShowcase: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -76,21 +64,7 @@ export const ClothesVideoShowcase: React.FC = () => {
                 </video>
 
                 {/* Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#19100B] via-transparent to-[#19100B]/30" />
-
-                {/* Floating Play / Pause Overlay Button */}
-                <button
-                  onClick={togglePlay}
-                  data-cursor={isPlaying ? 'PAUSE' : 'PLAY'}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#00F5D4] text-[#19100B] flex items-center justify-center shadow-[0_0_40px_rgba(0,245,212,0.6)] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
-                  title={isPlaying ? 'Pausar vídeo das roupas' : 'Reproduzir vídeo das roupas'}
-                >
-                  {isPlaying ? (
-                    <Pause className="w-6 h-6 sm:w-8 sm:h-8 fill-[#19100B]" />
-                  ) : (
-                    <Play className="w-6 h-6 sm:w-8 sm:h-8 fill-[#19100B] ml-1" />
-                  )}
-                </button>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#19100B] via-transparent to-[#19100B]/30 pointer-events-none" />
 
                 {/* Floating Controls Bar inside video */}
                 <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex items-center justify-between z-10 pointer-events-auto">

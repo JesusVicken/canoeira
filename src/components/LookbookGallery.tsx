@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Maximize2, X, Sun, Sparkles, Compass, Eye } from 'lucide-react';
+import { Maximize2, X, Sparkles, Eye } from 'lucide-react';
 
 interface GalleryItem {
   id: string;
@@ -44,10 +44,10 @@ export const LookbookGallery: React.FC = () => {
     },
     {
       id: 'photo-5',
-      title: 'Identidade & Emblema Solar',
-      category: 'Identidade',
-      src: '/assets/IMG_5334.PNG',
-      subtitle: 'A marca oficial de vestuário e equipamentos de canoa',
+      title: 'Top Activewear Canoeira',
+      category: 'Coleção Sol & Maré',
+      src: '/assets/canoeiraTop.jpg',
+      subtitle: 'Top técnico ergonômico desenvolvido para corrida, remada e treino no sol',
     },
   ];
 

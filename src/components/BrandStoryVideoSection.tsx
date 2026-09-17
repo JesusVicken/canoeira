@@ -1,22 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 export const BrandStoryVideoSection: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   const stats = [
     { label: 'Proteção FPU', val: '50+', sub: 'Certificação Solar Max' },
     { label: 'Origem', val: '100%', sub: 'Desenvolvimento Nacional' },
@@ -43,38 +29,29 @@ export const BrandStoryVideoSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Video Player Framework using canoeira2.mp4 */}
+        {/* Video Player Framework with Continuous Autoplay */}
         <div className="relative rounded-3xl overflow-hidden glass-panel border border-[#ECE5D8]/15 shadow-2xl group max-w-5xl mx-auto">
           <div className="relative aspect-video w-full overflow-hidden bg-[#241610]">
             <video
-              ref={videoRef}
               autoPlay
               loop
               muted
               playsInline
-              className="w-full h-full object-cover filter brightness-90 contrast-105 transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover filter brightness-95 contrast-105 transition-transform duration-700 group-hover:scale-105"
             >
               <source src="/assets/canoeira2.mp4" type="video/mp4" />
               <source src="/assets/cahnoeira2.mp4" type="video/mp4" />
             </video>
 
             {/* Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#19100B] via-transparent to-[#19100B]/40" />
-
-            {/* Center Play/Pause Floating Controller */}
-            <button
-              onClick={togglePlay}
-              data-cursor={isPlaying ? 'PAUSE' : 'PLAY'}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-[#00F5D4] text-[#19100B] flex items-center justify-center shadow-[0_0_40px_rgba(0,245,212,0.6)] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
-            >
-              {isPlaying ? <Pause className="w-8 h-8 fill-[#19100B]" /> : <Play className="w-8 h-8 fill-[#19100B] ml-1" />}
-            </button>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#19100B] via-transparent to-[#19100B]/30 pointer-events-none" />
 
             {/* Bottom Floating Caption inside Video */}
             <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none">
               <div className="flex items-center gap-3 glass-pill px-4 py-2 rounded-full border border-[#00F5D4]/30">
+                <MapPin className="w-4 h-4 text-[#00F5D4]" />
                 <span className="font-syne text-xs uppercase tracking-widest text-[#ECE5D8]">
-                  USE CANOEIRA
+                  Litoral Brasileiro • Origem Oceânica
                 </span>
               </div>
             </div>
