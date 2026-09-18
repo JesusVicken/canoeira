@@ -13,10 +13,12 @@ import { VIPWaitlistSection } from './components/VIPWaitlistSection';
 import { InstagramShowcase } from './components/InstagramShowcase';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
+import { MobileBottomBar } from './components/MobileBottomBar';
 
 export const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [subscribedEmail, setSubscribedEmail] = useState<string | null>(null);
+  const [isSoundPlaying, setIsSoundPlaying] = useState(false);
 
   useEffect(() => {
     // Initialize Lenis smooth scroll
@@ -59,10 +61,10 @@ export const App: React.FC = () => {
       {/* Preloader Screen */}
       <Preloader onComplete={() => setIsLoading(false)} />
 
-      {/* Main Page Content */}
-      <HeaderNavbar onVIPClick={scrollToVIP} />
+      {/* Header & Mobile Sticky Bar */}
+      <HeaderNavbar onVIPClick={scrollToVIP} onSoundStateChange={setIsSoundPlaying} />
 
-      <main className="w-full overflow-x-hidden">
+      <main className="w-full overflow-x-hidden pb-16 md:pb-0">
         <HeroSection onSubscribeSuccess={handleSubscribeSuccess} />
         <BrandManifesto />
         <ClothesVideoShowcase />
@@ -75,6 +77,12 @@ export const App: React.FC = () => {
       </main>
 
       <Footer />
+
+      {/* Floating Mobile Bottom Navigation Bar */}
+      <MobileBottomBar
+        onVIPClick={scrollToVIP}
+        isSoundPlaying={isSoundPlaying}
+      />
     </div>
   );
 };

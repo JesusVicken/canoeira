@@ -48,21 +48,21 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
   };
 
   return (
-    <section id="vip" className="relative py-28 bg-[#19100B] text-[#ECE5D8] overflow-hidden">
+    <section id="vip" className="relative py-20 sm:py-28 bg-[#19100B] text-[#ECE5D8] overflow-hidden">
       {/* Glow Effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00F5D4]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] bg-[#00F5D4]/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-8 relative z-10">
-        <div className="rounded-3xl glass-panel border border-[#00F5D4]/40 p-8 sm:p-14 shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl glass-panel border border-[#00F5D4]/40 p-6 sm:p-14 shadow-2xl relative overflow-hidden">
           {/* Subtle Shimmer top bar */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#7A4421] via-[#00F5D4] to-[#7A4421]" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
             {/* Left Content */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
+            <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00F5D4]/15 border border-[#00F5D4]/30 w-fit">
                 <Sparkles className="w-3.5 h-3.5 text-[#00F5D4]" />
-                <span className="font-syne text-[11px] uppercase tracking-widest text-[#00F5D4]">
+                <span className="font-syne text-[10px] sm:text-[11px] uppercase tracking-widest text-[#00F5D4]">
                   Lote VIP 0 • Vagas Limitadas
                 </span>
               </div>
@@ -78,10 +78,10 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
               </p>
 
               {/* Perks Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-2">
                 {perks.map((p, i) => (
                   <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-[#241610]/80 border border-[#ECE5D8]/10">
-                    <div className="p-1 rounded-full bg-[#00F5D4]/20 text-[#00F5D4] mt-0.5">
+                    <div className="p-1 rounded-full bg-[#00F5D4]/20 text-[#00F5D4] mt-0.5 flex-shrink-0">
                       <Check className="w-3.5 h-3.5" />
                     </div>
                     <div>
@@ -98,14 +98,14 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
               {!subscribed ? (
                 <form
                   onSubmit={handleSubmit}
-                  className="p-6 sm:p-8 rounded-2xl bg-[#241610] border border-[#ECE5D8]/15 flex flex-col gap-4 shadow-xl"
+                  className="p-5 sm:p-8 rounded-2xl bg-[#241610] border border-[#ECE5D8]/15 flex flex-col gap-4 shadow-xl"
                 >
-                  <h3 className="font-serif text-2xl text-[#ECE5D8] text-center mb-2">
+                  <h3 className="font-serif text-2xl text-[#ECE5D8] text-center mb-1">
                     Inscrição VIP
                   </h3>
 
                   <div>
-                    <label className="block font-syne text-[11px] uppercase tracking-widest text-[#ECE5D8]/70 mb-1.5">
+                    <label className="block font-syne text-[10px] sm:text-[11px] uppercase tracking-widest text-[#ECE5D8]/70 mb-1.5">
                       Seu Nome
                     </label>
                     <input
@@ -114,12 +114,12 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Como prefere ser chamado..."
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-[#19100B] border border-[#ECE5D8]/20 text-[#ECE5D8] text-sm focus:outline-none focus:border-[#00F5D4]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#19100B] border border-[#ECE5D8]/20 text-[#ECE5D8] text-base sm:text-sm focus:outline-none focus:border-[#00F5D4] min-h-[48px]"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-syne text-[11px] uppercase tracking-widest text-[#ECE5D8]/70 mb-1.5">
+                    <label className="block font-syne text-[10px] sm:text-[11px] uppercase tracking-widest text-[#ECE5D8]/70 mb-1.5">
                       Seu Melhor E-mail
                     </label>
                     <input
@@ -128,18 +128,18 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="seuemail@exemplo.com"
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-[#19100B] border border-[#ECE5D8]/20 text-[#ECE5D8] text-sm focus:outline-none focus:border-[#00F5D4]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#19100B] border border-[#ECE5D8]/20 text-[#ECE5D8] text-base sm:text-sm focus:outline-none focus:border-[#00F5D4] min-h-[48px]"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-syne text-[11px] uppercase tracking-widest text-[#ECE5D8]/70 mb-1.5">
+                    <label className="block font-syne text-[10px] sm:text-[11px] uppercase tracking-widest text-[#ECE5D8]/70 mb-1.5">
                       Sua Modalidade Principal
                     </label>
                     <select
                       value={paddleStyle}
                       onChange={(e) => setPaddleStyle(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-[#19100B] border border-[#ECE5D8]/20 text-[#ECE5D8] text-sm focus:outline-none focus:border-[#00F5D4]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#19100B] border border-[#ECE5D8]/20 text-[#ECE5D8] text-base sm:text-sm focus:outline-none focus:border-[#00F5D4] min-h-[48px]"
                     >
                       <option value="Canoa Havaiana (VA'A)">Canoa Havaiana (VA'A)</option>
                       <option value="Stand Up Paddle (SUP)">Stand Up Paddle (SUP)</option>
@@ -151,13 +151,13 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
                   <button
                     type="submit"
                     data-cursor="SUBMIT"
-                    className="w-full py-4 mt-2 rounded-xl bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] transition-all shadow-[0_0_20px_rgba(0,245,212,0.4)] cursor-pointer"
+                    className="w-full py-4 mt-2 rounded-xl bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] active:scale-95 transition-all shadow-[0_0_20px_rgba(0,245,212,0.4)] cursor-pointer min-h-[48px]"
                   >
                     <span>Garantir 10% OFF no Drop</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
 
-                  <div className="flex items-center justify-center gap-2 font-syne text-[10px] uppercase tracking-widest text-[#ECE5D8]/50 mt-2">
+                  <div className="flex items-center justify-center gap-2 font-syne text-[10px] uppercase tracking-widest text-[#ECE5D8]/50 mt-1">
                     <Clock className="w-3 h-3 text-[#00F5D4]" />
                     <span>384 canoeiros já inscritos</span>
                   </div>
@@ -166,10 +166,10 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
                 <motion.div
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  className="p-8 rounded-2xl bg-[#241610] border border-[#00F5D4] text-center flex flex-col items-center justify-center gap-4"
+                  className="p-6 sm:p-8 rounded-2xl bg-[#241610] border border-[#00F5D4] text-center flex flex-col items-center justify-center gap-4"
                 >
-                  <div className="w-16 h-16 rounded-full bg-[#00F5D4]/20 border border-[#00F5D4] flex items-center justify-center text-[#00F5D4]">
-                    <ShieldCheck className="w-8 h-8" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#00F5D4]/20 border border-[#00F5D4] flex items-center justify-center text-[#00F5D4]">
+                    <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8" />
                   </div>
 
                   <h3 className="font-serif text-2xl text-[#ECE5D8]">

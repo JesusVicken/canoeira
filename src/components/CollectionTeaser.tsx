@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bell, Sparkles, CheckCircle2, ShieldCheck, X, ArrowRight, Eye } from 'lucide-react';
+import { Bell, Sparkles, CheckCircle2, ShieldCheck, X, ArrowRight, Eye, ChevronRight, ChevronLeft } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface ProductItem {
@@ -79,18 +79,18 @@ export const CollectionTeaser: React.FC = () => {
   };
 
   return (
-    <section id="colecoes" className="relative py-28 bg-[#19100B] overflow-hidden text-[#ECE5D8]">
+    <section id="colecoes" className="relative py-20 sm:py-28 bg-[#19100B] overflow-hidden text-[#ECE5D8]">
       {/* Background Accent Gradients */}
-      <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#7A4421]/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-[#00F5D4]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-0 w-80 sm:w-96 h-80 sm:h-96 bg-[#7A4421]/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-80 sm:w-96 h-80 sm:h-96 bg-[#00F5D4]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-16">
           <div>
-            <div className="inline-flex items-center gap-2 font-syne text-xs uppercase tracking-widest text-[#00F5D4] mb-3">
-              <span className="w-8 h-[1px] bg-[#00F5D4]" />
-              <span>Site de Pré-Lançamento</span>
+            <div className="inline-flex items-center gap-2 font-syne text-[11px] sm:text-xs uppercase tracking-widest text-[#00F5D4] mb-2 sm:mb-3">
+              <span className="w-6 sm:w-8 h-[1px] bg-[#00F5D4]" />
+              <span>Site de Pré-Lançamento Exclusivo</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
               Site com todas as novidades <br />
@@ -98,14 +98,19 @@ export const CollectionTeaser: React.FC = () => {
             </h2>
           </div>
 
-          <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/70 max-w-md font-light">
-            Confira as fotos oficiais das primeiras peças em desenvolvimento. 
-            Inscreva-se no VIP para ser notificado com prioridade no lançamento.
-          </p>
+          <div className="flex flex-col gap-2">
+            <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/70 max-w-md font-light">
+              Confira as fotos oficiais das primeiras peças em desenvolvimento. 
+              Inscreva-se no VIP para ser notificado com prioridade no lançamento.
+            </p>
+            <span className="md:hidden font-syne text-[11px] uppercase tracking-wider text-[#00F5D4] flex items-center gap-1">
+              Deslize para o lado para ver mais peças →
+            </span>
+          </div>
         </div>
 
-        {/* Product Cards Grid with Real Product Photos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Product Cards Grid / Touch Carousel on Mobile */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory pb-6 space-x-4 md:grid md:grid-cols-2 md:space-x-0 md:gap-8 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
           {products.map((product) => {
             const isNotified = notifiedItems[product.id];
             return (
@@ -115,23 +120,23 @@ export const CollectionTeaser: React.FC = () => {
                 transition={{ duration: 0.3 }}
                 data-cursor="AMPLIAR FOTO"
                 onClick={() => setSelectedProduct(product)}
-                className="group relative rounded-3xl glass-panel border border-[#ECE5D8]/10 overflow-hidden hover:border-[#00F5D4]/50 transition-all duration-500 cursor-pointer flex flex-col justify-between p-6 sm:p-8 min-h-[460px]"
+                className="snap-center flex-shrink-0 w-[88vw] sm:w-[420px] md:w-auto group relative rounded-3xl glass-panel border border-[#ECE5D8]/10 overflow-hidden hover:border-[#00F5D4]/50 active:scale-[0.98] transition-all duration-300 cursor-pointer flex flex-col justify-between p-5 sm:p-8 min-h-[440px]"
               >
                 {/* Dynamic Gradient Card Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-30 group-hover:opacity-60 transition-opacity duration-500`} />
 
                 {/* Top Badge & Category */}
                 <div className="relative z-10 flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-[#00F5D4]/15 border border-[#00F5D4]/40 font-syne text-[11px] uppercase tracking-widest text-[#00F5D4]">
+                  <span className="px-3 py-1 rounded-full bg-[#00F5D4]/15 border border-[#00F5D4]/40 font-syne text-[10px] sm:text-[11px] uppercase tracking-widest text-[#00F5D4]">
                     {product.badge}
                   </span>
-                  <span className="font-syne text-xs uppercase tracking-widest text-[#ECE5D8]/60">
+                  <span className="font-syne text-[10px] sm:text-xs uppercase tracking-widest text-[#ECE5D8]/60">
                     {product.category}
                   </span>
                 </div>
 
                 {/* Product Photo Showcase */}
-                <div className="relative z-10 my-6 w-full h-56 rounded-2xl overflow-hidden border border-[#ECE5D8]/10 group-hover:border-[#00F5D4]/40 transition-colors shadow-xl">
+                <div className="relative z-10 my-4 sm:my-6 w-full h-48 sm:h-56 rounded-2xl overflow-hidden border border-[#ECE5D8]/10 group-hover:border-[#00F5D4]/40 transition-colors shadow-xl">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -139,22 +144,22 @@ export const CollectionTeaser: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#19100B] via-transparent to-transparent opacity-80" />
                   
-                  <div className="absolute top-3 right-3 p-2 rounded-full bg-[#19100B]/80 backdrop-blur-md text-[#00F5D4] border border-[#00F5D4]/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-3 right-3 p-2 rounded-full bg-[#19100B]/80 backdrop-blur-md text-[#00F5D4] border border-[#00F5D4]/30 md:opacity-0 group-hover:opacity-100 transition-opacity">
                     <Eye className="w-4 h-4" />
                   </div>
                 </div>
 
                 {/* Bottom Details */}
-                <div className="relative z-10 flex flex-col gap-4">
+                <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
                   <div>
                     <h3 className="font-serif text-2xl sm:text-3xl text-[#ECE5D8] group-hover:text-[#00F5D4] transition-colors">
                       {product.name}
                     </h3>
-                    <div className="flex flex-wrap gap-2 mt-3">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2 sm:mt-3">
                       {product.specs.slice(0, 2).map((spec, i) => (
                         <span
                           key={i}
-                          className="text-[11px] font-sans px-2.5 py-1 rounded-md bg-[#19100B]/80 text-[#ECE5D8]/80 border border-[#ECE5D8]/10"
+                          className="text-[10px] sm:text-[11px] font-sans px-2.5 py-1 rounded-md bg-[#19100B]/80 text-[#ECE5D8]/80 border border-[#ECE5D8]/10"
                         >
                           ✓ {spec}
                         </span>
@@ -162,10 +167,10 @@ export const CollectionTeaser: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-[#ECE5D8]/10 flex items-center justify-between">
+                  <div className="pt-3 sm:pt-4 border-t border-[#ECE5D8]/10 flex items-center justify-between gap-2">
                     <button
                       onClick={(e) => handleNotifyMe(product.id, e)}
-                      className={`flex items-center gap-2 px-4 py-2 rounded-full font-syne text-xs font-bold uppercase tracking-wider transition-all ${
+                      className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-syne text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all active:scale-95 ${
                         isNotified
                           ? 'bg-[#00F5D4]/20 border border-[#00F5D4] text-[#00F5D4]'
                           : 'bg-[#7A4421]/60 text-[#ECE5D8] hover:bg-[#00F5D4] hover:text-[#19100B]'
@@ -184,8 +189,8 @@ export const CollectionTeaser: React.FC = () => {
                       )}
                     </button>
 
-                    <span className="font-syne text-xs uppercase tracking-widest text-[#00F5D4] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                      Ver foto ampliada <ArrowRight className="w-3.5 h-3.5" />
+                    <span className="font-syne text-[10px] sm:text-xs uppercase tracking-widest text-[#00F5D4] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      Ver foto <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
                 </div>
@@ -210,19 +215,19 @@ export const CollectionTeaser: React.FC = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-3xl rounded-3xl glass-panel border border-[#00F5D4]/40 p-6 sm:p-10 shadow-2xl text-[#ECE5D8]"
+              className="relative w-full max-w-3xl rounded-3xl glass-panel border border-[#00F5D4]/40 p-5 sm:p-10 shadow-2xl text-[#ECE5D8] my-auto"
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProduct(null)}
-                className="absolute top-6 right-6 p-2.5 rounded-full bg-[#7A4421]/60 text-[#ECE5D8] hover:text-[#00F5D4] transition-colors z-20"
+                className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2.5 rounded-full bg-[#7A4421]/60 text-[#ECE5D8] hover:text-[#00F5D4] transition-colors z-20 active:scale-90"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
                 {/* Image View */}
-                <div className="relative rounded-2xl overflow-hidden border border-[#00F5D4]/30 shadow-2xl aspect-square bg-[#241610]">
+                <div className="relative rounded-2xl overflow-hidden border border-[#00F5D4]/30 shadow-2xl aspect-[4/3] sm:aspect-square bg-[#241610]">
                   <img
                     src={selectedProduct.image}
                     alt={selectedProduct.name}
@@ -242,16 +247,16 @@ export const CollectionTeaser: React.FC = () => {
                       <span>{selectedProduct.badge}</span>
                     </div>
 
-                    <h3 className="font-serif text-3xl sm:text-4xl text-[#ECE5D8] mb-4">
+                    <h3 className="font-serif text-2xl sm:text-4xl text-[#ECE5D8] mb-3 sm:mb-4">
                       {selectedProduct.name}
                     </h3>
 
-                    <p className="font-sans text-sm text-[#ECE5D8]/80 font-light leading-relaxed mb-6">
+                    <p className="font-sans text-xs sm:text-sm text-[#ECE5D8]/80 font-light leading-relaxed mb-4 sm:mb-6">
                       {selectedProduct.description}
                     </p>
 
-                    <div className="space-y-3 mb-6">
-                      <h4 className="font-syne text-xs font-bold uppercase tracking-widest text-[#00F5D4]">
+                    <div className="space-y-2 sm:space-y-3 mb-6">
+                      <h4 className="font-syne text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#00F5D4]">
                         Destaques da Peça
                       </h4>
                       <div className="flex flex-col gap-2">
@@ -270,7 +275,7 @@ export const CollectionTeaser: React.FC = () => {
                       handleNotifyMe(selectedProduct.id);
                       setSelectedProduct(null);
                     }}
-                    className="w-full py-4 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] transition-all"
+                    className="w-full py-3.5 sm:py-4 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] active:scale-95 transition-all"
                   >
                     <Bell className="w-4 h-4" />
                     <span>Quero ser avisado no lançamento</span>
