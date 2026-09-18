@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Volume2, VolumeX, Waves } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Volume2, VolumeX } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface AmbientAudioProps {
   onSoundStateChange?: (isPlaying: boolean) => void;
@@ -15,23 +15,22 @@ export const AmbientAudio: React.FC<AmbientAudioProps> = ({ onSoundStateChange }
 
   const toggleSound = () => {
     if (!isPlaying) {
-      startOceanSound();
+      startAmbientSound();
       setIsPlaying(true);
       if (onSoundStateChange) onSoundStateChange(true);
     } else {
-      stopOceanSound();
+      stopAmbientSound();
       setIsPlaying(false);
       if (onSoundStateChange) onSoundStateChange(false);
     }
   };
 
-  const startOceanSound = () => {
+  const startAmbientSound = () => {
     try {
       const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
       const ctx = new AudioCtx();
       audioCtxRef.current = ctx;
 
-      // Create brown noise generator for soft ocean waves
       const bufferSize = 2 * ctx.sampleRate;
       const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
       const output = noiseBuffer.getChannelData(0);
@@ -41,32 +40,28 @@ export const AmbientAudio: React.FC<AmbientAudioProps> = ({ onSoundStateChange }
         const white = Math.random() * 2 - 1;
         output[i] = (lastOut + 0.02 * white) / 1.02;
         lastOut = output[i];
-        output[i] *= 3.5; // Boost amplitude
+        output[i] *= 3.5;
       }
 
       const whiteNoise = ctx.createBufferSource();
       whiteNoise.buffer = noiseBuffer;
       whiteNoise.loop = true;
 
-      // Lowpass filter for deep ocean rumble
       const filter = ctx.createBiquadFilter();
       filter.type = 'lowpass';
       filter.frequency.setValueAtTime(350, ctx.currentTime);
 
-      // LFO (Low Frequency Oscillator) to modulate wave swells (every 5-7 seconds)
       const lfo = ctx.createOscillator();
       lfo.type = 'sine';
-      lfo.frequency.setValueAtTime(0.18, ctx.currentTime); // Wave swell frequency (~5.5 seconds per wave)
+      lfo.frequency.setValueAtTime(0.18, ctx.currentTime);
 
       const lfoGain = ctx.createGain();
       lfoGain.gain.setValueAtTime(250, ctx.currentTime);
       lfo.connect(lfoGain);
       lfoGain.connect(filter.frequency);
 
-      // Main Gain Node
       const mainGain = ctx.createGain();
       mainGain.gain.setValueAtTime(0.01, ctx.currentTime);
-      // Smooth fade-in
       mainGain.gain.exponentialRampToValueAtTime(0.12, ctx.currentTime + 2.5);
 
       whiteNoise.connect(filter);
@@ -80,11 +75,11 @@ export const AmbientAudio: React.FC<AmbientAudioProps> = ({ onSoundStateChange }
       gainNodeRef.current = mainGain;
       lfoRef.current = lfo;
     } catch (e) {
-      console.warn('Web Audio API not supported or blocked:', e);
+      console.warn('Web Audio API not supported:', e);
     }
   };
 
-  const stopOceanSound = () => {
+  const stopAmbientSound = () => {
     if (audioCtxRef.current && gainNodeRef.current) {
       const ctx = audioCtxRef.current;
       gainNodeRef.current.gain.setValueAtTime(gainNodeRef.current.gain.value, ctx.currentTime);
@@ -98,20 +93,20 @@ export const AmbientAudio: React.FC<AmbientAudioProps> = ({ onSoundStateChange }
 
   useEffect(() => {
     return () => {
-      stopOceanSound();
+      stopAmbientSound();
     };
   }, []);
 
   return (
     <button
       onClick={toggleSound}
-      data-cursor={isPlaying ? 'MUTE' : 'SOM MAR'}
+      data-cursor={isPlaying ? 'MUTE' : 'AUDIO'}
       className={`relative group flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-500 ${
         isPlaying
           ? 'bg-[#00F5D4]/15 border-[#00F5D4] text-[#00F5D4] shadow-[0_0_15px_rgba(0,245,212,0.3)]'
           : 'bg-[#241610]/80 border-[#ECE5D8]/20 text-[#ECE5D8]/70 hover:border-[#00F5D4]/50 hover:text-[#00F5D4]'
       }`}
-      title={isPlaying ? 'Mudar som ambiente' : 'Ouvir som do mar e remada'}
+      title={isPlaying ? 'Mudar áudio' : 'Ouvir ambiente solar'}
     >
       <div className="relative flex items-center justify-center">
         {isPlaying ? (
@@ -122,10 +117,9 @@ export const AmbientAudio: React.FC<AmbientAudioProps> = ({ onSoundStateChange }
       </div>
 
       <span className="text-xs font-semibold tracking-wider uppercase font-syne hidden sm:inline-block">
-        {isPlaying ? 'Som Ativo' : 'Som do Mar'}
+        {isPlaying ? 'Áudio Ativo' : 'Áudio Solar'}
       </span>
 
-      {/* Wave bars animation when active */}
       {isPlaying && (
         <div className="flex items-center gap-0.5 h-3 ml-0.5">
           <motion.span

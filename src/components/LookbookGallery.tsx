@@ -16,38 +16,38 @@ export const LookbookGallery: React.FC = () => {
   const galleryItems: GalleryItem[] = [
     {
       id: 'photo-1',
-      title: 'Camisa Solar UV50+ Canoeira',
-      category: 'Vestuário Técnico',
-      src: '/assets/canoieraBlusa.jpeg',
-      subtitle: 'Desenvolvida para o sol do meio-dia e a salinidade do mar',
+      title: 'Regata & Vestuário Canoeira',
+      category: 'Linha Performance',
+      src: '/assets/canoieraHero.jpeg',
+      subtitle: 'Conforto e mobilidade para suas atividades no sol',
     },
     {
       id: 'photo-2',
+      title: 'Camisa Solar UV50+ Canoeira',
+      category: 'Proteção Solar',
+      src: '/assets/canoieraBlusa.jpeg',
+      subtitle: 'Desenvolvida com filtro solar permanente nas fibras',
+    },
+    {
+      id: 'photo-3',
       title: 'Boné Caiçara Solstício Hydro',
       category: 'Acessórios Sol',
       src: '/assets/canoeiraBone.jpeg',
       subtitle: 'Tecido leve e secagem ultrarrápida com aba antirreflexo',
     },
     {
-      id: 'photo-3',
-      title: 'Espírito da Remada & Lifestyle',
-      category: 'Conceito',
-      src: '/assets/canoieraHero.jpeg',
-      subtitle: 'Nascida nas águas brasileiras e moldada pelo sol',
-    },
-    {
       id: 'photo-4',
-      title: 'Alma Caiçara & Oceano',
-      category: 'Coleção Sol & Maré',
-      src: '/assets/canoeira.jpeg',
-      subtitle: 'Estética atemporal pensada para quem vive na praia e na água',
+      title: 'Top Activewear Canoeira',
+      category: 'Moda Fitness & Sol',
+      src: '/assets/canoeiraTop.jpg',
+      subtitle: 'Top ergonômico de alta sustentação para caminhada e corrida',
     },
     {
       id: 'photo-5',
-      title: 'Top Activewear Canoeira',
-      category: 'Coleção Sol & Maré',
-      src: '/assets/canoeiraTop.jpg',
-      subtitle: 'Top técnico ergonômico desenvolvido para corrida, remada e treino no sol',
+      title: 'Shorts & Equipamentos Canoeira',
+      category: 'Linha Solstício',
+      src: '/assets/canoeira.jpeg',
+      subtitle: 'Bermuda ergonômica com tecido flexível de secagem rápida',
     },
   ];
 
@@ -68,7 +68,7 @@ export const LookbookGallery: React.FC = () => {
             Lookbook & <span className="italic text-[#00F5D4]">Detalhes das Peças</span>
           </h2>
           <p className="mt-4 font-sans text-sm sm:text-base text-[#ECE5D8]/70 font-light max-w-xl mx-auto">
-            Clique em qualquer imagem para ampliar e explorar as fotos reais da nova coleção da Canoeira.
+            Clique em qualquer imagem para ampliar e explorar as fotos oficiais da nova coleção da Canoeira.
           </p>
         </div>
 

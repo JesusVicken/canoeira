@@ -7,7 +7,7 @@ export const InstagramShowcase: React.FC = () => {
     {
       id: 'post-1',
       title: 'Camisa Solar Canoeira',
-      caption: 'Proteção UV50+ projetada para o sol do meio-dia e a maré. ☀️ #usecanoeira',
+      caption: 'Proteção UV50+ projetada para o sol e para o treino ao ar livre. ☀️ #usecanoeira',
       likes: '482',
       comments: '34',
       image: '/assets/canoieraBlusa.jpeg',
@@ -16,7 +16,7 @@ export const InstagramShowcase: React.FC = () => {
     {
       id: 'post-2',
       title: 'Boné Caiçara Hydro',
-      caption: 'Aba antirreflexo e tecido flutuável de alta performance. #almasolar',
+      caption: 'Aba antirreflexo e tecido de secagem ultrarrápida. #almasolar',
       likes: '621',
       comments: '58',
       image: '/assets/canoeiraBone.jpeg',
@@ -24,20 +24,20 @@ export const InstagramShowcase: React.FC = () => {
     },
     {
       id: 'post-3',
-      title: 'Travessia ao Amanhecer',
-      caption: 'Sintonia da equipe na água. O ritmo da canoa não para! 🌊 #vaabrasil',
+      title: 'Top Activewear Canoeira',
+      caption: 'Sustentação anatômica e estilo minimalista elegante. #usecanoeira',
       likes: '890',
       comments: '72',
-      image: '/assets/canoieraHero.jpeg',
+      image: '/assets/canoeiraTop.jpg',
       tag: '@usecanoeira',
     },
     {
       id: 'post-4',
-      title: 'Horizonte Infinito',
-      caption: 'Onde o mar encontra a terra, a Canoeira se faz presente.',
+      title: 'Vestuário & Performance',
+      caption: 'O site oficial com a coleção completa está chegando. Acompanhe as novidades!',
       likes: '512',
       comments: '41',
-      image: '/assets/canoeira.jpeg',
+      image: '/assets/canoieraHero.jpeg',
       tag: '@usecanoeira',
     },
   ];
@@ -69,7 +69,7 @@ export const InstagramShowcase: React.FC = () => {
           </a>
         </div>
 
-        {/* Posts Grid with Real Photos */}
+        {/* Posts Grid with Real Unique Photos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {posts.map((post, i) => (
             <motion.a

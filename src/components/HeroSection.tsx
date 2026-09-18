@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Volume2, VolumeX, Sparkles, ArrowRight, ShieldCheck, Waves } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, Sparkles, ArrowRight, ShieldCheck, Sun } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface HeroSectionProps {
@@ -123,7 +123,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
         >
           <span className="w-2 h-2 rounded-full bg-[#00F5D4] animate-pulse" />
           <span className="font-syne text-[10px] sm:text-xs uppercase tracking-widest text-[#00F5D4]">
-            Pré-Lançamento Exclusivo • Est. 2025
+            Pré-Lançamento do Site Oficial • Est. 2025
           </span>
         </motion.div>
 
@@ -135,14 +135,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
           className="max-w-4xl"
         >
           <h1 className="font-serif text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tight text-[#ECE5D8] leading-[0.98]">
-            Sinta a maré<span className="text-[#00F5D4]">.</span> <br />
+            Alma Solar<span className="text-[#00F5D4]">.</span> <br />
             <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#ECE5D8] via-[#00F5D4] to-[#ECE5D8]">
               Vista o sol.
             </span>
           </h1>
           <p className="mt-4 sm:mt-6 font-sans text-sm sm:text-lg md:text-xl text-[#ECE5D8]/80 max-w-2xl font-light leading-relaxed">
-            Nascida no litoral e moldada pela essência da canoa e dos esportes aquáticos. 
-            Uma marca de vestuário e acessórios solares feita para quem vive em harmonia com a natureza.
+            Nascida para quem vive o sol e a prática de esportes ao ar livre. 
+            Estamos preparando a loja online oficial da Canoeira para o lançamento oficial em breve.
           </p>
         </motion.div>
 
@@ -188,7 +188,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
                   Presença Confirmada no Lote VIP 0!
                 </h4>
                 <p className="text-xs text-[#ECE5D8]/80 font-sans mt-0.5">
-                  Você receberá o cupom de 10% OFF e o link de acesso antes do lançamento oficial.
+                  Você receberá o cupom de 10% OFF e o link de acesso antes da abertura da loja oficial.
                 </p>
               </div>
             </motion.div>
@@ -198,7 +198,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 font-syne text-[10px] sm:text-[11px] text-[#ECE5D8]/60 uppercase tracking-widest">
             <span className="flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-[#00F5D4]" />
-              10% OFF no Lançamento
+              10% OFF no Lançamento da Loja
             </span>
             <span className="text-[#00F5D4]">•</span>
             <span className="flex items-center gap-1.5">
@@ -216,7 +216,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
         {/* Countdown */}
         <div className="flex items-center gap-3 sm:gap-8">
           <span className="font-syne text-[10px] sm:text-xs uppercase tracking-widest text-[#ECE5D8]/50 hidden sm:inline-block">
-            Contagem Regressiva Lançamento:
+            Contagem Regressiva para Abertura da Loja:
           </span>
 
           <div className="flex items-center gap-2.5 sm:gap-3 font-serif">
@@ -261,7 +261,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
         >
           <span>Role para explorar</span>
           <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#ECE5D8]/20 flex items-center justify-center animate-bounce">
-            <Waves className="w-3.5 h-3.5 text-[#00F5D4]" />
+            <Sun className="w-3.5 h-3.5 text-[#00F5D4]" />
           </div>
         </a>
       </div>

@@ -1,24 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sun, Compass, Anchor, Flame, Feather, Award } from 'lucide-react';
+import { Sun, Compass, Anchor } from 'lucide-react';
 
 export const BrandManifesto: React.FC = () => {
   const pillars = [
     {
       num: '01',
       title: 'Proteção Solar UV50+',
-      desc: 'Tecidos técnicos de alta performance desenvolvidos especificamente para resistir à exposição solar prolongada e salinidade do mar.',
+      desc: 'Tecidos técnicos de alta performance desenvolvidos especificamente para resistir à exposição solar prolongada e ao uso intenso.',
       icon: Sun,
     },
     {
       num: '02',
-      title: 'Ergonomia da Remada',
-      desc: 'Cortes pensados para máxima liberdade de movimento dos ombros, sem atrito na pele durante cada visada na água.',
+      title: 'Ergonomia em Movimento',
+      desc: 'Cortes pensados para máxima liberdade de movimento dos ombros e corpo, sem atrito na pele durante qualquer treino ou caminhada.',
       icon: Anchor,
     },
     {
       num: '03',
-      title: 'Alma Caiçara & Atemporal',
+      title: 'Alma Solar & Atemporal',
       desc: 'Estética minimalista sofisticada com tons terrosos e cianos inspirados nas paisagens tropicais brasileiras.',
       icon: Compass,
     },
@@ -30,19 +30,19 @@ export const BrandManifesto: React.FC = () => {
       <div className="w-full overflow-hidden border-y border-[#ECE5D8]/10 bg-[#241610]/40 py-5 mb-24">
         <div className="animate-marquee whitespace-nowrap flex items-center gap-12 font-serif text-2xl sm:text-4xl uppercase tracking-widest text-[#ECE5D8]/40">
           <span className="flex items-center gap-6">
-            <span className="text-[#00F5D4]">CANOEIRA</span> • ALMA SOLAR • RITMO DO MAR
+            <span className="text-[#00F5D4]">CANOEIRA</span> • ALMA SOLAR • SITE OFICIAL EM BREVE
           </span>
           <span className="flex items-center gap-6">
-            <span className="text-[#00F5D4]">VESTUÁRIO DE REMADA</span> • EST. 2025 • LIFESTYLE CAIÇARA
+            <span className="text-[#00F5D4]">VESTUÁRIO DE PERFORMANCE</span> • EST. 2025 • PRÉ-LANÇAMENTO VIP
           </span>
           <span className="flex items-center gap-6">
-            <span className="text-[#00F5D4]">SOLSTÍCIO & OCEANO</span> • TECNOLOGIA UV50+
+            <span className="text-[#00F5D4]">SOLSTÍCIO & ENERGIA</span> • TECNOLOGIA UV50+
           </span>
           <span className="flex items-center gap-6">
-            <span className="text-[#00F5D4]">CANOEIRA</span> • ALMA SOLAR • RITMO DO MAR
+            <span className="text-[#00F5D4]">CANOEIRA</span> • ALMA SOLAR • SITE OFICIAL EM BREVE
           </span>
           <span className="flex items-center gap-6">
-            <span className="text-[#00F5D4]">VESTUÁRIO DE REMADA</span> • EST. 2025 • LIFESTYLE CAIÇARA
+            <span className="text-[#00F5D4]">VESTUÁRIO DE PERFORMANCE</span> • EST. 2025 • PRÉ-LANÇAMENTO VIP
           </span>
         </div>
       </div>
@@ -54,24 +54,23 @@ export const BrandManifesto: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 font-syne text-xs uppercase tracking-widest text-[#00F5D4]">
               <span className="w-8 h-[1px] bg-[#00F5D4]" />
-              <span>Manifesto da Marca</span>
+              <span>O E-commerce Oficial Está Chegando</span>
             </div>
 
             <h2 className="font-serif text-4xl sm:text-6xl font-medium tracking-tight leading-[1.1]">
               Não é apenas vestuário.<br />
-              É o <span className="italic text-[#00F5D4]">ritmo da sua jornada</span> na água.
+              É o <span className="italic text-[#00F5D4]">conforto do seu dia a dia</span> no sol.
             </h2>
 
             <p className="font-sans text-base sm:text-lg text-[#ECE5D8]/80 font-light leading-relaxed">
-              A <strong>Canoeira</strong> nasceu do desejo de unir o desempenho exigido por quem rema
-              à elegância despretensiosa da vida praiana. Cada peça é desenhada pensando no atrito da água, 
-              no calor do sol de meio-dia e no vento da volta para a praia.
+              A <strong>Canoeira</strong> foi concebida do desejo de unir o desempenho exigido na prática esportiva
+              à elegância despretensiosa do vestuário solar. Estamos preparando nossa loja oficial online para que você possa adquirir todas as peças exclusivas diretamente da fábrica.
             </p>
 
             <div className="p-6 rounded-2xl glass-panel border border-[#7A4421]/50 relative overflow-hidden mt-4">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#00F5D4]/10 rounded-full blur-2xl pointer-events-none" />
               <blockquote className="font-serif italic text-lg sm:text-xl text-[#ECE5D8] leading-relaxed">
-                "Remar é estar presente. O oceano não pede pressa, pede sintonia. A Canoeira é a extensão desse movimento."
+                "Este site de pré-lançamento foi feito para que nossos clientes garantam acesso prioritário e desconto exclusivo no dia da inauguração da loja online oficial."
               </blockquote>
               <div className="mt-4 font-syne text-xs uppercase tracking-widest text-[#00F5D4]">
                 — Equipe Canoeira
@@ -115,7 +114,7 @@ export const BrandManifesto: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
-                data-cursor="PILLAR"
+                data-cursor="PILAR"
                 className="group relative p-8 rounded-3xl glass-panel border border-[#ECE5D8]/10 hover:border-[#00F5D4]/40 transition-all duration-500 hover:-translate-y-2"
               >
                 <div className="flex justify-between items-start mb-6">

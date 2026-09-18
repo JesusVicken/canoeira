@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bell, Sparkles, CheckCircle2, ShieldCheck, X, ArrowRight, Eye, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Bell, Sparkles, CheckCircle2, ShieldCheck, X, ArrowRight, Eye } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface ProductItem {
@@ -24,44 +24,44 @@ export const CollectionTeaser: React.FC = () => {
       id: 'blusao-uv50',
       name: 'Camisa Solar UV50+ Canoeira',
       category: 'Vestuário Técnico',
-      line: 'Linha Sol & Maré',
-      badge: 'Lançamento • Lote VIP',
+      line: 'Linha Sol & Performance',
+      badge: 'Lote VIP 0',
       image: '/assets/canoieraBlusa.jpeg',
       specs: ['Proteção FPU50+ Vitalícia', 'Tecido Ultra Breathable', 'Costuras Antiatrito Zero Touch'],
-      description: 'Desenvolvida com poliamida de alta tenacidade e dióxido de titânio fundido às fibras para bloquear 98% dos raios UVA e UVB. Modelagem perfeita para remadas intensas no mar.',
+      description: 'Desenvolvida com poliamida de alta tenacidade e dióxido de titânio fundido às fibras para bloquear 98% dos raios UVA e UVB. Estará disponível para compra no lançamento do e-commerce oficial.',
       gradient: 'from-[#7A4421]/60 via-[#241610] to-[#00F5D4]/20',
     },
     {
       id: 'bone-solsticio',
       name: 'Boné Caiçara Solstício Hydro',
-      category: 'Acessórios',
+      category: 'Acessórios Sol',
       line: 'Linha Alma Caiçara',
-      badge: 'Lançamento • Lote VIP',
+      badge: 'Lote VIP 0',
       image: '/assets/canoeiraBone.jpeg',
-      specs: ['Aba Antirreflexo Solar', 'Ajuste Micrométrico Neoprene', 'Flutuável na Água'],
-      description: 'Projetado para não afundar se cair no mar durante a remada. Material de secagem rápida com faixa interna de absorção de suor.',
+      specs: ['Aba Antirreflexo Solar', 'Ajuste Micrométrico Neoprene', 'Tecido Flutuável'],
+      description: 'Projetado para treinos e atividades ao sol. Material de secagem rápida com faixa interna de absorção de suor.',
       gradient: 'from-[#241610] via-[#7A4421]/40 to-[#00F5D4]/30',
     },
     {
-      id: 'lifestyle-mar',
-      name: 'Regata & Vestuário Alma Solar',
-      category: 'Lifestyle Praiano',
-      line: 'Linha Expedição',
+      id: 'top-activewear',
+      name: 'Top Activewear Canoeira',
+      category: 'Moda Fitness & Sol',
+      line: 'Linha Performance',
       badge: 'Lote VIP 0',
-      image: '/assets/canoieraHero.jpeg',
-      specs: ['Toque de Algodão Orgânico', 'Secagem Rápida Hydro', 'Modelagem Anatômica'],
-      description: 'Perfeita para a transição entre a água e o pós-remada. Conforto térmico absoluto com estilo minimalista elegante.',
+      image: '/assets/canoeiraTop.jpg',
+      specs: ['Sustentação Anatômica 3D', 'Secagem Ultrarrápida', 'Tecido Respirável Premium'],
+      description: 'Top de alta sustentação e modelagem ergonômica ideal para caminhada, corrida e atividades ao ar livre sob o sol.',
       gradient: 'from-[#623417]/80 via-[#19100B] to-[#7A4421]/40',
     },
     {
       id: 'shorts-expedicao',
-      name: 'Bermuda & Equipamento de Remada',
+      name: 'Bermuda & Shorts de Treino',
       category: 'Performance',
-      line: 'Linha Travessia',
+      line: 'Linha Solstício',
       badge: 'Edição Limitada',
       image: '/assets/canoeira.jpeg',
       specs: ['Elasticidade 360° Flex', 'Bolso Estanque com Zíper YKK', 'Tratamento Hidrofóbico'],
-      description: 'Corte ergonômico acima do joelho que garante liberdade total no assento da canoa havaiana e SUP.',
+      description: 'Corte ergonômico que garante liberdade total de movimento. Estará à venda no site oficial da Canoeira.',
       gradient: 'from-[#00F5D4]/20 via-[#19100B] to-[#7A4421]/60',
     },
   ];
@@ -90,7 +90,7 @@ export const CollectionTeaser: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-2 font-syne text-[11px] sm:text-xs uppercase tracking-widest text-[#00F5D4] mb-2 sm:mb-3">
               <span className="w-6 sm:w-8 h-[1px] bg-[#00F5D4]" />
-              <span>Site de Pré-Lançamento Exclusivo</span>
+              <span>Pré-Lançamento da Loja Online Oficial</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
               Site com todas as novidades <br />
@@ -100,8 +100,8 @@ export const CollectionTeaser: React.FC = () => {
 
           <div className="flex flex-col gap-2">
             <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/70 max-w-md font-light">
-              Confira as fotos oficiais das primeiras peças em desenvolvimento. 
-              Inscreva-se no VIP para ser notificado com prioridade no lançamento.
+              Confira as fotos oficiais das peças que estarão à venda no nosso e-commerce. 
+              Inscreva-se no VIP para receber o cupom de 10% OFF no dia da inauguração.
             </p>
             <span className="md:hidden font-syne text-[11px] uppercase tracking-wider text-[#00F5D4] flex items-center gap-1">
               Deslize para o lado para ver mais peças →
@@ -278,7 +278,7 @@ export const CollectionTeaser: React.FC = () => {
                     className="w-full py-3.5 sm:py-4 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] active:scale-95 transition-all"
                   >
                     <Bell className="w-4 h-4" />
-                    <span>Quero ser avisado no lançamento</span>
+                    <span>Avisar na abertura da loja oficial</span>
                   </button>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CanoeiraLogo } from './CanoeiraLogo';
-import { Instagram, ArrowUp, Sun, Waves, Sparkles, Heart } from 'lucide-react';
+import { Instagram, ArrowUp, Heart } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -25,8 +25,8 @@ export const Footer: React.FC = () => {
             </a>
 
             <p className="font-sans text-sm text-[#ECE5D8]/70 font-light max-w-md leading-relaxed">
-              Canoeira é uma marca brasileira inspirada no oceano, no sol e na arte da remada. 
-              Criada para proporcionar alta performance técnica e estética caiçara atemporal.
+              Canoeira é uma marca brasileira de vestuário e acessórios solares de alta performance. 
+              Este é o site de pré-lançamento oficial que antecede a inauguração da nossa loja online oficial.
             </p>
 
             <div className="flex items-center gap-4">
@@ -46,10 +46,10 @@ export const Footer: React.FC = () => {
           {/* Links Col 1 */}
           <div className="md:col-span-3 flex flex-col gap-3 font-syne text-xs uppercase tracking-widest text-[#ECE5D8]/70">
             <h4 className="text-[#00F5D4] font-bold mb-2">Navegação</h4>
-            <a href="#manifesto" className="hover:text-[#00F5D4] transition-colors">Conceito & Manifesto</a>
-            <a href="#colecoes" className="hover:text-[#00F5D4] transition-colors">Prévias das Coleções</a>
-            <a href="#filosofia" className="hover:text-[#00F5D4] transition-colors">Filosofia de Marca</a>
-            <a href="#instagram" className="hover:text-[#00F5D4] transition-colors">Comunidade Instagram</a>
+            <a href="#manifesto" className="hover:text-[#00F5D4] transition-colors">Conceito & Marca</a>
+            <a href="#colecoes" className="hover:text-[#00F5D4] transition-colors">Novidades em Breve</a>
+            <a href="#filosofia" className="hover:text-[#00F5D4] transition-colors">Qualidade & Origem</a>
+            <a href="#instagram" className="hover:text-[#00F5D4] transition-colors">Instagram Oficial</a>
             <a href="#vip" className="hover:text-[#00F5D4] transition-colors">Inscrição Lote VIP</a>
           </div>
 
@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
             </a>
             <span className="text-[#ECE5D8]/40">contato@usecanoeira.com.br</span>
             <div className="mt-4 p-3 rounded-xl bg-[#241610] border border-[#ECE5D8]/10 text-[10px] text-[#ECE5D8]/60">
-              <span className="text-[#00F5D4] font-bold">Awwwards Nominee</span> • Design de alta performance React + Vite + TS.
+              <span className="text-[#00F5D4] font-bold">Canoeira E-commerce</span> • Pré-Lançamento Oficial.
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
 
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5">
-              Feito com <Heart className="w-3 h-3 text-[#00F5D4] fill-[#00F5D4]" /> para amantes do mar
+              Feito com <Heart className="w-3 h-3 text-[#00F5D4] fill-[#00F5D4]" /> para entusiastas do sol
             </span>
 
             <button

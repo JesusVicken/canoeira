@@ -7,24 +7,24 @@ export const FAQSection: React.FC = () => {
 
   const faqs = [
     {
-      q: 'Quando será o lançamento oficial da Canoeira?',
-      a: 'O lançamento do Lote VIP 0 acontecerá no mês de Outubro de 2025. Todos os inscritos na nossa lista pré-lançamento receberão o link secreto com 24 horas de antecedência.',
+      q: 'Quando será o lançamento oficial do e-commerce?',
+      a: 'O lançamento do e-commerce oficial da Canoeira acontecerá em breve. Todos os inscritos na nossa lista VIP de pré-lançamento receberão o link de acesso com 24 horas de antecedência.',
     },
     {
-      q: 'Como funciona o benefício do Lote VIP 0?',
-      a: 'Ao se cadastrar no site, você garante 15% de desconto acumulável na primeira compra, além de frete grátis e preferência absoluta no estoque numerado de primeira edição.',
+      q: 'Como funciona o benefício da inscrição VIP?',
+      a: 'Ao se cadastrar no site, você garante 10% de desconto acumulável na primeira compra, além de frete grátis e preferência absoluta no estoque de primeira edição da loja oficial.',
     },
     {
-      q: 'Quais peças farão parte da primeira coleção?',
-      a: 'A primeira coleção contará com Camisas Solares UV50+, Bermudas/Shorts de remada 4-way stretch, Bonés técnicos flutuantes, Bolsas estanques impermeáveis e linha activewear praia.',
+      q: 'Quais peças estarão à venda na loja oficial?',
+      a: 'A primeira coleção da loja contará com Camisas Solares UV50+, Bonés técnicos Solstício Hydro, Tops Activewear, Bermudas de treino e linha de vestuário casual solar.',
     },
     {
       q: 'Quais são os tamanhos e modelagens disponíveis?',
-      a: 'Nossas peças femininas e masculinas vão do PP ao XGG. Desenvolvemos tabelas de medidas detalhadas com base no biotipo de atletas e praticantes de esportes aquáticos.',
+      a: 'Nossas peças masculinas e femininas vão do PP ao XGG. Desenvolvemos tabelas de medidas detalhadas com base no biotipo de atletas e praticantes de atividades ao ar livre.',
     },
     {
-      q: 'A marca envia para todo o Brasil?',
-      a: 'Sim! Entregamos em todo o território nacional via Transportadora Expressa e Correios, com rastreamento em tempo real.',
+      q: 'Vocês entregam em todo o Brasil?',
+      a: 'Sim! A loja oficial entregará em todo o território nacional via Transportadora Expressa e Correios, com rastreamento em tempo real.',
     },
   ];
 

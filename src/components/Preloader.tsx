@@ -20,7 +20,6 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
           }, 400);
           return 100;
         }
-        // Random incremental speed
         const diff = Math.floor(Math.random() * 15) + 5;
         return Math.min(prev + diff, 100);
       });
@@ -48,7 +47,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
               <span className="w-2 h-2 rounded-full bg-[#00F5D4] animate-ping" />
               Canoeira Est. 2025
             </span>
-            <span>Edição Pré-Lançamento</span>
+            <span>Pré-Lançamento Oficial</span>
           </div>
 
           {/* Center Logo & Text Reveal */}
@@ -80,7 +79,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             </motion.h1>
 
             <p className="mt-3 font-syne text-xs md:text-sm tracking-[0.3em] uppercase text-[#ECE5D8]/70">
-              Alma Solar • Ritmo da Maré
+              Alma Solar • E-Commerce Oficial Em Breve
             </p>
           </div>
 
