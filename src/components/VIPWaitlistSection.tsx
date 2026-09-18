@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ShieldCheck, ArrowRight, Clock, Check } from 'lucide-react';
+import { Sparkles, ShieldCheck, ArrowRight, Check, Bell } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface VIPWaitlistSectionProps {
@@ -10,25 +10,24 @@ interface VIPWaitlistSectionProps {
 export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscribeSuccess }) => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
-  const [paddleStyle, setPaddleStyle] = useState('Canoa Havaiana (VA\'A)');
   const [subscribed, setSubscribed] = useState(false);
 
   const perks = [
     {
-      title: '10% de Desconto na Primeira Compra',
-      desc: 'Cupom exclusivo garantido para membros inscritos no pré-lançamento.',
+      title: 'Aviso em Primeira Mão',
+      desc: 'Receba o link de abertura da loja online oficial no seu e-mail.',
     },
     {
-      title: 'Acesso Antecipado ao Drop Novo',
-      desc: 'Receba o link secreto de compras 24h antes do público geral.',
+      title: 'Acesso Antecipado',
+      desc: 'Acesse o e-commerce antes da divulgação oficial nas redes sociais.',
     },
     {
-      title: 'Kit Exclusivo de Adesivos',
-      desc: 'Adesivos vinílicos impermeáveis para sua canoa, remo ou garrafa.',
+      title: 'Linha Completa de Roupas',
+      desc: 'Confira todas as peças masculinas e femininas na inauguração.',
     },
     {
-      title: 'Frete Grátis na Primeira Compra',
-      desc: 'Frete grátis nacional garantido para a primeira remessa.',
+      title: 'Entrega para Todo o Brasil',
+      desc: 'Envio rápido via transportadora para qualquer cidade brasileira.',
     },
   ];
 
@@ -37,10 +36,10 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
     if (!email || !email.includes('@')) return;
 
     confetti({
-      particleCount: 150,
-      spread: 90,
+      particleCount: 120,
+      spread: 80,
       origin: { y: 0.5 },
-      colors: ['#00F5D4', '#7A4421', '#ECE5D8', '#66FFEA'],
+      colors: ['#00F5D4', '#7A4421', '#ECE5D8'],
     });
 
     setSubscribed(true);
@@ -48,12 +47,12 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
   };
 
   return (
-    <section id="vip" className="relative py-20 sm:py-28 bg-[#19100B] text-[#ECE5D8] overflow-hidden">
+    <section id="inauguracao" className="relative py-20 sm:py-28 bg-[#19100B] text-[#ECE5D8] overflow-hidden">
       {/* Glow Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] bg-[#00F5D4]/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-8 relative z-10">
-        <div className="rounded-3xl glass-panel border border-[#00F5D4]/40 p-6 sm:p-14 shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl glass-panel border border-[#00F5D4]/40 p-6 sm:p-12 shadow-2xl relative overflow-hidden">
           {/* Subtle Shimmer top bar */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#7A4421] via-[#00F5D4] to-[#7A4421]" />
 
@@ -61,20 +60,19 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
             {/* Left Content */}
             <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00F5D4]/15 border border-[#00F5D4]/30 w-fit">
-                <Sparkles className="w-3.5 h-3.5 text-[#00F5D4]" />
+                <Bell className="w-3.5 h-3.5 text-[#00F5D4]" />
                 <span className="font-syne text-[10px] sm:text-[11px] uppercase tracking-widest text-[#00F5D4]">
-                  Lote VIP 0 • Vagas Limitadas
+                  Inauguração da Loja Oficial
                 </span>
               </div>
 
               <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight leading-tight">
-                Garanta sua vaga nas <br />
-                <span className="italic text-[#00F5D4]">primeiras peças do nosso drop novo.</span>
+                Seja o primeiro a saber <br />
+                <span className="italic text-[#00F5D4]">da inauguração oficial.</span>
               </h2>
 
               <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light leading-relaxed">
-                As primeiras peças da Canoeira serão produzidas em tiragem exclusiva. 
-                Cadastre-se para garantir 10% OFF no seu primeiro pedido e prioridade de estoque.
+                O e-commerce oficial da marca Canoeira será lançado em breve. Inscreva-se abaixo para receber o aviso de abertura da loja em primeira mão.
               </p>
 
               {/* Perks Grid */}
@@ -101,7 +99,7 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
                   className="p-5 sm:p-8 rounded-2xl bg-[#241610] border border-[#ECE5D8]/15 flex flex-col gap-4 shadow-xl"
                 >
                   <h3 className="font-serif text-2xl text-[#ECE5D8] text-center mb-1">
-                    Inscrição VIP
+                    Cadastrar E-mail
                   </h3>
 
                   <div>
@@ -132,44 +130,23 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
                     />
                   </div>
 
-                  <div>
-                    <label className="block font-syne text-[10px] sm:text-[11px] uppercase tracking-widest text-[#ECE5D8]/70 mb-1.5">
-                      Sua Modalidade Principal
-                    </label>
-                    <select
-                      value={paddleStyle}
-                      onChange={(e) => setPaddleStyle(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-[#19100B] border border-[#ECE5D8]/20 text-[#ECE5D8] text-base sm:text-sm focus:outline-none focus:border-[#00F5D4] min-h-[48px]"
-                    >
-                      <option value="Canoa Havaiana (VA'A)">Canoa Havaiana (VA'A)</option>
-                      <option value="Stand Up Paddle (SUP)">Stand Up Paddle (SUP)</option>
-                      <option value="Caiaque">Caiaque & Surfski</option>
-                      <option value="Natação / Lifestyle Praiano">Natação & Lifestyle Praiano</option>
-                    </select>
-                  </div>
-
                   <button
                     type="submit"
                     data-cursor="SUBMIT"
                     className="w-full py-4 mt-2 rounded-xl bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] active:scale-95 transition-all shadow-[0_0_20px_rgba(0,245,212,0.4)] cursor-pointer min-h-[48px]"
                   >
-                    <span>Garantir 10% OFF no Drop</span>
+                    <span>Avisar Inauguração</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
-
-                  <div className="flex items-center justify-center gap-2 font-syne text-[10px] uppercase tracking-widest text-[#ECE5D8]/50 mt-1">
-                    <Clock className="w-3 h-3 text-[#00F5D4]" />
-                    <span>384 canoeiros já inscritos</span>
-                  </div>
                 </form>
               ) : (
                 <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
+                  initial={{ scale: 0.95, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   className="p-6 sm:p-8 rounded-2xl bg-[#241610] border border-[#00F5D4] text-center flex flex-col items-center justify-center gap-4"
                 >
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#00F5D4]/20 border border-[#00F5D4] flex items-center justify-center text-[#00F5D4]">
-                    <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8" />
+                  <div className="w-14 h-14 rounded-full bg-[#00F5D4]/20 border border-[#00F5D4] flex items-center justify-center text-[#00F5D4]">
+                    <ShieldCheck className="w-7 h-7" />
                   </div>
 
                   <h3 className="font-serif text-2xl text-[#ECE5D8]">
@@ -177,12 +154,8 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
                   </h3>
 
                   <p className="font-sans text-xs text-[#ECE5D8]/80 leading-relaxed">
-                    Parabéns, <strong>{name || 'Canoeiro'}</strong>! Seu e-mail (<code>{email}</code>) foi adicionado à lista do Lote VIP 0.
+                    Obrigado, <strong>{name || 'Cliente'}</strong>! Você receberá o aviso em primeira mão no e-mail (<code>{email}</code>) no dia da inauguração da loja de roupas.
                   </p>
-
-                  <div className="p-3 rounded-xl bg-[#19100B] border border-[#00F5D4]/30 text-[11px] font-syne uppercase tracking-wider text-[#00F5D4]">
-                    Cupom Reservado: CANOEIRAVIP10
-                  </div>
                 </motion.div>
               )}
             </div>

@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { CanoeiraLogo } from './CanoeiraLogo';
-import { AmbientAudio } from './AmbientAudio';
-import { Instagram, Sparkles, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Instagram, Menu, X, ArrowUpRight, Bell } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface HeaderNavbarProps {
-  onVIPClick: () => void;
-  onSoundStateChange?: (isPlaying: boolean) => void;
+  onNotifyClick: () => void;
 }
 
-export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onVIPClick, onSoundStateChange }) => {
+export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -34,7 +32,7 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onVIPClick, onSoundS
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 py-4 px-4 sm:px-8 ${
           scrolled
-            ? 'bg-[#19100B]/85 backdrop-blur-xl border-b border-[#ECE5D8]/10 py-3 shadow-2xl'
+            ? 'bg-[#19100B]/90 backdrop-blur-md border-b border-[#ECE5D8]/10 py-3 shadow-xl'
             : 'bg-gradient-to-b from-[#19100B]/80 to-transparent'
         }`}
       >
@@ -43,7 +41,7 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onVIPClick, onSoundS
           <a
             href="#"
             data-cursor="CANOEIRA"
-            className="group flex items-center gap-2 focus:outline-none"
+            className="group flex items-center gap-2.5 focus:outline-none"
           >
             <CanoeiraLogo size="sm" color="cyan" />
             <span className="font-serif text-2xl font-bold tracking-tight text-[#ECE5D8] group-hover:text-[#00F5D4] transition-colors">
@@ -56,39 +54,36 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onVIPClick, onSoundS
             <button
               onClick={() => scrollToSection('manifesto')}
               className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="CONCEPT"
+              data-cursor="CONCEITO"
             >
               Conceito
             </button>
             <button
               onClick={() => scrollToSection('colecoes')}
               className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="DROPS"
+              data-cursor="ROUPAS"
             >
-              Coleções
+              Peças
             </button>
             <button
               onClick={() => scrollToSection('filosofia')}
               className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="STORY"
+              data-cursor="QUALIDADE"
             >
-              Filosofia
+              Qualidade
             </button>
             <button
               onClick={() => scrollToSection('instagram')}
               className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="COMMUNITY"
+              data-cursor="INSTAGRAM"
             >
-              Comunidade
+              Instagram
             </button>
           </nav>
 
           {/* Action Buttons */}
           <div className="flex items-center gap-3">
-            {/* Ambient Sound Generator */}
-            <AmbientAudio onSoundStateChange={onSoundStateChange} />
-
-            {/* Instagram Link */}
+            {/* Instagram Direct Link */}
             <a
               href="https://www.instagram.com/usecanoeira/"
               target="_blank"
@@ -100,14 +95,14 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onVIPClick, onSoundS
               <Instagram className="w-4 h-4" />
             </a>
 
-            {/* VIP Registration CTA */}
+            {/* Clean Notification Action Button */}
             <button
-              onClick={onVIPClick}
-              data-cursor="VIP ACCESS"
-              className="relative group overflow-hidden px-4 sm:px-5 py-2 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,245,212,0.5)] hover:scale-105 active:scale-95 cursor-pointer flex items-center gap-1.5"
+              onClick={onNotifyClick}
+              data-cursor="AVISAR"
+              className="relative group px-4 sm:px-5 py-2 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#66FFEA] active:scale-95 cursor-pointer flex items-center gap-1.5 shadow-[0_0_15px_rgba(0,245,212,0.3)]"
             >
-              <Sparkles className="w-3.5 h-3.5 fill-[#19100B]" />
-              <span>Garantir VIP</span>
+              <Bell className="w-3.5 h-3.5 fill-[#19100B]" />
+              <span>Avisar Inauguração</span>
             </button>
 
             {/* Mobile Menu Toggle */}
@@ -129,40 +124,40 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onVIPClick, onSoundS
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-30 bg-[#19100B]/95 backdrop-blur-2xl pt-24 px-6 pb-10 flex flex-col justify-between md:hidden"
+            className="fixed inset-0 z-30 bg-[#19100B]/98 backdrop-blur-2xl pt-24 px-6 pb-10 flex flex-col justify-between md:hidden"
           >
-            <div className="flex flex-col gap-6 font-serif text-3xl text-[#ECE5D8]">
+            <div className="flex flex-col gap-6 font-serif text-2xl text-[#ECE5D8]">
               <button
                 onClick={() => scrollToSection('manifesto')}
-                className="text-left hover:text-[#00F5D4] transition-colors py-2 border-b border-[#ECE5D8]/10 flex items-center justify-between"
+                className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>01. Conceito</span>
+                <span>01. Conceito da Marca</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
                 onClick={() => scrollToSection('colecoes')}
-                className="text-left hover:text-[#00F5D4] transition-colors py-2 border-b border-[#ECE5D8]/10 flex items-center justify-between"
+                className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>02. Coleções</span>
+                <span>02. Coleção de Roupas</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
                 onClick={() => scrollToSection('filosofia')}
-                className="text-left hover:text-[#00F5D4] transition-colors py-2 border-b border-[#ECE5D8]/10 flex items-center justify-between"
+                className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>03. Filosofia</span>
+                <span>03. Qualidade & Tecidos</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
                 onClick={() => scrollToSection('instagram')}
-                className="text-left hover:text-[#00F5D4] transition-colors py-2 border-b border-[#ECE5D8]/10 flex items-center justify-between"
+                className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>04. Comunidade</span>
+                <span>04. Instagram Oficial</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
               <a
                 href="https://www.instagram.com/usecanoeira/"
                 target="_blank"
@@ -170,17 +165,17 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onVIPClick, onSoundS
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-[#ECE5D8]/20 bg-[#241610] text-[#ECE5D8] font-syne text-xs uppercase tracking-widest"
               >
                 <Instagram className="w-4 h-4 text-[#00F5D4]" />
-                <span>Siga @usecanoeira no Instagram</span>
+                <span>Siga @usecanoeira</span>
               </a>
 
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  onVIPClick();
+                  onNotifyClick();
                 }}
-                className="w-full py-4 rounded-xl bg-[#00F5D4] text-[#19100B] font-syne text-sm font-bold uppercase tracking-wider text-center"
+                className="w-full py-3.5 rounded-xl bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider text-center"
               >
-                Inscrever no Lote VIP 0
+                Receber Aviso da Inauguração
               </button>
             </div>
           </motion.div>

@@ -13,12 +13,9 @@ import { VIPWaitlistSection } from './components/VIPWaitlistSection';
 import { InstagramShowcase } from './components/InstagramShowcase';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
-import { MobileBottomBar } from './components/MobileBottomBar';
 
 export const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [subscribedEmail, setSubscribedEmail] = useState<string | null>(null);
-  const [isSoundPlaying, setIsSoundPlaying] = useState(false);
 
   useEffect(() => {
     // Initialize Lenis smooth scroll
@@ -42,15 +39,11 @@ export const App: React.FC = () => {
     };
   }, []);
 
-  const scrollToVIP = () => {
-    const vipSection = document.getElementById('vip');
-    if (vipSection) {
-      vipSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToNotify = () => {
+    const notifySection = document.getElementById('inauguracao');
+    if (notifySection) {
+      notifySection.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const handleSubscribeSuccess = (email: string) => {
-    setSubscribedEmail(email);
   };
 
   return (
@@ -61,28 +54,22 @@ export const App: React.FC = () => {
       {/* Preloader Screen */}
       <Preloader onComplete={() => setIsLoading(false)} />
 
-      {/* Header & Mobile Sticky Bar */}
-      <HeaderNavbar onVIPClick={scrollToVIP} onSoundStateChange={setIsSoundPlaying} />
+      {/* Header */}
+      <HeaderNavbar onNotifyClick={scrollToNotify} />
 
-      <main className="w-full overflow-x-hidden pb-16 md:pb-0">
-        <HeroSection onSubscribeSuccess={handleSubscribeSuccess} />
+      <main className="w-full overflow-x-hidden">
+        <HeroSection onSubscribeSuccess={() => {}} />
         <BrandManifesto />
         <ClothesVideoShowcase />
         <CollectionTeaser />
         <LookbookGallery />
         <BrandStoryVideoSection />
-        <VIPWaitlistSection onSubscribeSuccess={handleSubscribeSuccess} />
+        <VIPWaitlistSection onSubscribeSuccess={() => {}} />
         <InstagramShowcase />
         <FAQSection />
       </main>
 
       <Footer />
-
-      {/* Floating Mobile Bottom Navigation Bar */}
-      <MobileBottomBar
-        onVIPClick={scrollToVIP}
-        isSoundPlaying={isSoundPlaying}
-      />
     </div>
   );
 };
