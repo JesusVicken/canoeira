@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ShieldCheck, ArrowRight, Check, Bell } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Check, Bell, CreditCard, Truck, ShoppingBag } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface VIPWaitlistSectionProps {
@@ -14,20 +14,20 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
 
   const perks = [
     {
-      title: 'Aviso em Primeira Mão',
-      desc: 'Receba o link de abertura da loja online oficial no seu e-mail.',
+      title: 'Vendas 100% Online',
+      desc: 'Compre no conforto da sua casa no novo site oficial da Canoeira.',
     },
     {
-      title: 'Acesso Antecipado',
-      desc: 'Acesse o e-commerce antes da divulgação oficial nas redes sociais.',
-    },
-    {
-      title: 'Linha Completa de Roupas',
-      desc: 'Confira todas as peças masculinas e femininas na inauguração.',
+      title: 'Pagamento Seguro & Parcelado',
+      desc: 'Aceitamos Pix instantâneo e Cartão de Crédito em até 6x sem juros.',
     },
     {
       title: 'Entrega para Todo o Brasil',
-      desc: 'Envio rápido via transportadora para qualquer cidade brasileira.',
+      desc: 'Envio rápido via transportadora com código de rastreamento.',
+    },
+    {
+      title: 'Aviso de Inauguração',
+      desc: 'Receba o link de abertura da loja online no seu e-mail.',
     },
   ];
 
@@ -62,17 +62,18 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00F5D4]/15 border border-[#00F5D4]/30 w-fit">
                 <Bell className="w-3.5 h-3.5 text-[#00F5D4]" />
                 <span className="font-syne text-[10px] sm:text-[11px] uppercase tracking-widest text-[#00F5D4]">
-                  Inauguração da Loja Oficial
+                  Inauguração da Loja Online Oficial
                 </span>
               </div>
 
               <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight leading-tight">
-                Seja o primeiro a saber <br />
-                <span className="italic text-[#00F5D4]">da inauguração oficial.</span>
+                Seja avisado sobre o novo site <br />
+                <span className="italic text-[#00F5D4]">de vendas online.</span>
               </h2>
 
               <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light leading-relaxed">
-                O e-commerce oficial da marca Canoeira será lançado em breve. Inscreva-se abaixo para receber o aviso de abertura da loja em primeira mão.
+                A nova plataforma e-commerce de roupas da marca Canoeira será lançada em breve. 
+                Cadastre-se para receber o aviso de abertura com pagamento seguro e entrega para todo o Brasil.
               </p>
 
               {/* Perks Grid */}
@@ -132,10 +133,9 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
 
                   <button
                     type="submit"
-                    data-cursor="SUBMIT"
                     className="w-full py-4 mt-2 rounded-xl bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#66FFEA] active:scale-95 transition-all shadow-[0_0_20px_rgba(0,245,212,0.4)] cursor-pointer min-h-[48px]"
                   >
-                    <span>Avisar Inauguração</span>
+                    <span>Avisar Inauguração da Loja</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </form>
@@ -154,7 +154,7 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
                   </h3>
 
                   <p className="font-sans text-xs text-[#ECE5D8]/80 leading-relaxed">
-                    Obrigado, <strong>{name || 'Cliente'}</strong>! Você receberá o aviso em primeira mão no e-mail (<code>{email}</code>) no dia da inauguração da loja de roupas.
+                    Obrigado, <strong>{name || 'Cliente'}</strong>! Você receberá o aviso em primeira mão no e-mail (<code>{email}</code>) no dia da inauguração das vendas online.
                   </p>
                 </motion.div>
               )}

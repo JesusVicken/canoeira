@@ -1,26 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sun, Compass, Anchor } from 'lucide-react';
+import { ShoppingBag, Truck, ShieldCheck } from 'lucide-react';
 
 export const BrandManifesto: React.FC = () => {
   const pillars = [
     {
       num: '01',
-      title: 'Proteção Solar UV50+',
-      desc: 'Tecidos técnicos de alta performance desenvolvidos especificamente para resistir à exposição solar prolongada e ao uso intenso.',
-      icon: Sun,
+      title: 'Loja 100% Online & Segura',
+      desc: 'Compre direto de onde estiver com pagamento rápido e seguro via Pix ou Cartão de Crédito em até 6x.',
+      icon: ShoppingBag,
     },
     {
       num: '02',
-      title: 'Ergonomia em Movimento',
-      desc: 'Cortes pensados para máxima liberdade de movimento dos ombros e corpo, sem atrito na pele durante qualquer treino ou caminhada.',
-      icon: Anchor,
+      title: 'Entrega para Todo o Brasil',
+      desc: 'Envio expresso com rastreamento em tempo real para todos os estados e cidades brasileiras.',
+      icon: Truck,
     },
     {
       num: '03',
-      title: 'Alma Solar & Atemporal',
-      desc: 'Estética minimalista sofisticada com tons terrosos e cianos inspirados nas paisagens tropicais brasileiras.',
-      icon: Compass,
+      title: 'Peças Exclusivas de Fábrica',
+      desc: 'Toda a coleção de roupas técnicas e casuais Canoeira vendidas diretamente no site oficial.',
+      icon: ShieldCheck,
     },
   ];
 
@@ -30,19 +30,19 @@ export const BrandManifesto: React.FC = () => {
       <div className="w-full overflow-hidden border-y border-[#ECE5D8]/10 bg-[#241610]/40 py-5 mb-24">
         <div className="animate-marquee whitespace-nowrap flex items-center gap-12 font-serif text-2xl sm:text-4xl uppercase tracking-widest text-[#ECE5D8]/40">
           <span className="flex items-center gap-6">
-            <span className="text-[#00F5D4]">CANOEIRA</span> • ALMA SOLAR • SITE OFICIAL EM BREVE
+            <span className="text-[#00F5D4]">CANOEIRA</span> • NOVO SITE DE VENDAS ONLINE • EM BREVE
           </span>
           <span className="flex items-center gap-6">
-            <span className="text-[#00F5D4]">VESTUÁRIO DE PERFORMANCE</span> • EST. 2025 • PRÉ-LANÇAMENTO VIP
+            <span className="text-[#00F5D4]">ENTREGA PARA TODO O BRASIL</span> • PAGAMENTO SEGURO
           </span>
           <span className="flex items-center gap-6">
-            <span className="text-[#00F5D4]">SOLSTÍCIO & ENERGIA</span> • TECNOLOGIA UV50+
+            <span className="text-[#00F5D4]">LOJA DE ROUPAS OFICIAL</span> • EST. 2025
           </span>
           <span className="flex items-center gap-6">
-            <span className="text-[#00F5D4]">CANOEIRA</span> • ALMA SOLAR • SITE OFICIAL EM BREVE
+            <span className="text-[#00F5D4]">CANOEIRA</span> • NOVO SITE DE VENDAS ONLINE • EM BREVE
           </span>
           <span className="flex items-center gap-6">
-            <span className="text-[#00F5D4]">VESTUÁRIO DE PERFORMANCE</span> • EST. 2025 • PRÉ-LANÇAMENTO VIP
+            <span className="text-[#00F5D4]">ENTREGA PARA TODO O BRASIL</span> • PAGAMENTO SEGURO
           </span>
         </div>
       </div>
@@ -54,23 +54,23 @@ export const BrandManifesto: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 font-syne text-xs uppercase tracking-widest text-[#00F5D4]">
               <span className="w-8 h-[1px] bg-[#00F5D4]" />
-              <span>O E-commerce Oficial Está Chegando</span>
+              <span>Novo Site de Vendas Online</span>
             </div>
 
-            <h2 className="font-serif text-4xl sm:text-6xl font-medium tracking-tight leading-[1.1]">
-              Não é apenas vestuário.<br />
-              É o <span className="italic text-[#00F5D4]">conforto do seu dia a dia</span> no sol.
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1]">
+              O novo e-commerce oficial da marca Canoeira <br />
+              <span className="italic text-[#00F5D4]">está chegando.</span>
             </h2>
 
             <p className="font-sans text-base sm:text-lg text-[#ECE5D8]/80 font-light leading-relaxed">
-              A <strong>Canoeira</strong> foi concebida do desejo de unir o desempenho exigido na prática esportiva
-              à elegância despretensiosa do vestuário solar. Estamos preparando nossa loja oficial online para que você possa adquirir todas as peças exclusivas diretamente da fábrica.
+              Estamos finalizando a nova plataforma de vendas online da <strong>Canoeira</strong>. 
+              Em breve você poderá adquirir toda a linha de roupas diretamente no site oficial, com pagamento facilitado via Pix e Cartão de Crédito, e frete com entrega para todo o Brasil.
             </p>
 
             <div className="p-6 rounded-2xl glass-panel border border-[#7A4421]/50 relative overflow-hidden mt-4">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#00F5D4]/10 rounded-full blur-2xl pointer-events-none" />
               <blockquote className="font-serif italic text-lg sm:text-xl text-[#ECE5D8] leading-relaxed">
-                "Este site de pré-lançamento foi feito para que nossos clientes garantam acesso prioritário e desconto exclusivo no dia da inauguração da loja online oficial."
+                "Cadastre seu e-mail para ser notificado em primeira mão no dia da abertura oficial das vendas online."
               </blockquote>
               <div className="mt-4 font-syne text-xs uppercase tracking-widest text-[#00F5D4]">
                 — Equipe Canoeira
@@ -78,13 +78,13 @@ export const BrandManifesto: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Brand Emblem Highlight */}
+          {/* Right Brand Logo Highlight (CLEAN - NO "Identidade Solar Original" BADGE) */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
             {/* Glowing Terracotta & Cyan aura */}
             <div className="absolute w-72 h-72 bg-[#7A4421]/50 rounded-full blur-[90px]" />
             <div className="absolute w-48 h-48 bg-[#00F5D4]/20 rounded-full blur-[60px]" />
 
-            <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden glass-panel p-6 border border-[#ECE5D8]/15 flex flex-col items-center justify-center text-center shadow-2xl group">
+            <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden glass-panel p-8 border border-[#ECE5D8]/15 flex items-center justify-center text-center shadow-2xl group">
               {/* Brand Logo Container */}
               <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden flex items-center justify-center bg-[#7A4421]/30 p-8 transition-transform duration-700 group-hover:scale-105">
                 <img
@@ -92,12 +92,6 @@ export const BrandManifesto: React.FC = () => {
                   alt="Canoeira Identity"
                   className="w-full h-full object-contain filter drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
                 />
-              </div>
-
-              {/* Tag below */}
-              <div className="absolute bottom-4 left-4 right-4 py-2 rounded-xl bg-[#19100B]/90 backdrop-blur-md border border-[#00F5D4]/30 font-syne text-xs uppercase tracking-widest text-[#00F5D4] flex items-center justify-center gap-2">
-                <Sun className="w-3.5 h-3.5" />
-                <span>Identidade Solar Original</span>
               </div>
             </div>
           </div>
@@ -114,7 +108,7 @@ export const BrandManifesto: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
-                data-cursor="PILAR"
+                data-cursor="LOJA"
                 className="group relative p-8 rounded-3xl glass-panel border border-[#ECE5D8]/10 hover:border-[#00F5D4]/40 transition-all duration-500 hover:-translate-y-2"
               >
                 <div className="flex justify-between items-start mb-6">
