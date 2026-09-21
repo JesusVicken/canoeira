@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, Sun, ArrowRight, ExternalLink, MapPin, Tag, Flame, ShieldCheck } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface ViseiraItem {
   id: string;
@@ -12,6 +16,10 @@ interface ViseiraItem {
 }
 
 export const ViseirasShowcase: React.FC = () => {
+  const showcaseContainerRef = useRef<HTMLDivElement>(null);
+  const cardBrasilRef = useRef<HTMLDivElement>(null);
+  const cardParanoaRef = useRef<HTMLDivElement>(null);
+
   const whatsappUrlAthos = "https://wa.me/556184267049?text=Ol%C3%A1%21+Quero+garantir+a+PR%C3%89-VENDA+da+Viseira+Athos+Bulc%C3%A3o+%28R%24+69%2C00%29.";
   const whatsappUrlBrasil = "https://wa.me/556184267049?text=Ol%C3%A1%21+Quero+garantir+a+Viseira+Orgulho+de+Ser+Brasileira%21";
   const whatsappUrlParanoa = "https://wa.me/556184267049?text=Ol%C3%A1%21+Quero+garantir+a+Viseira+Lago+Parano%C3%A1%21";
@@ -48,6 +56,52 @@ export const ViseirasShowcase: React.FC = () => {
       description: 'Exuberância e estilo atemporal para treinos e caminhadas ao sol.',
     },
   ];
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Parallax Fade & Scale on Scroll for Card A (Viseira Brasil)
+      if (cardBrasilRef.current) {
+        gsap.fromTo(
+          cardBrasilRef.current,
+          { opacity: 1, scale: 1, y: 0 },
+          {
+            opacity: 0.15,
+            scale: 0.88,
+            y: -70,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: cardBrasilRef.current,
+              start: 'top center',
+              end: 'bottom top',
+              scrub: 1.2,
+            },
+          }
+        );
+      }
+
+      // Parallax Fade & Scale on Scroll for Card B (Viseira Lago Paranoá)
+      if (cardParanoaRef.current) {
+        gsap.fromTo(
+          cardParanoaRef.current,
+          { opacity: 1, scale: 1, y: 0 },
+          {
+            opacity: 0.15,
+            scale: 0.88,
+            y: -70,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: cardParanoaRef.current,
+              start: 'top center',
+              end: 'bottom top',
+              scrub: 1.5,
+            },
+          }
+        );
+      }
+    }, showcaseContainerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section id="viseiras" className="relative py-24 sm:py-32 bg-[#19100B] text-[#ECE5D8] overflow-hidden">
@@ -136,12 +190,15 @@ export const ViseirasShowcase: React.FC = () => {
           ))}
         </div>
 
-        {/* 2. SPECIAL VIDEO SHOWCASE SECTION (Viseira Brasil 360° & Viseira Lago Paranoá) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* 2. SPECIAL VIDEO SHOWCASE SECTION (GSAP ScrollTrigger Parallax & Fade on Scroll) */}
+        <div ref={showcaseContainerRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Card A: Viseira Brasil 360° */}
-          <div className="rounded-3xl overflow-hidden glass-panel border border-[#ECE5D8]/15 flex flex-col justify-between p-6 sm:p-8">
-            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-[#241610] mb-6">
+          <div
+            ref={cardBrasilRef}
+            className="rounded-3xl overflow-hidden glass-panel border border-[#ECE5D8]/15 flex flex-col justify-between p-6 sm:p-8 will-change-transform shadow-2xl hover:border-[#00F5D4]/50 transition-colors"
+          >
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-[#241610] mb-6 shadow-inner">
               <video
                 autoPlay
                 loop
@@ -185,8 +242,11 @@ export const ViseirasShowcase: React.FC = () => {
           </div>
 
           {/* Card B: Viseira Lago Paranoá */}
-          <div className="rounded-3xl overflow-hidden glass-panel border border-[#ECE5D8]/15 flex flex-col justify-between p-6 sm:p-8">
-            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-[#241610] mb-6">
+          <div
+            ref={cardParanoaRef}
+            className="rounded-3xl overflow-hidden glass-panel border border-[#ECE5D8]/15 flex flex-col justify-between p-6 sm:p-8 will-change-transform shadow-2xl hover:border-[#00F5D4]/50 transition-colors"
+          >
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-[#241610] mb-6 shadow-inner">
               <video
                 autoPlay
                 loop
