@@ -64,7 +64,7 @@ export const ViseirasShowcase: React.FC = () => {
           </div>
 
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight mb-4">
-            Linha Proteção: Viseiras Canoeira 🔥 <br />
+            Linha Proteção: Viseiras Canoeira <br />
             <span className="italic text-[#00F5D4]">PRÉ-VENDA VISEIRA ATHOS BULCÃO (R$ 69)</span>
           </h2>
 
@@ -160,7 +160,7 @@ export const ViseirasShowcase: React.FC = () => {
               </div>
 
               <h3 className="font-serif text-2xl sm:text-3xl text-[#ECE5D8]">
-                Viseira Orgulho de Ser Brasileira 🇧🇷
+                Viseira Orgulho de Ser Brasileira
               </h3>
 
               <p className="font-sans text-sm text-[#ECE5D8]/80 font-light leading-relaxed">
@@ -205,7 +205,7 @@ export const ViseirasShowcase: React.FC = () => {
               </div>
 
               <h3 className="font-serif text-2xl sm:text-3xl text-[#ECE5D8]">
-                Viseira Lago Paranoá 🌊
+                Viseira Lago Paranoá
               </h3>
 
               <p className="font-sans text-sm text-[#ECE5D8]/80 font-light leading-relaxed">

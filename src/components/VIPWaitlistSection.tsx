@@ -62,7 +62,7 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00F5D4]/15 border border-[#00F5D4]/30 w-fit">
                 <Bell className="w-3.5 h-3.5 text-[#00F5D4]" />
                 <span className="font-syne text-[10px] sm:text-[11px] uppercase tracking-widest text-[#00F5D4]">
-                  Inauguração da Loja Online Oficial
+                  Pré-Lançamento • Nova Loja na Nuvemshop
                 </span>
               </div>
 
@@ -72,8 +72,8 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
               </h2>
 
               <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light leading-relaxed">
-                A nova plataforma e-commerce oficial da marca Canoeira será lançada em breve reunindo nossas linhas de <strong>Movimento</strong>, <strong>Proteção</strong> e <strong>Pausa</strong>. 
-                Cadastre-se para receber o aviso de abertura com pagamento seguro e entrega para todo o Brasil.
+                A nova plataforma e-commerce oficial da marca Canoeira está sendo construída na Nuvemshop reunindo nossas linhas de <strong>Movimento</strong>, <strong>Proteção</strong> e <strong>Pausa</strong>. 
+                Cadastre-se para receber o aviso no dia da abertura da loja virtual.
               </p>
 
               {/* Perks Grid */}

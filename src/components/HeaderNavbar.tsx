@@ -143,7 +143,7 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
                 onClick={() => scrollToSection('viseiras')}
                 className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between text-[#00F5D4]"
               >
-                <span>01. Linha Proteção (Viseiras R$ 69) 🔥</span>
+                <span>01. Linha Proteção (Viseiras R$ 69)</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
@@ -157,7 +157,7 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
                 onClick={() => scrollToSection('looks-treino')}
                 className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>03. Looks Treino 🌊</span>
+                <span>03. Looks Treino</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button

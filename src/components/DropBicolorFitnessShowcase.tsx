@@ -58,7 +58,7 @@ export const DropBicolorFitnessShowcase: React.FC = () => {
 
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight mb-4">
             O Drop Bicolor chegou <br className="hidden sm:inline" />
-            <span className="italic text-[#00F5D4]">arrasando corações ❤️🔥🛟</span>
+            <span className="italic text-[#00F5D4]">arrasando corações.</span>
           </h2>
 
           <p className="font-sans text-base sm:text-lg text-[#ECE5D8]/85 font-light leading-relaxed max-w-2xl mx-auto">

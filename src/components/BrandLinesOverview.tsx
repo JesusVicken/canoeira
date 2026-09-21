@@ -23,7 +23,7 @@ export const BrandLinesOverview: React.FC = () => {
       title: 'Linha Proteção',
       subtitle: 'Viseiras Canoeira & Acessórios Solares',
       desc: 'Viseiras e acessórios solares projetados para bloquear 98% dos raios UV, com abas antirreflexo, ajuste confortável e secagem ultrarrápida.',
-      items: ['Viseira Athos Bulcão (Pré-Venda R$ 69)', 'Viseira Orgulho de Ser Brasileira 🇧🇷', 'Viseira Lago Paranoá 🌊', 'Proteção FPU50+ Vitalícia'],
+      items: ['Viseira Athos Bulcão (Pré-Venda R$ 69)', 'Viseira Orgulho de Ser Brasileira', 'Viseira Lago Paranoá', 'Proteção FPU50+ Vitalícia'],
       icon: ShieldCheck,
       accent: '#00F5D4',
       image: '/assets/viseiras/viseiras1.jpeg',

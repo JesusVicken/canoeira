@@ -7,16 +7,16 @@ export const FAQSection: React.FC = () => {
 
   const faqs = [
     {
-      q: 'Quando será o lançamento oficial do e-commerce?',
-      a: 'O lançamento do e-commerce oficial da Canoeira acontecerá em breve. Todos os inscritos na nossa lista VIP de pré-lançamento receberão o link de acesso com 24 horas de antecedência.',
+      q: 'Quando será a inauguração do novo site de vendas online?',
+      a: 'A nossa loja virtual oficial está sendo desenvolvida na plataforma Nuvemshop e será lançada em breve. Este site atual é uma vitrine de pré-lançamento para apresentar nossas peças e receber cadastros para o aviso de abertura.',
     },
     {
-      q: 'Como funciona o benefício da inscrição VIP?',
-      a: 'Ao se cadastrar no site, você garante aviso imediato de abertura, acesso antecipado com 24 horas de antecedência e preferência absoluta no estoque de primeira edição da loja oficial.',
+      q: 'Como funcionará a nova loja online na Nuvemshop?',
+      a: 'Na nova loja da Nuvemshop, você terá a experiência completa de e-commerce com carrinho de compras, pagamento seguro via Pix ou Cartão e entrega rápida com código de rastreio para todo o Brasil. Enquanto finalizamos os detalhes, os atendimentos e vendas continuam diretamente pelo WhatsApp.',
     },
     {
-      q: 'Quais produtos estarão à venda na loja oficial?',
-      a: 'Nossa loja online contará com as 3 linhas oficiais da Canoeira: Linha Movimento (camisas solares UV50+, tops activewear e shorts de treino), Linha Proteção (viseiras Athos Bulcão, viseiras solares e bonés de alta performance) e a recém-chegada Linha Pausa (sabonetes artesanais veganos como o Trio Maré de Paz e Trio Leveza, e escalda-pés terapêuticos de ervas naturais).',
+      q: 'Quais produtos estarão disponíveis no novo site?',
+      a: 'Nossa loja online contará com as 3 linhas oficiais da Canoeira: Linha Movimento (camisas solares UV50+, tops activewear e conjuntos de treino), Linha Proteção (viseira Athos Bulcão R$ 69, bonés e viseiras de alta performance solar) e a Linha Pausa (sabonetes artesanais veganos e escalda-pés terapêuticos de ervas naturais).',
     },
     {
       q: 'Quais são os tamanhos e modelagens disponíveis?',

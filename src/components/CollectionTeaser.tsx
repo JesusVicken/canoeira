@@ -9,6 +9,7 @@ interface ProductItem {
   line: string;
   badge: string;
   image: string;
+  galleryImages?: string[];
   specs: string[];
   description: string;
   gradient: string;
@@ -16,6 +17,7 @@ interface ProductItem {
 
 export const CollectionTeaser: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
+  const [activeImage, setActiveImage] = useState<string>('');
 
   const whatsappBaseUrl = "https://wa.me/556184267049?text=";
 
@@ -54,14 +56,15 @@ export const CollectionTeaser: React.FC = () => {
       gradient: 'from-[#623417]/80 via-[#19100B] to-[#7A4421]/40',
     },
     {
-      id: 'shorts-expedicao',
-      name: 'Bermuda & Shorts de Treino',
-      category: 'Performance',
-      line: 'Linha Solstício',
-      badge: 'Edição Limitada',
+      id: 'bone-five-panel-sprint',
+      name: 'Boné Five Panel Sprint',
+      category: 'Linha Proteção',
+      line: 'Acessórios & Sol',
+      badge: 'Edição Especial',
       image: '/assets/boneFivePanel.jpeg',
-      specs: ['Elasticidade 360° Flex', 'Bolso Estanque com Zíper YKK', 'Tratamento Hidrofóbico'],
-      description: 'Corte ergonômico que garante liberdade total de movimento. Peça disponível para pedido via WhatsApp.',
+      galleryImages: ['/assets/boneFivePanel.jpeg', '/assets/fivepanel.jpeg', '/assets/fivepanel2.jpeg'],
+      specs: ['Levinho & Respirável', 'Aba Flexível', 'Conforto Surreal', 'Proteção FPU 50+'],
+      description: 'Levinho, respirável, aba flexível e um conforto surreal! Perfeito pra qualquer atividade outdoor. Do treino ao dia a dia.',
       gradient: 'from-[#00F5D4]/20 via-[#19100B] to-[#7A4421]/60',
     },
   ];
@@ -106,7 +109,10 @@ export const CollectionTeaser: React.FC = () => {
               whileHover={{ y: -6 }}
               transition={{ duration: 0.3 }}
               data-cursor="VER PEÇA"
-              onClick={() => setSelectedProduct(product)}
+              onClick={() => {
+                setSelectedProduct(product);
+                setActiveImage(product.image);
+              }}
               className="snap-center flex-shrink-0 w-[88vw] sm:w-[420px] md:w-auto group relative rounded-3xl glass-panel border border-[#ECE5D8]/10 overflow-hidden hover:border-[#00F5D4]/50 active:scale-[0.98] transition-all duration-300 cursor-pointer flex flex-col justify-between p-5 sm:p-8 min-h-[440px]"
             >
               {/* Dynamic Gradient Card Background */}
@@ -202,16 +208,41 @@ export const CollectionTeaser: React.FC = () => {
               </button>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
-                {/* Image View */}
-                <div className="relative rounded-2xl overflow-hidden border border-[#00F5D4]/30 shadow-2xl aspect-[4/3] sm:aspect-square bg-[#241610]">
-                  <img
-                    src={selectedProduct.image}
-                    alt={selectedProduct.name}
-                    className="w-full h-full object-cover object-center"
-                  />
-                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#19100B]/80 backdrop-blur-md border border-[#00F5D4]/40 text-[#00F5D4] font-syne text-[10px] uppercase tracking-widest">
-                    Foto Oficial
+                {/* Image View & Gallery Thumbnails */}
+                <div className="flex flex-col gap-3">
+                  <div className="relative rounded-2xl overflow-hidden border border-[#00F5D4]/30 shadow-2xl aspect-[4/3] sm:aspect-square bg-[#241610]">
+                    <img
+                      src={activeImage || selectedProduct.image}
+                      alt={selectedProduct.name}
+                      className="w-full h-full object-cover object-center transition-all duration-300"
+                    />
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#19100B]/80 backdrop-blur-md border border-[#00F5D4]/40 text-[#00F5D4] font-syne text-[10px] uppercase tracking-widest">
+                      Foto Oficial
+                    </div>
                   </div>
+
+                  {/* Thumbnail Row */}
+                  {selectedProduct.galleryImages && selectedProduct.galleryImages.length > 1 && (
+                    <div className="flex items-center gap-2">
+                      {selectedProduct.galleryImages.map((imgSrc, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setActiveImage(imgSrc)}
+                          className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 transition-all ${
+                            (activeImage || selectedProduct.image) === imgSrc
+                              ? 'border-[#00F5D4] scale-105 shadow-[0_0_12px_rgba(0,245,212,0.4)]'
+                              : 'border-[#ECE5D8]/20 opacity-70 hover:opacity-100'
+                          }`}
+                        >
+                          <img
+                            src={imgSrc}
+                            alt={`${selectedProduct.name} ${idx + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Details */}

@@ -68,7 +68,7 @@ export const TreinosQueridinhosShowcase: React.FC = () => {
           </h2>
 
           <p className="font-sans text-lg sm:text-xl text-[#00F5D4] font-serif italic max-w-xl mx-auto mb-6">
-            Gostou? Manda um Aloha! 🌊
+            Gostou? Manda um Aloha!
           </p>
 
           <div>

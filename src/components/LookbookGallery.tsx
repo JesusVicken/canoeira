@@ -51,10 +51,10 @@ export const LookbookGallery: React.FC = () => {
     },
     {
       id: 'photo-6',
-      title: 'Boné Five Panel Canoeira',
+      title: 'Boné Five Panel Sprint',
       category: 'Linha Proteção',
       src: '/assets/boneFivePanel.jpeg',
-      subtitle: 'Modelagem Five Panel anatômica com secagem ultrarrápida e proteção solar FPU 50+',
+      subtitle: 'Levinho, respirável, aba flexível e um conforto surreal! Perfeito pra qualquer atividade outdoor.',
     },
     {
       id: 'photo-7',
