@@ -51,10 +51,10 @@ export const LookbookGallery: React.FC = () => {
     },
     {
       id: 'photo-6',
-      title: 'Boné Caiçara Solstício Hydro',
+      title: 'Boné Five Panel Canoeira',
       category: 'Linha Proteção',
-      src: '/assets/canoeiraBone.jpeg',
-      subtitle: 'Tecido leve e secagem ultrarrápida com aba antirreflexo',
+      src: '/assets/boneFivePanel.jpeg',
+      subtitle: 'Modelagem Five Panel anatômica com secagem ultrarrápida e proteção solar FPU 50+',
     },
     {
       id: 'photo-7',
@@ -67,7 +67,7 @@ export const LookbookGallery: React.FC = () => {
       id: 'photo-8',
       title: 'Top Activewear Canoeira',
       category: 'Linha Movimento',
-      src: '/assets/canoeiraTop.jpg',
+      src: '/assets/canoeiratop.jpg',
       subtitle: 'Top ergonômico de alta sustentação para caminhada e corrida',
     },
   ];

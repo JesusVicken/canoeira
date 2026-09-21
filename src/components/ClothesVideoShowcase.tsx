@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shirt, ShieldCheck, ArrowRight, Zap, Sun, Sparkles } from 'lucide-react';
+import { SafariAutoplayVideo } from './common/SafariAutoplayVideo';
 
 export const ClothesVideoShowcase: React.FC = () => {
   const specs = [
@@ -23,8 +24,8 @@ export const ClothesVideoShowcase: React.FC = () => {
           </div>
 
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
-            Vocês pediram e a gente atendeu! <br className="hidden sm:inline" />
-            <span className="italic text-[#00F5D4]">Chegaram as Aero Sport Dry.</span>
+            Vocês pediram e a <br />
+            <span className="italic text-[#00F5D4]">gente atendeu!</span>
           </h2>
 
           <p className="mt-4 font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light max-w-2xl mx-auto leading-relaxed">
@@ -38,20 +39,17 @@ export const ClothesVideoShowcase: React.FC = () => {
 
         {/* Video & Info Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Video Container with camisetasAero.mp4 */}
+          {/* Video Container with videocamisetasAero.mp4 */}
           <div className="lg:col-span-8 relative">
             <div className="relative rounded-3xl overflow-hidden glass-panel border border-[#00F5D4]/30 shadow-2xl">
               <div className="relative aspect-[4/3] sm:aspect-video w-full overflow-hidden bg-[#241610]">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <SafariAutoplayVideo
+                  src="/assets/videocamisetasAero.mp4"
+                  fallbackSrc="/assets/camisetasAero.mp4"
                   className="w-full h-full object-cover"
-                >
-                  <source src="/assets/camisetasAero.mp4" type="video/mp4" />
-                  <source src="/assets/videocamisetasAero.mp4" type="video/mp4" />
-                </video>
+                  containerClassName="w-full h-full"
+                  ariaLabel="Vídeo Camisetas Aero Sport Dry Canoeira"
+                />
 
                 {/* Badge Overlay */}
                 <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[#19100B]/80 backdrop-blur-md border border-[#00F5D4]/30 font-syne text-[10px] uppercase tracking-widest text-[#00F5D4]">

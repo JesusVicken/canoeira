@@ -113,7 +113,7 @@ export const BrandManifesto: React.FC = () => {
             <div className="relative w-full max-w-md rounded-3xl overflow-hidden glass-panel border border-[#00F5D4]/40 shadow-2xl group">
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#241610]">
                 <img
-                  src="/assets/canoeiraBlusa.jpeg"
+                  src="/assets/canoieraBlusa.jpeg"
                   alt="Teatro Nacional de Brasília — Canoeira Estonada 100% Algodão"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />

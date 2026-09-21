@@ -28,7 +28,7 @@ export const InstagramShowcase: React.FC = () => {
       caption: 'Sustentação anatômica e estilo minimalista elegante. #usecanoeira',
       likes: '890',
       comments: '72',
-      image: '/assets/canoeiraTop.jpg',
+      image: '/assets/canoeiratop.jpg',
       tag: '@usecanoeira',
     },
     {

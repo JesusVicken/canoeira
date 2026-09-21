@@ -137,8 +137,8 @@ export const AwwwardsParallaxSection: React.FC = () => {
       className="relative py-28 sm:py-40 bg-[#120A07] text-[#ECE5D8] overflow-hidden select-none"
     >
       {/* Background Ambient Atmospheric Lights */}
-      <div className="absolute top-1/3 left-10 w-[500px] sm:w-[800px] h-[500px] sm:h-[800px] bg-[#7A4421]/20 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-10 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-[#00F5D4]/12 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 left-10 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-[#7A4421]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-10 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-[#00F5D4]/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* GIANT GSAP HORIZONTAL SCROLLING MARQUEE (BACKGROUND LAYER) */}
       <div className="w-full overflow-hidden absolute top-1/2 -translate-y-1/2 pointer-events-none opacity-[0.06] z-0">
@@ -186,7 +186,7 @@ export const AwwwardsParallaxSection: React.FC = () => {
           >
             <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden mb-3 bg-[#241610]">
               <img
-                src="/assets/canoeiraBlusa.jpeg"
+                src="/assets/canoieraBlusa.jpeg"
                 alt="Teatro Nacional de Brasília"
                 className="w-full h-full object-cover filter brightness-95"
                 loading="lazy"

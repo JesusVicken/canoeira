@@ -17,11 +17,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-[#ECE5D8]/10">
           {/* Brand Col */}
           <div className="md:col-span-6 flex flex-col gap-6">
-            <a href="#" className="inline-flex items-center gap-2">
-              <CanoeiraLogo size="md" color="cyan" />
-              <span className="font-serif text-3xl font-bold text-[#ECE5D8]">
-                Canoeira<span className="text-[#00F5D4]">.</span>
-              </span>
+            <a href="#" className="inline-flex items-center">
+              <CanoeiraLogo size="lg" color="cyan" />
             </a>
 
             <p className="font-sans text-sm text-[#ECE5D8]/70 font-light max-w-md leading-relaxed">

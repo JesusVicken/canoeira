@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Bell, Truck, CreditCard } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { SafariAutoplayVideo } from './common/SafariAutoplayVideo';
+import { CanoeiraLogo } from './CanoeiraLogo';
 
 interface HeroSectionProps {
   onSubscribeSuccess: (email: string) => void;
@@ -30,24 +32,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
     <section className="relative pt-24 sm:pt-28 pb-12 px-4 sm:px-8 bg-[#19100B] overflow-hidden text-[#ECE5D8]">
       <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-12">
         
-        {/* 1. CLEAN VIDEO CONTAINER */}
+        {/* 1. CLEAN VIDEO CONTAINER WITH SAFARI COMPLIANT AUTOPLAY */}
         <div className="w-full relative rounded-3xl overflow-hidden glass-panel border border-[#ECE5D8]/15 shadow-2xl">
           <div className="relative aspect-[4/5] sm:aspect-video w-full overflow-hidden bg-[#241610]">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
+            <SafariAutoplayVideo
+              src="/assets/canoeira.mp4"
+              fallbackSrc="/assets/videocasal.mp4"
               className="w-full h-full object-cover"
-            >
-              <source src="/assets/canoeira.mp4" type="video/mp4" />
-            </video>
+              containerClassName="w-full h-full"
+              ariaLabel="Canoeira — Vídeo de Abertura"
+            />
           </div>
         </div>
 
         {/* 2. TEXT & NOTIFICATION FORM FOCUSED ON NEW E-COMMERCE LAUNCH */}
         <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-5 sm:gap-6 py-4">
           
+          {/* Official Brand Logo */}
+          <div className="mb-2">
+            <CanoeiraLogo size="lg" color="cyan" />
+          </div>
+
           {/* Simple Clean Pill Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#241610] border border-[#00F5D4]/40 font-syne text-[10px] sm:text-xs uppercase tracking-widest text-[#00F5D4]">
             <span className="w-2 h-2 rounded-full bg-[#00F5D4] animate-pulse" />

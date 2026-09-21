@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SafariAutoplayVideo } from './common/SafariAutoplayVideo';
 
 export const BrandStoryVideoSection: React.FC = () => {
   const stats = [
@@ -28,19 +29,16 @@ export const BrandStoryVideoSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Video Player Box - 100% Clean without Overlays */}
+        {/* Video Player Box - 100% Clean with Cross-Browser Safari Autoplay */}
         <div className="relative rounded-3xl overflow-hidden glass-panel border border-[#ECE5D8]/15 shadow-2xl max-w-5xl mx-auto">
           <div className="relative aspect-video w-full overflow-hidden bg-[#241610]">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
+            <SafariAutoplayVideo
+              src="/assets/videocasal.mp4"
+              fallbackSrc="/assets/canoeiraroupas.mp4"
               className="w-full h-full object-cover"
-            >
-              <source src="/assets/canoeira2.mp4" type="video/mp4" />
-              <source src="/assets/cahnoeira2.mp4" type="video/mp4" />
-            </video>
+              containerClassName="w-full h-full"
+              ariaLabel="Canoeira — Qualidade e Estilo de Vida"
+            />
           </div>
         </div>
 

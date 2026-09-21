@@ -37,16 +37,13 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Brand Logo */}
+          {/* Official Brand Logo Wordmark */}
           <a
             href="#"
             data-cursor="CANOEIRA"
-            className="group flex items-center gap-2.5 focus:outline-none"
+            className="group flex items-center focus:outline-none py-1"
           >
-            <CanoeiraLogo size="sm" color="cyan" />
-            <span className="font-serif text-2xl font-bold tracking-tight text-[#ECE5D8] group-hover:text-[#00F5D4] transition-colors">
-              Canoeira<span className="text-[#00F5D4]">.</span>
-            </span>
+            <CanoeiraLogo size="md" color="cyan" />
           </a>
 
           {/* Navigation Links - Desktop */}

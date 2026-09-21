@@ -3,7 +3,6 @@ import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Preloader } from './components/Preloader';
-import { CustomCursor } from './components/CustomCursor';
 import { HeaderNavbar } from './components/HeaderNavbar';
 import { HeroSection } from './components/HeroSection';
 import { BrandLinesOverview } from './components/BrandLinesOverview';
@@ -25,13 +24,15 @@ export const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Initialize Lenis smooth scroll
+    // Initialize Lenis smooth scroll tuned for high-performance 60fps+ responsiveness
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
+      wheelMultiplier: 1.1,
+      touchMultiplier: 1.5,
     });
 
     // Synchronize Lenis with GSAP ScrollTrigger
@@ -59,9 +60,6 @@ export const App: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-[#19100B] text-[#ECE5D8] selection:bg-[#00F5D4] selection:text-[#19100B] font-sans overflow-x-hidden">
-      {/* Custom Awwwards Cursor */}
-      <CustomCursor />
-
       {/* Preloader Screen with Official Brand Mark */}
       <Preloader onComplete={() => setIsLoading(false)} />
 
