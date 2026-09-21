@@ -11,7 +11,7 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const whatsappUrl = "https://wa.me/556184267049?text=Ol%C3%A1%21+Vim+pelo+site+da+Canoeira+e+gostaria+de+saber+mais+sobre+as+pe%C3%A7as.";
+  const whatsappUrl = "https://wa.me/556184267049?text=Ol%C3%A1%21+Vim+pelo+site+da+Canoeira+e+gostaria+de+atendimento.";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,13 +52,20 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
           </a>
 
           {/* Navigation Links - Desktop */}
-          <nav className="hidden md:flex items-center gap-8 font-syne text-xs tracking-widest uppercase text-[#ECE5D8]/70">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-syne text-xs tracking-widest uppercase text-[#ECE5D8]/70">
             <button
-              onClick={() => scrollToSection('manifesto')}
+              onClick={() => scrollToSection('drop-bicolor')}
               className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="CONCEITO"
+              data-cursor="BICOLOR"
             >
-              Conceito
+              Drop Bicolor
+            </button>
+            <button
+              onClick={() => scrollToSection('looks-treino')}
+              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
+              data-cursor="TREINOS"
+            >
+              Looks Treino
             </button>
             <button
               onClick={() => scrollToSection('trio-flow')}
@@ -70,16 +77,9 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
             <button
               onClick={() => scrollToSection('colecoes')}
               className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="ROUPAS"
+              data-cursor="PEÇAS"
             >
               Peças
-            </button>
-            <button
-              onClick={() => scrollToSection('instagram')}
-              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="INSTAGRAM"
-            >
-              Instagram
             </button>
           </nav>
 
@@ -91,7 +91,7 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="WHATSAPP"
-              className="flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full border border-[#25D366]/40 bg-[#25D366]/15 text-[#25D366] font-syne text-xs font-bold uppercase tracking-wider hover:bg-[#25D366] hover:text-[#19100B] transition-all"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#25D366]/40 bg-[#25D366]/15 text-[#25D366] font-syne text-xs font-bold uppercase tracking-wider hover:bg-[#25D366] hover:text-[#19100B] transition-all shadow-md"
               title="Atendimento via WhatsApp"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
@@ -131,33 +131,33 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-30 bg-[#19100B]/98 backdrop-blur-2xl pt-24 px-6 pb-10 flex flex-col justify-between md:hidden"
           >
-            <div className="flex flex-col gap-6 font-serif text-2xl text-[#ECE5D8]">
+            <div className="flex flex-col gap-5 font-serif text-2xl text-[#ECE5D8]">
               <button
-                onClick={() => scrollToSection('manifesto')}
-                className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
+                onClick={() => scrollToSection('drop-bicolor')}
+                className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>01. Conceito da Marca</span>
+                <span>01. Drop Bicolor 🔥</span>
+                <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
+              </button>
+              <button
+                onClick={() => scrollToSection('looks-treino')}
+                className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
+              >
+                <span>02. Looks Treino 🌊</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
                 onClick={() => scrollToSection('trio-flow')}
-                className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
+                className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>02. Trio Flow & Tops</span>
+                <span>03. Trio Flow & Tops</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
                 onClick={() => scrollToSection('colecoes')}
-                className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
+                className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>03. Coleção de Roupas</span>
-                <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
-              </button>
-              <button
-                onClick={() => scrollToSection('instagram')}
-                className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
-              >
-                <span>04. Instagram Oficial</span>
+                <span>04. Coleção Completa</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
             </div>

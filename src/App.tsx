@@ -5,6 +5,8 @@ import { CustomCursor } from './components/CustomCursor';
 import { HeaderNavbar } from './components/HeaderNavbar';
 import { HeroSection } from './components/HeroSection';
 import { BrandManifesto } from './components/BrandManifesto';
+import { DropBicolorFitnessShowcase } from './components/DropBicolorFitnessShowcase';
+import { TreinosQueridinhosShowcase } from './components/TreinosQueridinhosShowcase';
 import { TrioFlowShowcase } from './components/TrioFlowShowcase';
 import { ClothesVideoShowcase } from './components/ClothesVideoShowcase';
 import { CollectionTeaser } from './components/CollectionTeaser';
@@ -61,6 +63,8 @@ export const App: React.FC = () => {
       <main className="w-full overflow-x-hidden">
         <HeroSection onSubscribeSuccess={() => {}} />
         <BrandManifesto />
+        <DropBicolorFitnessShowcase />
+        <TreinosQueridinhosShowcase />
         <TrioFlowShowcase />
         <ClothesVideoShowcase />
         <CollectionTeaser />
