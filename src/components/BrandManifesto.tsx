@@ -26,6 +26,15 @@ export const BrandManifesto: React.FC = () => {
 
   return (
     <section id="manifesto" className="relative py-24 bg-[#19100B] overflow-hidden text-[#ECE5D8]">
+      {/* Rich Parallax Ambient Background with /assets/canoieraHero.jpeg */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/assets/canoieraHero.jpeg"
+          alt="Canoeira Manifesto Background"
+          className="w-full h-full object-cover filter brightness-[0.22] blur-[2px] scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#19100B] via-[#19100B]/85 to-[#19100B]" />
+      </div>
       {/* Infinite Marquee Ticker */}
       <div className="w-full overflow-hidden border-y border-[#ECE5D8]/10 bg-[#241610]/40 py-5 mb-24">
         <div className="animate-marquee whitespace-nowrap flex items-center gap-12 font-serif text-2xl sm:text-4xl uppercase tracking-widest text-[#ECE5D8]/40">

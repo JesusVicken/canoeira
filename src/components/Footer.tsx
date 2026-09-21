@@ -64,8 +64,18 @@ export const Footer: React.FC = () => {
 
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-syne text-xs text-[#ECE5D8]/50 uppercase tracking-widest">
-          <div>
-            © {new Date().getFullYear()} Canoeira. Todos os direitos reservados.
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <span>© {new Date().getFullYear()} Canoeira. Todos os direitos reservados.</span>
+            <span className="hidden sm:inline text-[#ECE5D8]/20">•</span>
+            <a
+              href="https://www.instagram.com/v1ccken/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#00F5D4] hover:underline font-bold tracking-wider transition-colors lowercase"
+              title="Desenvolvido por @v1ccken no Instagram"
+            >
+              dev: @v1ccken
+            </a>
           </div>
 
           <div className="flex items-center gap-6">

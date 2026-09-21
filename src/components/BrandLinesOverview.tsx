@@ -104,9 +104,6 @@ export const BrandLinesOverview: React.FC = () => {
                     <span className="px-3 py-1 rounded-full bg-[#19100B]/80 backdrop-blur-md border border-[#ECE5D8]/20 font-syne text-[10px] uppercase tracking-widest text-[#00F5D4]">
                       {line.tag}
                     </span>
-                    <div className="p-3 rounded-2xl bg-[#00F5D4]/15 border border-[#00F5D4]/30 text-[#00F5D4] group-hover:bg-[#00F5D4] group-hover:text-[#19100B] transition-colors">
-                      <IconComponent className="w-5 h-5" />
-                    </div>
                   </div>
 
                   <div>

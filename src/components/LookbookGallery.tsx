@@ -22,13 +22,6 @@ export const LookbookGallery: React.FC = () => {
       subtitle: 'Sabonetes artesanais veganos e escalda-pés naturais à beira do lago',
     },
     {
-      id: 'photo-2',
-      title: 'Regata & Vestuário Canoeira',
-      category: 'Linha Movimento',
-      src: '/assets/canoieraHero.jpeg',
-      subtitle: 'Conforto e mobilidade para suas atividades no sol',
-    },
-    {
       id: 'photo-3',
       title: 'Trio Maré de Paz',
       category: 'Linha Pausa',
