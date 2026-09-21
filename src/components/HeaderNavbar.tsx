@@ -46,9 +46,6 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
             className="group flex items-center gap-2.5 focus:outline-none"
           >
             <CanoeiraLogo size="sm" color="cyan" />
-            <span className="font-serif text-2xl font-bold tracking-tight text-[#ECE5D8] group-hover:text-[#00F5D4] transition-colors">
-              Canoeira<span className="text-[#00F5D4]">.</span>
-            </span>
           </a>
 
           {/* Navigation Links - Desktop */}
