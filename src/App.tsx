@@ -6,6 +6,7 @@ import { HeaderNavbar } from './components/HeaderNavbar';
 import { HeroSection } from './components/HeroSection';
 import { BrandManifesto } from './components/BrandManifesto';
 import { BrandLinesOverview } from './components/BrandLinesOverview';
+import { LinhaPausaShowcase } from './components/LinhaPausaShowcase';
 import { ViseirasShowcase } from './components/ViseirasShowcase';
 import { DropBicolorFitnessShowcase } from './components/DropBicolorFitnessShowcase';
 import { TreinosQueridinhosShowcase } from './components/TreinosQueridinhosShowcase';
@@ -63,14 +64,32 @@ export const App: React.FC = () => {
       <HeaderNavbar onNotifyClick={scrollToNotify} />
 
       <main className="w-full overflow-x-hidden">
+        {/* Hero Section */}
         <HeroSection onSubscribeSuccess={() => {}} />
-        <BrandManifesto />
-        <BrandLinesOverview />
-        <ViseirasShowcase />
-        <DropBicolorFitnessShowcase />
-        <TreinosQueridinhosShowcase />
-        <TrioFlowShowcase />
+
+        {/* 1 - OLHA QUEM CHEGOU NA LINHA PAUSA */}
+        <LinhaPausaShowcase />
+
+        {/* 2 - Camisetas Aero Sport Dry */}
         <ClothesVideoShowcase />
+
+        {/* 3 - O vestir comunica quem somos */}
+        <BrandLinesOverview />
+        <BrandManifesto />
+
+        {/* 4 - Dia de treino com calma, conforto e proteção */}
+        <TrioFlowShowcase />
+
+        {/* 5 - O Drop Bicolor chegou arrasando corações */}
+        <DropBicolorFitnessShowcase />
+
+        {/* 6 - Os looks queridinhos de treino estão de volta */}
+        <TreinosQueridinhosShowcase />
+
+        {/* 7 - VISEIRAS (Linha Proteção) */}
+        <ViseirasShowcase />
+
+        {/* Extra Catalog, Gallery & Waitlist */}
         <CollectionTeaser />
         <LookbookGallery />
         <BrandStoryVideoSection />

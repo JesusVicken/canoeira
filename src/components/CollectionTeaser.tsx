@@ -189,15 +189,17 @@ export const CollectionTeaser: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             onClick={() => setSelectedProduct(null)}
-            className="fixed inset-0 z-50 bg-[#19100B]/95 backdrop-blur-xl p-4 sm:p-8 flex items-center justify-center overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#19100B]/98 backdrop-blur-md p-4 sm:p-8 flex items-center justify-center overflow-y-auto transform-gpu"
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 15 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-3xl rounded-3xl glass-panel border border-[#00F5D4]/40 p-5 sm:p-10 shadow-2xl text-[#ECE5D8] my-auto"
+              className="relative w-full max-w-3xl rounded-3xl glass-panel border border-[#00F5D4]/40 p-5 sm:p-10 shadow-2xl text-[#ECE5D8] my-auto transform-gpu"
             >
               {/* Close Button */}
               <button

@@ -123,17 +123,22 @@ export const LinhaPausaShowcase: React.FC = () => {
             {/* Arrival Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00F5D4]/15 border border-[#00F5D4]/40 font-syne text-[11px] uppercase tracking-widest text-[#00F5D4] mb-4">
               <Flower2 className="w-3.5 h-3.5 text-[#00F5D4]" />
-              <span>Novidade Oficial • Linha 03</span>
+              <span>1 • Olha quem chegou na Linha Pausa</span>
             </div>
 
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
-              Linha Pausa <br />
-              <span className="italic text-[#00F5D4]">O Ritual do Descanso</span>
+              Olha quem chegou <br />
+              <span className="italic text-[#00F5D4]">na Linha Pausa</span>
             </h2>
 
             <p className="mt-3 font-serif italic text-lg sm:text-2xl text-[#ECE5D8]/90">
-              Perfumando todo o Cerrado de repente.
+              Perfumando todo o Cerrado de repente!
             </p>
+
+            <div className="mt-4 space-y-1 font-sans text-sm sm:text-base text-[#ECE5D8]/90">
+              <p>• <strong>Trio de Sabonetes Artesanais:</strong> Maré de Paz e Leveza.</p>
+              <p>• <strong>Escalda-Pés:</strong> Serenidade, Equilíbrio e TPM Zen.</p>
+            </div>
 
             <p className="mt-4 font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light leading-relaxed max-w-2xl">
               Porque investir no descanso também é autocuidado. É na recuperação e na pausa que o corpo agradece.
@@ -296,15 +301,17 @@ export const LinhaPausaShowcase: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             onClick={() => setActiveModalProduct(null)}
-            className="fixed inset-0 z-50 bg-[#19100B]/95 backdrop-blur-2xl p-4 sm:p-8 flex items-center justify-center overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#19100B]/98 backdrop-blur-md p-4 sm:p-8 flex items-center justify-center overflow-y-auto transform-gpu"
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 15 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl rounded-3xl glass-panel border border-[#00F5D4]/40 p-5 sm:p-10 shadow-2xl text-[#ECE5D8] my-auto bg-[#1C120C]"
+              className="relative w-full max-w-4xl rounded-3xl glass-panel border border-[#00F5D4]/40 p-5 sm:p-10 shadow-2xl text-[#ECE5D8] my-auto bg-[#1C120C] transform-gpu"
             >
               {/* Close Button */}
               <button

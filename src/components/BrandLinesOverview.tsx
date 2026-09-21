@@ -88,14 +88,14 @@ export const BrandLinesOverview: React.FC = () => {
                 transition={{ duration: 0.6, delay: idx * 0.15 }}
                 className="group relative rounded-3xl glass-panel border border-[#ECE5D8]/15 overflow-hidden p-6 sm:p-8 flex flex-col justify-between hover:border-[#00F5D4]/50 transition-all duration-500 hover:-translate-y-1.5 shadow-xl"
               >
-                {/* Background Image with Dark Gradient */}
+                {/* Background Image with Crisp Clear Overlay */}
                 <div className="absolute inset-0 z-0">
                   <img
                     src={line.image}
                     alt={line.title}
-                    className="w-full h-full object-cover filter brightness-[0.25] group-hover:scale-105 group-hover:brightness-[0.32] transition-all duration-700"
+                    className="w-full h-full object-cover filter brightness-[0.75] group-hover:scale-105 group-hover:brightness-90 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#140D09] via-[#140D09]/80 to-[#140D09]/60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#140D09] via-[#140D09]/65 to-[#140D09]/30" />
                 </div>
 
                 {/* Top Info */}

@@ -51,11 +51,25 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
           {/* Navigation Links - Desktop */}
           <nav className="hidden md:flex items-center gap-5 lg:gap-7 font-syne text-xs tracking-widest uppercase text-[#ECE5D8]/70">
             <button
-              onClick={() => scrollToSection('viseiras')}
+              onClick={() => scrollToSection('linha-pausa')}
               className="hover:text-[#00F5D4] transition-colors cursor-pointer text-[#00F5D4] font-bold"
+              data-cursor="PAUSA"
+            >
+              Linha Pausa
+            </button>
+            <button
+              onClick={() => scrollToSection('viseiras')}
+              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
               data-cursor="PROTEÇÃO"
             >
               Linha Proteção
+            </button>
+            <button
+              onClick={() => scrollToSection('trio-flow')}
+              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
+              data-cursor="TRIO FLOW"
+            >
+              Trio Flow
             </button>
             <button
               onClick={() => scrollToSection('drop-bicolor')}
@@ -70,20 +84,6 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
               data-cursor="TREINOS"
             >
               Looks Treino
-            </button>
-            <button
-              onClick={() => scrollToSection('trio-flow')}
-              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="TRIO FLOW"
-            >
-              Trio Flow
-            </button>
-            <button
-              onClick={() => scrollToSection('colecoes')}
-              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="PEÇAS"
-            >
-              Peças
             </button>
           </nav>
 
@@ -137,38 +137,38 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
           >
             <div className="flex flex-col gap-5 font-serif text-2xl text-[#ECE5D8]">
               <button
-                onClick={() => scrollToSection('viseiras')}
+                onClick={() => scrollToSection('linha-pausa')}
                 className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between text-[#00F5D4]"
               >
-                <span>01. Linha Proteção (Viseiras R$ 69)</span>
-                <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
-              </button>
-              <button
-                onClick={() => scrollToSection('drop-bicolor')}
-                className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
-              >
-                <span>02. Drop Bicolor</span>
-                <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
-              </button>
-              <button
-                onClick={() => scrollToSection('looks-treino')}
-                className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
-              >
-                <span>03. Looks Treino</span>
+                <span>01. Linha Pausa (Sabonetes & Escalda-Pés)</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
                 onClick={() => scrollToSection('trio-flow')}
                 className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>04. Trio Flow & Tops</span>
+                <span>02. Trio Flow & Tops</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
-                onClick={() => scrollToSection('colecoes')}
+                onClick={() => scrollToSection('drop-bicolor')}
                 className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>05. Coleção Completa</span>
+                <span>03. Drop Bicolor</span>
+                <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
+              </button>
+              <button
+                onClick={() => scrollToSection('looks-treino')}
+                className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
+              >
+                <span>04. Looks Treino</span>
+                <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
+              </button>
+              <button
+                onClick={() => scrollToSection('viseiras')}
+                className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
+              >
+                <span>05. Linha Proteção (Viseiras R$ 69)</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
             </div>

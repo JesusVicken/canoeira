@@ -197,19 +197,21 @@ export const LookbookGallery: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             onClick={() => setActiveItem(null)}
-            className="fixed inset-0 z-50 bg-[#19100B]/95 backdrop-blur-2xl p-4 sm:p-8 flex items-center justify-center"
+            className="fixed inset-0 z-50 bg-[#19100B]/98 backdrop-blur-md p-4 sm:p-8 flex items-center justify-center transform-gpu"
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 15 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-full max-h-[90vh] rounded-3xl glass-panel border border-[#00F5D4]/40 p-4 sm:p-8 flex flex-col items-center justify-center overflow-hidden shadow-2xl"
+              className="relative max-w-5xl w-full max-h-[90vh] rounded-3xl glass-panel border border-[#00F5D4]/40 p-4 sm:p-8 flex flex-col items-center justify-center overflow-hidden shadow-2xl transform-gpu"
             >
               <button
                 onClick={() => setActiveItem(null)}
-                className="absolute top-6 right-6 p-3 rounded-full bg-[#7A4421]/60 text-[#ECE5D8] hover:text-[#00F5D4] transition-colors z-20"
+                className="absolute top-6 right-6 p-3 rounded-full bg-[#7A4421]/80 text-[#ECE5D8] hover:text-[#00F5D4] transition-colors z-20 cursor-pointer"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -218,6 +220,7 @@ export const LookbookGallery: React.FC = () => {
                 <img
                   src={activeItem.src}
                   alt={activeItem.title}
+                  decoding="async"
                   className="w-full h-full object-contain"
                 />
               </div>
