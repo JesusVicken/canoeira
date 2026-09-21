@@ -86,11 +86,11 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
 
           {/* Main Action Button */}
           <button
-            onClick={onVIPClick}
-            className="flex-1 py-3 px-4 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-[0_0_20px_rgba(0,245,212,0.5)] active:scale-95 transition-transform"
+            onClick={() => scrollToId('viseiras')}
+            className="flex-1 py-3 px-4 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-[0_0_20px_rgba(0,245,212,0.5)] active:scale-95 transition-transform cursor-pointer"
           >
             <Sparkles className="w-3.5 h-3.5 fill-[#19100B]" />
-            <span>Garantir 10% OFF</span>
+            <span>Linha Proteção (Viseiras)</span>
           </button>
         </motion.div>
       )}

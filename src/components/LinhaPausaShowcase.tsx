@@ -271,7 +271,7 @@ export const LinhaPausaShowcase: React.FC = () => {
               </h3>
               <p className="font-sans text-sm text-[#ECE5D8]/80 font-light leading-relaxed">
                 Toda a Linha Pausa estará à venda online com exclusividade no lançamento do novo site oficial da Canoeira. 
-                Cadastre-se na lista de pré-lançamento para garantir seu cupom de 10% OFF na abertura.
+                Cadastre-se na lista de pré-lançamento para receber o aviso em primeira mão na abertura da loja online.
               </p>
             </div>
 

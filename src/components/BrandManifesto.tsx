@@ -92,7 +92,7 @@ export const BrandManifesto: React.FC = () => {
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <div>
                   <h4 className="font-serif text-lg text-[#ECE5D8]">Pré-Lançamento do E-commerce</h4>
-                  <p className="font-sans text-xs text-[#ECE5D8]/70">Cadastre-se para receber o aviso de inauguração com 10% OFF</p>
+                  <p className="font-sans text-xs text-[#ECE5D8]/70">Cadastre-se para receber o aviso em primeira mão no dia do lançamento oficial</p>
                 </div>
                 <a
                   href="#inauguracao"

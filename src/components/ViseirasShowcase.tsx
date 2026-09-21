@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, Sparkles, Sun, ArrowRight, ExternalLink, MapPin, Tag, Flame } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { MessageCircle, Sun, ArrowRight, ExternalLink, MapPin, Tag, Flame, ShieldCheck } from 'lucide-react';
 
 interface ViseiraItem {
   id: string;
@@ -9,7 +9,6 @@ interface ViseiraItem {
   badge: string;
   description: string;
   image: string;
-  tagline?: string;
 }
 
 export const ViseirasShowcase: React.FC = () => {
@@ -22,7 +21,7 @@ export const ViseirasShowcase: React.FC = () => {
       id: 'athos-1',
       title: 'Viseira Athos Bulcão — Pré-Venda',
       price: 'R$ 69,00',
-      badge: 'Pré-Venda Aberta',
+      badge: 'Linha Proteção • Pré-Venda',
       image: '/assets/viseiras/viseiras1.jpeg',
       description: 'Leve, autêntica e atemporal como a essência Canoeira. Garanta a sua antes que esgote novamente!',
     },
@@ -30,21 +29,21 @@ export const ViseirasShowcase: React.FC = () => {
       id: 'athos-2',
       title: 'Viseira Athos Bulcão (Edição Especial)',
       price: 'R$ 69,00',
-      badge: 'Pré-Venda Aberta',
+      badge: 'Linha Proteção • Pré-Venda',
       image: '/assets/viseiras/viseiras2.jpeg',
       description: 'FPS 50, tecido leve de secagem rápida com faixa interna de proteção solar.',
     },
     {
       id: 'paraty-1',
       title: 'Check-in Paraty/RJ • Viseira Athos',
-      badge: 'Paraty / RJ',
+      badge: 'Linha Proteção • Paraty',
       image: '/assets/viseirasLudprincipal.jpeg',
       description: 'Levando a vibe Brasiliense pelo Brasil inteiro! Patrimônio Mundial da Humanidade.',
     },
     {
       id: 'paraty-2',
       title: 'Check-in Paraty/RJ (Vista Litoral)',
-      badge: 'Paraty / RJ',
+      badge: 'Linha Proteção • Paraty',
       image: '/assets/viseiraLud1.jpeg',
       description: 'Exuberância e estilo atemporal para treinos e caminhadas ao sol.',
     },
@@ -60,17 +59,17 @@ export const ViseirasShowcase: React.FC = () => {
         {/* Main Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00F5D4]/15 border border-[#00F5D4]/30 font-syne text-[11px] uppercase tracking-widest text-[#00F5D4] mb-4">
-            <Flame className="w-3.5 h-3.5 text-[#00F5D4]" />
-            <span>Pré-Venda Aberta • Viseiras Canoeira</span>
+            <ShieldCheck className="w-3.5 h-3.5 text-[#00F5D4]" />
+            <span>Linha Proteção • Viseiras Canoeira</span>
           </div>
 
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight mb-4">
-            Ela mal chegou e já esgotou! 🔥 <br />
+            Linha Proteção: Viseiras Canoeira 🔥 <br />
             <span className="italic text-[#00F5D4]">PRÉ-VENDA VISEIRA ATHOS BULCÃO (R$ 69)</span>
           </h2>
 
           <p className="font-sans text-base sm:text-lg text-[#ECE5D8]/85 font-light leading-relaxed max-w-2xl mx-auto">
-            Leve, autêntica e atemporal como a essência Canoeira. 
+            Ela mal chegou e já esgotou! Leve, autêntica e atemporal como a essência Canoeira. 
             Garanta a sua no WhatsApp com tranquilidade antes que acabe de novo!
           </p>
 
@@ -157,7 +156,7 @@ export const ViseirasShowcase: React.FC = () => {
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2 font-syne text-[11px] uppercase tracking-widest text-[#00F5D4]">
                 <Sun className="w-3.5 h-3.5 text-[#00F5D4]" />
-                <span>Vídeo 360° • Edição Especial</span>
+                <span>Linha Proteção • Vídeo 360°</span>
               </div>
 
               <h3 className="font-serif text-2xl sm:text-3xl text-[#ECE5D8]">
@@ -202,7 +201,7 @@ export const ViseirasShowcase: React.FC = () => {
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2 font-syne text-[11px] uppercase tracking-widest text-[#00F5D4]">
                 <MapPin className="w-3.5 h-3.5 text-[#00F5D4]" />
-                <span>Lago Paranoá • Brasília</span>
+                <span>Linha Proteção • Lago Paranoá</span>
               </div>
 
               <h3 className="font-serif text-2xl sm:text-3xl text-[#ECE5D8]">
