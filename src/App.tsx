@@ -73,24 +73,26 @@ export const App: React.FC = () => {
         {/* 2 - Camisetas Aero Sport Dry */}
         <ClothesVideoShowcase />
 
-        {/* 3 - O vestir comunica quem somos */}
-        <BrandLinesOverview />
-        <BrandManifesto />
+        {/* 3 - NOVIDADE RECENTE: Boné Five Panel Sprint & Peças Exclusivas */}
+        <CollectionTeaser />
 
-        {/* 4 - Dia de treino com calma, conforto e proteção */}
+        {/* 4 - OS LOOKS QUERIDINHOS DE TREINO (Destaque Prioritário) */}
+        <TreinosQueridinhosShowcase />
+
+        {/* 5 - Dia de treino com calma, conforto e proteção (Fotos Expandidas) */}
         <TrioFlowShowcase />
 
-        {/* 5 - O Drop Bicolor chegou arrasando corações */}
+        {/* 6 - O Drop Bicolor chegou arrasando corações */}
         <DropBicolorFitnessShowcase />
-
-        {/* 6 - Os looks queridinhos de treino estão de volta */}
-        <TreinosQueridinhosShowcase />
 
         {/* 7 - VISEIRAS (Linha Proteção) */}
         <ViseirasShowcase />
 
-        {/* Extra Catalog, Gallery & Waitlist */}
-        <CollectionTeaser />
+        {/* O vestir comunica quem somos & Arquitetura da Marca */}
+        <BrandLinesOverview />
+        <BrandManifesto />
+
+        {/* Galeria, História e Inscrição E-commerce Nuvemshop */}
         <LookbookGallery />
         <BrandStoryVideoSection />
         <VIPWaitlistSection onSubscribeSuccess={() => {}} />

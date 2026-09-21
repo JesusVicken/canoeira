@@ -23,6 +23,18 @@ export const CollectionTeaser: React.FC = () => {
 
   const products: ProductItem[] = [
     {
+      id: 'bone-five-panel-sprint',
+      name: 'Boné Five Panel Sprint',
+      category: 'Linha Proteção',
+      line: 'Lançamento Recente • Novidade',
+      badge: 'Novidade Recente',
+      image: '/assets/boneFivePanel.jpeg',
+      galleryImages: ['/assets/boneFivePanel.jpeg', '/assets/fivepanel.jpeg', '/assets/fivepanel2.jpeg'],
+      specs: ['Levinho & Respirável', 'Aba Flexível', 'Conforto Surreal', 'Proteção FPU 50+'],
+      description: 'Levinho, respirável, aba flexível e um conforto surreal! Perfeito pra qualquer atividade outdoor. Do treino ao dia a dia.',
+      gradient: 'from-[#00F5D4]/30 via-[#19100B] to-[#7A4421]/60',
+    },
+    {
       id: 'blusao-uv50',
       name: 'Camisa Solar UV50+ Canoeira',
       category: 'Vestuário Técnico',
@@ -54,18 +66,6 @@ export const CollectionTeaser: React.FC = () => {
       specs: ['Sustentação Anatômica 3D', 'Secagem Ultrarrápida', 'Tecido Respirável Premium'],
       description: 'Top de alta sustentação e modelagem ergonômica ideal para caminhada, corrida e atividades ao ar livre sob o sol.',
       gradient: 'from-[#623417]/80 via-[#19100B] to-[#7A4421]/40',
-    },
-    {
-      id: 'bone-five-panel-sprint',
-      name: 'Boné Five Panel Sprint',
-      category: 'Linha Proteção',
-      line: 'Acessórios & Sol',
-      badge: 'Edição Especial',
-      image: '/assets/boneFivePanel.jpeg',
-      galleryImages: ['/assets/boneFivePanel.jpeg', '/assets/fivepanel.jpeg', '/assets/fivepanel2.jpeg'],
-      specs: ['Levinho & Respirável', 'Aba Flexível', 'Conforto Surreal', 'Proteção FPU 50+'],
-      description: 'Levinho, respirável, aba flexível e um conforto surreal! Perfeito pra qualquer atividade outdoor. Do treino ao dia a dia.',
-      gradient: 'from-[#00F5D4]/20 via-[#19100B] to-[#7A4421]/60',
     },
   ];
 

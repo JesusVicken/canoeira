@@ -58,11 +58,18 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
               Linha Pausa
             </button>
             <button
-              onClick={() => scrollToSection('viseiras')}
-              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="PROTEÇÃO"
+              onClick={() => scrollToSection('colecoes')}
+              className="hover:text-[#00F5D4] transition-colors cursor-pointer text-[#00F5D4]"
+              data-cursor="FIVE PANEL"
             >
-              Linha Proteção
+              Five Panel Sprint
+            </button>
+            <button
+              onClick={() => scrollToSection('looks-treino')}
+              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
+              data-cursor="TREINOS"
+            >
+              Looks Treino
             </button>
             <button
               onClick={() => scrollToSection('trio-flow')}
@@ -72,18 +79,11 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
               Trio Flow
             </button>
             <button
-              onClick={() => scrollToSection('drop-bicolor')}
+              onClick={() => scrollToSection('viseiras')}
               className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="BICOLOR"
+              data-cursor="PROTEÇÃO"
             >
-              Drop Bicolor
-            </button>
-            <button
-              onClick={() => scrollToSection('looks-treino')}
-              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="TREINOS"
-            >
-              Looks Treino
+              Linha Proteção
             </button>
           </nav>
 

@@ -99,7 +99,7 @@ export const TrioFlowShowcase: React.FC = () => {
               whileHover={{ y: -6 }}
               data-cursor="WHATSAPP"
               onClick={() => handlePhotoClick(item)}
-              className="group relative rounded-3xl glass-panel border border-[#ECE5D8]/15 overflow-hidden hover:border-[#25D366]/60 transition-all duration-500 cursor-pointer flex flex-col justify-end min-h-[380px] p-6 shadow-xl"
+              className="group relative rounded-3xl glass-panel border border-[#ECE5D8]/15 overflow-hidden hover:border-[#25D366]/60 transition-all duration-500 cursor-pointer flex flex-col justify-end min-h-[480px] sm:min-h-[540px] p-6 shadow-2xl"
             >
               {/* Photo */}
               <img
