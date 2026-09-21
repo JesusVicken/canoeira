@@ -8,6 +8,7 @@ interface ProductItem {
   name: string;
   category: string;
   line: string;
+  lineCategory: 'movimento' | 'protecao' | 'pausa';
   badge: string;
   image: string;
   specs: string[];
@@ -18,24 +19,39 @@ interface ProductItem {
 export const CollectionTeaser: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
   const [notifiedItems, setNotifiedItems] = useState<Record<string, boolean>>({});
+  const [selectedCategory, setSelectedCategory] = useState<'todos' | 'movimento' | 'protecao' | 'pausa'>('todos');
 
   const products: ProductItem[] = [
     {
-      id: 'blusao-uv50',
-      name: 'Camisa Solar UV50+ Canoeira',
-      category: 'Vestuário Técnico',
-      line: 'Linha Sol & Performance',
-      badge: 'Lote VIP 0',
-      image: '/assets/canoieraBlusa.jpeg',
-      specs: ['Proteção FPU50+ Vitalícia', 'Tecido Ultra Breathable', 'Costuras Antiatrito Zero Touch'],
-      description: 'Desenvolvida com poliamida de alta tenacidade e dióxido de titânio fundido às fibras para bloquear 98% dos raios UVA e UVB. Estará disponível para compra no lançamento do e-commerce oficial.',
+      id: 'camisetas-aero-sport-dry',
+      name: 'Camisetas Aero Sport Dry',
+      category: 'Vestuário Esportivo',
+      line: 'Linha Movimento',
+      lineCategory: 'movimento',
+      badge: 'Aero Sport Dry',
+      image: '/assets/canoieraHero.jpeg',
+      specs: ['Malha UV 50+ & Secagem Rápida', 'Anti Odor & Anti Bacteriana', 'Anti-Pilling & Alta Elasticidade'],
+      description: 'Chegaram as Aero Sport Dry nas versões manga curta e regata, com as estampas que são a cara do Cerrado. Pensada pro seu melhor desempenho.',
+      gradient: 'from-[#00F5D4]/25 via-[#19100B] to-[#7A4421]/60',
+    },
+    {
+      id: 'camiseta-estonada-algodao',
+      name: 'Camiseta Estonada 100% Algodão',
+      category: 'Lifestyle & Identidade',
+      line: 'Linha Movimento',
+      lineCategory: 'movimento',
+      badge: 'Edição Brasília',
+      image: '/assets/canoeiraBlusa.jpeg',
+      specs: ['100% Algodão Estonado Premium', 'Teatro Nacional de Brasília', 'Canoeira: Flow ao Seu Movimento'],
+      description: 'O vestir comunica quem somos. E quando a escolha vem do pertencimento fala ainda mais alto! Afinal, identidade não se veste pelo acaso.',
       gradient: 'from-[#7A4421]/60 via-[#241610] to-[#00F5D4]/20',
     },
     {
       id: 'bone-solsticio',
       name: 'Boné Caiçara Solstício Hydro',
       category: 'Acessórios Sol',
-      line: 'Linha Alma Caiçara',
+      line: 'Linha Proteção',
+      lineCategory: 'protecao',
       badge: 'Lote VIP 0',
       image: '/assets/canoeiraBone.jpeg',
       specs: ['Aba Antirreflexo Solar', 'Ajuste Micrométrico Neoprene', 'Tecido Flutuável'],
@@ -43,10 +59,23 @@ export const CollectionTeaser: React.FC = () => {
       gradient: 'from-[#241610] via-[#7A4421]/40 to-[#00F5D4]/30',
     },
     {
+      id: 'trio-mare-de-paz',
+      name: 'Trio Sabonetes Maré de Paz',
+      category: 'Sabonetes Artesanais Veganos',
+      line: 'Linha Pausa',
+      lineCategory: 'pausa',
+      badge: 'Linha Pausa',
+      image: '/assets/banho4.jpg',
+      specs: ['Banho de Mar, Banho Solar, Boas Energias', '100% Vegano & Natural', 'Livre de Conservantes'],
+      description: 'Para depois da água, do sol e do movimento. Para renovar o corpo, respirar fundo e desacelerar. Sabonetes artesanais veganos, livre de conservantes e corantes artificiais.',
+      gradient: 'from-[#7A4421]/70 via-[#241610] to-[#00F5D4]/30',
+    },
+    {
       id: 'top-activewear',
       name: 'Top Activewear Canoeira',
       category: 'Moda Fitness & Sol',
-      line: 'Linha Performance',
+      line: 'Linha Movimento',
+      lineCategory: 'movimento',
       badge: 'Lote VIP 0',
       image: '/assets/canoeiraTop.jpg',
       specs: ['Sustentação Anatômica 3D', 'Secagem Ultrarrápida', 'Tecido Respirável Premium'],
@@ -54,10 +83,35 @@ export const CollectionTeaser: React.FC = () => {
       gradient: 'from-[#623417]/80 via-[#19100B] to-[#7A4421]/40',
     },
     {
+      id: 'trio-leveza',
+      name: 'Trio Sabonetes Leveza',
+      category: 'Sabonetes Artesanais Veganos',
+      line: 'Linha Pausa',
+      lineCategory: 'pausa',
+      badge: 'Linha Pausa',
+      image: '/assets/banho5.jpg',
+      specs: ['Morena Tropicana, Felicidade, Serenidade', 'Aroma Suave do Cerrado', '100% Vegano & Artesanal'],
+      description: 'Para transformar o banho em pausa, cheiro bom e sensação de bem estar. Sabonetes artesanais veganos, livre de conservantes e corantes artificiais.',
+      gradient: 'from-[#241610] via-[#7A4421]/50 to-[#00F5D4]/20',
+    },
+    {
+      id: 'escalda-pes',
+      name: 'Escalda-Pés Terapêuticos Naturais',
+      category: 'Ervas & Óleos Essenciais',
+      line: 'Linha Pausa',
+      lineCategory: 'pausa',
+      badge: 'Linha Pausa',
+      image: '/assets/banho3.jpg',
+      specs: ['Serenidade, Equilíbrio, TPM Zen', 'Ervas Naturais & Sal Grosso', 'Alívio de Inchaço e Tensões'],
+      description: 'Feitos com óleo essencial e uma combinação de flores, folhas e ervas naturais. Garanta já o seu novo ritual favorito!',
+      gradient: 'from-[#623417]/80 via-[#19100B] to-[#7A4421]/40',
+    },
+    {
       id: 'shorts-expedicao',
       name: 'Bermuda & Shorts de Treino',
       category: 'Performance',
-      line: 'Linha Solstício',
+      line: 'Linha Movimento',
+      lineCategory: 'movimento',
       badge: 'Edição Limitada',
       image: '/assets/canoeira.jpeg',
       specs: ['Elasticidade 360° Flex', 'Bolso Estanque com Zíper YKK', 'Tratamento Hidrofóbico'],
@@ -78,6 +132,18 @@ export const CollectionTeaser: React.FC = () => {
     });
   };
 
+  const filteredProducts =
+    selectedCategory === 'todos'
+      ? products
+      : products.filter((p) => p.lineCategory === selectedCategory);
+
+  const categories = [
+    { id: 'todos', label: 'Todos os Produtos' },
+    { id: 'movimento', label: 'Linha Movimento' },
+    { id: 'protecao', label: 'Linha Proteção' },
+    { id: 'pausa', label: 'Linha Pausa' },
+  ] as const;
+
   return (
     <section id="colecoes" className="relative py-20 sm:py-28 bg-[#19100B] overflow-hidden text-[#ECE5D8]">
       {/* Background Accent Gradients */}
@@ -86,7 +152,7 @@ export const CollectionTeaser: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
           <div>
             <div className="inline-flex items-center gap-2 font-syne text-[11px] sm:text-xs uppercase tracking-widest text-[#00F5D4] mb-2 sm:mb-3">
               <span className="w-6 sm:w-8 h-[1px] bg-[#00F5D4]" />
@@ -100,8 +166,8 @@ export const CollectionTeaser: React.FC = () => {
 
           <div className="flex flex-col gap-2">
             <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/70 max-w-md font-light">
-              Confira as fotos oficiais das peças que estarão à venda no nosso e-commerce. 
-              Inscreva-se no VIP para receber o cupom de 10% OFF no dia da inauguração.
+              Confira as fotos oficiais das peças e produtos que estarão à venda no nosso e-commerce. 
+              Inscreva-se na lista de aviso para receber 10% OFF no dia da inauguração.
             </p>
             <span className="md:hidden font-syne text-[11px] uppercase tracking-wider text-[#00F5D4] flex items-center gap-1">
               Deslize para o lado para ver mais peças →
@@ -109,9 +175,26 @@ export const CollectionTeaser: React.FC = () => {
           </div>
         </div>
 
+        {/* 3 Linhas Filter Tabs */}
+        <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-6 scrollbar-none">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)}
+              className={`px-4 sm:px-5 py-2.5 rounded-full font-syne text-xs uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
+                selectedCategory === cat.id
+                  ? 'bg-[#00F5D4] text-[#19100B] font-bold shadow-[0_0_15px_rgba(0,245,212,0.3)]'
+                  : 'bg-[#241610] text-[#ECE5D8]/70 hover:text-[#ECE5D8] border border-[#ECE5D8]/10'
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
         {/* Product Cards Grid / Touch Carousel on Mobile */}
         <div className="flex overflow-x-auto snap-x snap-mandatory pb-6 space-x-4 md:grid md:grid-cols-2 md:space-x-0 md:gap-8 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
-          {products.map((product) => {
+          {filteredProducts.map((product) => {
             const isNotified = notifiedItems[product.id];
             return (
               <motion.div
@@ -161,7 +244,7 @@ export const CollectionTeaser: React.FC = () => {
                           key={i}
                           className="text-[10px] sm:text-[11px] font-sans px-2.5 py-1 rounded-md bg-[#19100B]/80 text-[#ECE5D8]/80 border border-[#ECE5D8]/10"
                         >
-                          ✓ {spec}
+                          {spec}
                         </span>
                       ))}
                     </div>

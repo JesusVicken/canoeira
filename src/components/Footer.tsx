@@ -25,8 +25,7 @@ export const Footer: React.FC = () => {
             </a>
 
             <p className="font-sans text-sm text-[#ECE5D8]/70 font-light max-w-md leading-relaxed">
-              Canoeira é uma marca brasileira de vestuário e acessórios solares de alta performance. 
-              Este é o site de pré-lançamento oficial que antecede a inauguração da nossa loja online oficial.
+              Canoeira é uma marca brasileira guiada por três pilares: Movimento (roupas de treino e lifestyle), Proteção (bonés e viseiras) e Pausa (rituais de autocuidado com sabonetes artesanais e escalda-pés).
             </p>
 
             <div className="flex items-center gap-4">
@@ -46,11 +45,11 @@ export const Footer: React.FC = () => {
           {/* Links Col 1 */}
           <div className="md:col-span-3 flex flex-col gap-3 font-syne text-xs uppercase tracking-widest text-[#ECE5D8]/70">
             <h4 className="text-[#00F5D4] font-bold mb-2">Navegação</h4>
+            <a href="#linhas" className="hover:text-[#00F5D4] transition-colors">As 3 Linhas</a>
+            <a href="#linha-pausa" className="hover:text-[#00F5D4] transition-colors text-[#00F5D4]">Linha Pausa (Novidade)</a>
             <a href="#manifesto" className="hover:text-[#00F5D4] transition-colors">Conceito & Marca</a>
-            <a href="#colecoes" className="hover:text-[#00F5D4] transition-colors">Novidades em Breve</a>
-            <a href="#filosofia" className="hover:text-[#00F5D4] transition-colors">Qualidade & Origem</a>
-            <a href="#instagram" className="hover:text-[#00F5D4] transition-colors">Instagram Oficial</a>
-            <a href="#vip" className="hover:text-[#00F5D4] transition-colors">Inscrição Lote VIP</a>
+            <a href="#colecoes" className="hover:text-[#00F5D4] transition-colors">Vitrine de Peças</a>
+            <a href="#inauguracao" className="hover:text-[#00F5D4] transition-colors">Aviso de Abertura</a>
           </div>
 
           {/* Links Col 2 */}

@@ -7,7 +7,7 @@ export const InstagramShowcase: React.FC = () => {
     {
       id: 'post-1',
       title: 'Camisa Solar Canoeira',
-      caption: 'Proteção UV50+ projetada para o sol e para o treino ao ar livre. ☀️ #usecanoeira',
+      caption: 'Proteção UV50+ projetada para o sol e para o treino ao ar livre. #usecanoeira',
       likes: '482',
       comments: '34',
       image: '/assets/canoieraBlusa.jpeg',

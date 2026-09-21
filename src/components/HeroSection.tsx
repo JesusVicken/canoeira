@@ -63,8 +63,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
           </h1>
 
           <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light max-w-xl leading-relaxed">
-            Estamos lançando a plataforma de vendas online da marca Canoeira. 
-            Compre roupas de alta qualidade com pagamento facilitado (Pix e Cartão) e entrega para todo o Brasil.
+            Estamos preparando a nova loja oficial online da Canoeira. 
+            Em breve você poderá comprar nossas coleções de <strong>Movimento</strong>, <strong>Proteção</strong> e <strong>Pausa</strong> com entrega para todo o Brasil e pagamento facilitado via Pix e Cartão.
           </p>
 
           {/* Badges: Pagamento & Entrega Brasil */}

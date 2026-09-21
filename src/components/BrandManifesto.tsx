@@ -50,48 +50,88 @@ export const BrandManifesto: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Main Grid Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Text Column */}
+          {/* Left Text Column - Manifesto of Belonging & Identity */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 font-syne text-xs uppercase tracking-widest text-[#00F5D4]">
               <span className="w-8 h-[1px] bg-[#00F5D4]" />
-              <span>Novo Site de Vendas Online</span>
+              <span>Manifesto de Pertencimento & Identidade</span>
             </div>
 
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1]">
-              O novo e-commerce oficial da marca Canoeira <br />
-              <span className="italic text-[#00F5D4]">está chegando.</span>
+              O vestir comunica <br />
+              <span className="italic text-[#00F5D4]">quem somos.</span>
             </h2>
 
-            <p className="font-sans text-base sm:text-lg text-[#ECE5D8]/80 font-light leading-relaxed">
-              Estamos finalizando a nova plataforma de vendas online da <strong>Canoeira</strong>. 
-              Em breve você poderá adquirir toda a linha de roupas diretamente no site oficial, com pagamento facilitado via Pix e Cartão de Crédito, e frete com entrega para todo o Brasil.
+            <p className="font-serif italic text-lg sm:text-2xl text-[#ECE5D8]/90 font-normal leading-relaxed">
+              "E quando a escolha vem do pertencimento fala ainda mais alto! Afinal, identidade não se veste pelo acaso."
             </p>
 
-            <div className="p-6 rounded-2xl glass-panel border border-[#7A4421]/50 relative overflow-hidden mt-4">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00F5D4]/10 rounded-full blur-2xl pointer-events-none" />
-              <blockquote className="font-serif italic text-lg sm:text-xl text-[#ECE5D8] leading-relaxed">
-                "Cadastre seu e-mail para ser notificado em primeira mão no dia da abertura oficial das vendas online."
-              </blockquote>
-              <div className="mt-4 font-syne text-xs uppercase tracking-widest text-[#00F5D4]">
-                — Equipe Canoeira
+            {/* Contém Pills */}
+            <div className="flex flex-col gap-2.5 p-5 rounded-2xl bg-[#241610] border border-[#ECE5D8]/15">
+              <span className="font-syne text-[10px] uppercase tracking-widest text-[#00F5D4] font-bold">
+                Composição desta identidade:
+              </span>
+              <div className="flex flex-wrap gap-2.5 mt-1">
+                <span className="px-3 py-1.5 rounded-xl bg-[#19100B] border border-[#ECE5D8]/10 text-xs font-sans text-[#ECE5D8]/90">
+                  Teatro Nacional de Brasília
+                </span>
+                <span className="px-3 py-1.5 rounded-xl bg-[#19100B] border border-[#ECE5D8]/10 text-xs font-sans text-[#ECE5D8]/90">
+                  Estonada 100% algodão
+                </span>
+                <span className="px-3 py-1.5 rounded-xl bg-[#19100B] border border-[#ECE5D8]/10 text-xs font-sans text-[#ECE5D8]/90">
+                  Athos Bulcão
+                </span>
+              </div>
+            </div>
+
+            <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light leading-relaxed">
+              <strong>Use Canoeira, a marca que dá flow ao seu movimento.</strong> Em breve você poderá comprar toda a nossa coleção no novo site de vendas online, com pagamento facilitado (Pix e Cartão em até 6x) e entrega com rastreio para todo o Brasil.
+            </p>
+
+            <div className="p-5 rounded-2xl glass-panel border border-[#00F5D4]/30 relative overflow-hidden bg-gradient-to-r from-[#241610] to-[#19100B]">
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <div>
+                  <h4 className="font-serif text-lg text-[#ECE5D8]">Pré-Lançamento do E-commerce</h4>
+                  <p className="font-sans text-xs text-[#ECE5D8]/70">Cadastre-se para receber o aviso de inauguração com 10% OFF</p>
+                </div>
+                <a
+                  href="#inauguracao"
+                  className="px-5 py-2.5 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider hover:bg-[#66FFEA] transition-all"
+                >
+                  Quero Ser Avisado
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Right Brand Logo Highlight (CLEAN - NO "Identidade Solar Original" BADGE) */}
+          {/* Right Column - Photo Highlight (Teatro Nacional de Brasília + canoeiraBlusa.jpeg) */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
             {/* Glowing Terracotta & Cyan aura */}
             <div className="absolute w-72 h-72 bg-[#7A4421]/50 rounded-full blur-[90px]" />
             <div className="absolute w-48 h-48 bg-[#00F5D4]/20 rounded-full blur-[60px]" />
 
-            <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden glass-panel p-8 border border-[#ECE5D8]/15 flex items-center justify-center text-center shadow-2xl group">
-              {/* Brand Logo Container */}
-              <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden flex items-center justify-center bg-[#7A4421]/30 p-8 transition-transform duration-700 group-hover:scale-105">
+            <div className="relative w-full max-w-md rounded-3xl overflow-hidden glass-panel border border-[#00F5D4]/40 shadow-2xl group">
+              <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#241610]">
                 <img
-                  src="/assets/IMG_5334.PNG"
-                  alt="Canoeira Identity"
-                  className="w-full h-full object-contain filter drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
+                  src="/assets/canoeiraBlusa.jpeg"
+                  alt="Teatro Nacional de Brasília — Canoeira Estonada 100% Algodão"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#19100B] via-transparent to-transparent opacity-80" />
+
+                {/* Floating Badge */}
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[#19100B]/85 backdrop-blur-md border border-[#ECE5D8]/15">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="font-syne text-[10px] uppercase tracking-widest text-[#00F5D4]">
+                        Identidade do Cerrado
+                      </span>
+                      <h4 className="font-serif text-base text-[#ECE5D8] mt-0.5">
+                        Estonada 100% Algodão Canoeira
+                      </h4>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

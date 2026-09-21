@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 interface PreloaderProps {
   onComplete: () => void;
@@ -8,25 +9,37 @@ interface PreloaderProps {
 export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
+  const [canSkip, setCanSkip] = useState(false);
 
   useEffect(() => {
+    // Enable skip after 1.5s
+    const skipTimer = setTimeout(() => setCanSkip(true), 1500);
+
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
           setTimeout(() => {
             setIsFinished(true);
-            setTimeout(onComplete, 800);
-          }, 400);
+            setTimeout(onComplete, 700);
+          }, 300);
           return 100;
         }
-        const diff = Math.floor(Math.random() * 15) + 5;
+        const diff = Math.floor(Math.random() * 18) + 6;
         return Math.min(prev + diff, 100);
       });
-    }, 120);
+    }, 110);
 
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      clearTimeout(skipTimer);
+    };
   }, [onComplete]);
+
+  const handleSkip = () => {
+    setIsFinished(true);
+    setTimeout(onComplete, 400);
+  };
 
   return (
     <AnimatePresence>
@@ -34,68 +47,94 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
         <motion.div
           key="preloader"
           initial={{ opacity: 1 }}
-          exit={{ y: '-100%', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
-          className="fixed inset-0 z-[9999] flex flex-col justify-between p-8 bg-[#19100B] text-[#ECE5D8] overflow-hidden"
+          exit={{ opacity: 0, scale: 1.05, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
+          className="fixed inset-0 z-[9999] flex flex-col justify-between p-6 sm:p-10 bg-[#19100B] text-[#ECE5D8] overflow-hidden"
         >
-          {/* Background Ambient Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7A4421]/20 rounded-full blur-[140px] pointer-events-none" />
-          <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-[#00F5D4]/10 rounded-full blur-[100px] pointer-events-none" />
+          {/* CINEMATIC BACKGROUND VIDEO - canoeira2.mp4 */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover filter brightness-[0.4] contrast-[1.1] scale-105"
+            >
+              <source src="/assets/canoeira2.mp4" type="video/mp4" />
+              <source src="/assets/cahnoeira2.mp4" type="video/mp4" />
+            </video>
+
+            {/* Dark Cinematic Vignette & Gradients */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#19100B] via-[#19100B]/40 to-[#19100B]/85" />
+            <div className="absolute inset-0 bg-[#7A4421]/15 mix-blend-color" />
+          </div>
 
           {/* Top Header info */}
-          <div className="flex justify-between items-center z-10 font-syne text-xs uppercase tracking-widest text-[#ECE5D8]/60">
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#00F5D4] animate-ping" />
-              Canoeira Est. 2025
-            </span>
+          <div className="relative z-10 flex justify-between items-center font-syne text-[10px] sm:text-xs uppercase tracking-widest text-[#ECE5D8]/70">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#00F5D4] animate-pulse" />
+              <span>Canoeira Est. 2025</span>
+            </div>
             <span>Pré-Lançamento Oficial</span>
           </div>
 
-          {/* Center Logo & Text Reveal */}
-          <div className="my-auto text-center z-10 flex flex-col items-center justify-center">
-            {/* Sun Rays SVG animation */}
+          {/* Center Brand Identity Reveal */}
+          <div className="relative z-10 my-auto text-center flex flex-col items-center justify-center max-w-xl mx-auto px-4">
             <motion.div
-              initial={{ scale: 0.6, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, ease: 'easeOut' }}
-              className="relative mb-6"
+              initial={{ scale: 0.9, opacity: 0, y: 15 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className="relative mb-6 flex flex-col items-center justify-center"
             >
-              <svg viewBox="0 0 100 60" className="w-24 h-16 text-[#00F5D4] stroke-current fill-none">
-                <circle cx="50" cy="50" r="10" className="fill-[#00F5D4]" />
-                <line x1="50" y1="20" x2="50" y2="30" strokeWidth="3" strokeLinecap="round" />
-                <line x1="30" y1="28" x2="37" y2="35" strokeWidth="3" strokeLinecap="round" />
-                <line x1="70" y1="28" x2="63" y2="35" strokeWidth="3" strokeLinecap="round" />
-                <line x1="18" y1="50" x2="28" y2="50" strokeWidth="3" strokeLinecap="round" />
-                <line x1="82" y1="50" x2="72" y2="50" strokeWidth="3" strokeLinecap="round" />
-              </svg>
+              {/* Soft glow behind logo */}
+              <div className="absolute inset-0 bg-[#00F5D4]/20 rounded-full blur-3xl -z-10 scale-90" />
+              
+              <img
+                src="/assets/canoeira2.svg"
+                alt="Canoeira — Marca Oficial"
+                className="w-56 sm:w-72 md:w-84 h-auto max-h-48 object-contain rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-[#ECE5D8]/15"
+              />
             </motion.div>
 
-            <motion.h1
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight text-[#ECE5D8]"
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="flex flex-col items-center gap-2"
             >
-              Canoeira<span className="text-[#00F5D4]">.</span>
-            </motion.h1>
-
-            <p className="mt-3 font-syne text-xs md:text-sm tracking-[0.3em] uppercase text-[#ECE5D8]/70">
-              Alma Solar • E-Commerce Oficial Em Breve
-            </p>
+              <p className="font-syne text-[11px] sm:text-xs tracking-[0.3em] uppercase text-[#00F5D4] font-semibold">
+                Movimento • Proteção • Pausa
+              </p>
+              <p className="font-sans text-xs text-[#ECE5D8]/70 font-light max-w-md">
+                A nova plataforma oficial de vendas online está sendo preparada
+              </p>
+            </motion.div>
           </div>
 
           {/* Bottom Progress Bar & Percentage */}
-          <div className="z-10 flex flex-col gap-4 max-w-4xl mx-auto w-full">
+          <div className="relative z-10 flex flex-col gap-3 max-w-4xl mx-auto w-full">
             <div className="flex justify-between items-end font-syne">
-              <span className="text-xs uppercase tracking-widest text-[#ECE5D8]/50">
-                Carregando Experiência
-              </span>
-              <span className="text-4xl md:text-6xl font-serif text-[#00F5D4] font-light">
+              <div className="flex flex-col gap-1">
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#ECE5D8]/50">
+                  Carregando Coleção
+                </span>
+                {canSkip && (
+                  <button
+                    onClick={handleSkip}
+                    className="text-[10px] uppercase tracking-widest text-[#00F5D4] hover:underline flex items-center gap-1 cursor-pointer transition-all"
+                  >
+                    <span>Entrar no site</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
+                )}
+              </div>
+
+              <span className="text-4xl sm:text-6xl font-serif text-[#00F5D4] font-light tracking-tight">
                 {progress}%
               </span>
             </div>
 
             {/* Progress line */}
-            <div className="w-full h-[2px] bg-[#ECE5D8]/10 rounded-full overflow-hidden">
+            <div className="w-full h-[2px] bg-[#ECE5D8]/15 rounded-full overflow-hidden">
               <motion.div
                 className="h-full bg-[#00F5D4] shadow-[0_0_15px_#00F5D4]"
                 animate={{ width: `${progress}%` }}

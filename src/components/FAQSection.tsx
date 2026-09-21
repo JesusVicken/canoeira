@@ -15,8 +15,8 @@ export const FAQSection: React.FC = () => {
       a: 'Ao se cadastrar no site, você garante 10% de desconto acumulável na primeira compra, além de frete grátis e preferência absoluta no estoque de primeira edição da loja oficial.',
     },
     {
-      q: 'Quais peças estarão à venda na loja oficial?',
-      a: 'A primeira coleção da loja contará com Camisas Solares UV50+, Bonés técnicos Solstício Hydro, Tops Activewear, Bermudas de treino e linha de vestuário casual solar.',
+      q: 'Quais produtos estarão à venda na loja oficial?',
+      a: 'Nossa loja online contará com as 3 linhas oficiais da Canoeira: Linha Movimento (camisas solares UV50+, tops activewear e shorts de treino), Linha Proteção (bonés e viseiras de alta performance solar) e a recém-chegada Linha Pausa (sabonetes artesanais veganos como o Trio Maré de Paz e Trio Leveza, e escalda-pés terapêuticos de ervas naturais).',
     },
     {
       q: 'Quais são os tamanhos e modelagens disponíveis?',

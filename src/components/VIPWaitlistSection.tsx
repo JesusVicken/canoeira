@@ -72,7 +72,7 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
               </h2>
 
               <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light leading-relaxed">
-                A nova plataforma e-commerce de roupas da marca Canoeira será lançada em breve. 
+                A nova plataforma e-commerce oficial da marca Canoeira será lançada em breve reunindo nossas linhas de <strong>Movimento</strong>, <strong>Proteção</strong> e <strong>Pausa</strong>. 
                 Cadastre-se para receber o aviso de abertura com pagamento seguro e entrega para todo o Brasil.
               </p>
 

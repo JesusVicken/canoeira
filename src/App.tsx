@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Preloader } from './components/Preloader';
 import { CustomCursor } from './components/CustomCursor';
 import { HeaderNavbar } from './components/HeaderNavbar';
 import { HeroSection } from './components/HeroSection';
-import { BrandManifesto } from './components/BrandManifesto';
+import { BrandLinesOverview } from './components/BrandLinesOverview';
+import { AwwwardsParallaxSection } from './components/AwwwardsParallaxSection';
+import { LinhaPausaShowcase } from './components/LinhaPausaShowcase';
 import { ClothesVideoShowcase } from './components/ClothesVideoShowcase';
 import { CollectionTeaser } from './components/CollectionTeaser';
+import { BrandManifesto } from './components/BrandManifesto';
 import { LookbookGallery } from './components/LookbookGallery';
 import { BrandStoryVideoSection } from './components/BrandStoryVideoSection';
 import { VIPWaitlistSection } from './components/VIPWaitlistSection';
 import { InstagramShowcase } from './components/InstagramShowcase';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,14 +34,18 @@ export const App: React.FC = () => {
       smoothWheel: true,
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    const animationFrameId = requestAnimationFrame(raf);
+    // Synchronize Lenis with GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
+
+    const updateTicker = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+
+    gsap.ticker.add(updateTicker);
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      gsap.ticker.remove(updateTicker);
       lenis.destroy();
     };
   }, []);
@@ -51,21 +62,47 @@ export const App: React.FC = () => {
       {/* Custom Awwwards Cursor */}
       <CustomCursor />
 
-      {/* Preloader Screen */}
+      {/* Preloader Screen with Official Brand Mark */}
       <Preloader onComplete={() => setIsLoading(false)} />
 
       {/* Header */}
       <HeaderNavbar onNotifyClick={scrollToNotify} />
 
       <main className="w-full overflow-x-hidden">
+        {/* 1. Hero: E-commerce online launch teaser */}
         <HeroSection onSubscribeSuccess={() => {}} />
-        <BrandManifesto />
+
+        {/* 2. Official 3 Lines: Movimento, Proteção, Pausa */}
+        <BrandLinesOverview />
+
+        {/* 3. Awwwards-style Parallax Experience with GSAP & ScrollTrigger */}
+        <AwwwardsParallaxSection />
+
+        {/* 4. Dedicated Linha Pausa Launch Showcase */}
+        <LinhaPausaShowcase />
+
+        {/* 5. Linha Movimento in action */}
         <ClothesVideoShowcase />
+
+        {/* 5. Interactive product catalog with tabs for the 3 lines */}
         <CollectionTeaser />
+
+        {/* 6. Brand Concept & E-commerce safety pillars */}
+        <BrandManifesto />
+
+        {/* 7. Comprehensive Lookbook Gallery */}
         <LookbookGallery />
+
+        {/* 8. Atmosphere & Quality video */}
         <BrandStoryVideoSection />
+
+        {/* 9. VIP Pre-Launch Registration */}
         <VIPWaitlistSection onSubscribeSuccess={() => {}} />
+
+        {/* 10. Social Connection */}
         <InstagramShowcase />
+
+        {/* 11. FAQ */}
         <FAQSection />
       </main>
 

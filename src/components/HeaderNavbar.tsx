@@ -50,7 +50,22 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
           </a>
 
           {/* Navigation Links - Desktop */}
-          <nav className="hidden md:flex items-center gap-8 font-syne text-xs tracking-widest uppercase text-[#ECE5D8]/70">
+          <nav className="hidden md:flex items-center gap-7 font-syne text-xs tracking-widest uppercase text-[#ECE5D8]/70">
+            <button
+              onClick={() => scrollToSection('linhas')}
+              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
+              data-cursor="LINHAS"
+            >
+              3 Linhas
+            </button>
+            <button
+              onClick={() => scrollToSection('linha-pausa')}
+              className="hover:text-[#00F5D4] transition-colors cursor-pointer flex items-center gap-1.5 text-[#00F5D4]"
+              data-cursor="PAUSA"
+            >
+              <span>Linha Pausa</span>
+              <span className="px-1.5 py-0.5 rounded-full bg-[#00F5D4]/20 text-[9px] font-bold">Novo</span>
+            </button>
             <button
               onClick={() => scrollToSection('manifesto')}
               className="hover:text-[#00F5D4] transition-colors cursor-pointer"
@@ -61,16 +76,9 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
             <button
               onClick={() => scrollToSection('colecoes')}
               className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="ROUPAS"
+              data-cursor="PRODUTOS"
             >
-              Peças
-            </button>
-            <button
-              onClick={() => scrollToSection('filosofia')}
-              className="hover:text-[#00F5D4] transition-colors cursor-pointer"
-              data-cursor="QUALIDADE"
-            >
-              Qualidade
+              Vitrine
             </button>
             <button
               onClick={() => scrollToSection('instagram')}
@@ -126,33 +134,43 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-30 bg-[#19100B]/98 backdrop-blur-2xl pt-24 px-6 pb-10 flex flex-col justify-between md:hidden"
           >
-            <div className="flex flex-col gap-6 font-serif text-2xl text-[#ECE5D8]">
+            <div className="flex flex-col gap-4 font-serif text-2xl text-[#ECE5D8]">
               <button
-                onClick={() => scrollToSection('manifesto')}
+                onClick={() => scrollToSection('linhas')}
                 className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>01. Conceito da Marca</span>
+                <span>01. As 3 Linhas da Marca</span>
+                <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
+              </button>
+              <button
+                onClick={() => scrollToSection('linha-pausa')}
+                className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between text-[#00F5D4]"
+              >
+                <div className="flex items-center gap-2">
+                  <span>02. Linha Pausa</span>
+                  <span className="text-xs font-syne uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#00F5D4]/20 text-[#00F5D4]">Novidade</span>
+                </div>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
                 onClick={() => scrollToSection('colecoes')}
                 className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>02. Coleção de Roupas</span>
+                <span>03. Vitrine de Produtos</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
-                onClick={() => scrollToSection('filosofia')}
+                onClick={() => scrollToSection('manifesto')}
                 className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>03. Qualidade & Tecidos</span>
+                <span>04. Conceito da Marca</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
               <button
                 onClick={() => scrollToSection('instagram')}
                 className="text-left hover:text-[#00F5D4] transition-colors py-3 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>04. Instagram Oficial</span>
+                <span>05. Instagram Oficial</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
             </div>
