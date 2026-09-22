@@ -168,7 +168,7 @@ export const HeaderNavbar: React.FC<HeaderNavbarProps> = ({ onNotifyClick }) => 
                 onClick={() => scrollToSection('viseiras')}
                 className="text-left hover:text-[#00F5D4] transition-colors py-2.5 border-b border-[#ECE5D8]/10 flex items-center justify-between"
               >
-                <span>05. Linha Proteção (Viseiras R$ 69)</span>
+                <span>05. Linha Proteção (Viseiras)</span>
                 <ArrowUpRight className="w-5 h-5 text-[#00F5D4]" />
               </button>
             </div>

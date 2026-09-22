@@ -18,8 +18,8 @@ export const VIPWaitlistSection: React.FC<VIPWaitlistSectionProps> = ({ onSubscr
       desc: 'Compre no conforto da sua casa no novo site oficial da Canoeira.',
     },
     {
-      title: 'Pagamento Seguro & Parcelado',
-      desc: 'Aceitamos Pix instantâneo e Cartão de Crédito em até 6x sem juros.',
+      title: 'Pagamento Seguro Online',
+      desc: 'Aceitamos Pix e Cartões de Crédito com total segurança na nova loja.',
     },
     {
       title: 'Entrega para Todo o Brasil',

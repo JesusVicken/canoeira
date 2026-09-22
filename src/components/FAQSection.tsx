@@ -16,7 +16,7 @@ export const FAQSection: React.FC = () => {
     },
     {
       q: 'Quais produtos estarão disponíveis no novo site?',
-      a: 'Nossa loja online contará com as 3 linhas oficiais da Canoeira: Linha Movimento (camisas solares UV50+, tops activewear e conjuntos de treino), Linha Proteção (viseira Athos Bulcão R$ 69, bonés e viseiras de alta performance solar) e a Linha Pausa (sabonetes artesanais veganos e escalda-pés terapêuticos de ervas naturais).',
+      a: 'Nossa loja online contará com as 3 linhas oficiais da Canoeira: Linha Movimento (camisas solares UV50+, tops activewear e conjuntos de treino), Linha Proteção (viseiras Athos Bulcão, bonés e acessórios solares) e a Linha Pausa (sabonetes artesanais veganos e escalda-pés terapêuticos de ervas naturais).',
     },
     {
       q: 'Quais são os tamanhos e modelagens disponíveis?',

@@ -7,7 +7,7 @@ export const BrandManifesto: React.FC = () => {
     {
       num: '01',
       title: 'Loja 100% Online & Segura',
-      desc: 'Compre direto de onde estiver com pagamento rápido e seguro via Pix ou Cartão de Crédito em até 6x.',
+      desc: 'Compre direto de onde estiver na nova loja oficial com pagamento seguro online.',
       icon: ShoppingBag,
     },
     {
@@ -94,7 +94,7 @@ export const BrandManifesto: React.FC = () => {
             </div>
 
             <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light leading-relaxed">
-              <strong>Use Canoeira, a marca que dá flow ao seu movimento.</strong> Em breve você poderá comprar toda a nossa coleção no novo site de vendas online, com pagamento facilitado (Pix e Cartão em até 6x) e entrega com rastreio para todo o Brasil.
+              <strong>Use Canoeira, a marca que dá flow ao seu movimento.</strong> Em breve você poderá comprar toda a nossa coleção no novo site de vendas online, com pagamento seguro e entrega com rastreio para todo o Brasil.
             </p>
 
             <div className="p-5 rounded-2xl glass-panel border border-[#00F5D4]/30 relative overflow-hidden bg-gradient-to-r from-[#241610] to-[#19100B]">

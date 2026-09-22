@@ -20,7 +20,7 @@ export const ViseirasShowcase: React.FC = () => {
   const cardBrasilRef = useRef<HTMLDivElement>(null);
   const cardParanoaRef = useRef<HTMLDivElement>(null);
 
-  const whatsappUrlAthos = "https://wa.me/556184267049?text=Ol%C3%A1%21+Quero+garantir+a+PR%C3%89-VENDA+da+Viseira+Athos+Bulc%C3%A3o+%28R%24+69%2C00%29.";
+  const whatsappUrlAthos = "https://wa.me/556184267049?text=Ol%C3%A1%21+Quero+garantir+a+PR%C3%89-VENDA+da+Viseira+Athos+Bulc%C3%A3o.";
   const whatsappUrlBrasil = "https://wa.me/556184267049?text=Ol%C3%A1%21+Quero+garantir+a+Viseira+Orgulho+de+Ser+Brasileira%21";
   const whatsappUrlParanoa = "https://wa.me/556184267049?text=Ol%C3%A1%21+Quero+garantir+a+Viseira+Lago+Parano%C3%A1%21";
 
@@ -28,7 +28,6 @@ export const ViseirasShowcase: React.FC = () => {
     {
       id: 'athos-1',
       title: 'Viseira Athos Bulcão — Pré-Venda',
-      price: 'R$ 69,00',
       badge: 'Linha Proteção • Pré-Venda',
       image: '/assets/viseiras/viseiras1.jpeg',
       description: 'Leve, autêntica e atemporal como a essência Canoeira. Garanta a sua antes que esgote novamente!',
@@ -36,7 +35,6 @@ export const ViseirasShowcase: React.FC = () => {
     {
       id: 'athos-2',
       title: 'Viseira Athos Bulcão (Edição Especial)',
-      price: 'R$ 69,00',
       badge: 'Linha Proteção • Pré-Venda',
       image: '/assets/viseiras/viseiras2.jpeg',
       description: 'FPS 50, tecido leve de secagem rápida com faixa interna de proteção solar.',
@@ -119,7 +117,7 @@ export const ViseirasShowcase: React.FC = () => {
 
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-tight mb-4">
             Linha Proteção: Viseiras Canoeira <br />
-            <span className="italic text-[#00F5D4]">PRÉ-VENDA VISEIRA ATHOS BULCÃO (R$ 69)</span>
+            <span className="italic text-[#00F5D4]">PRÉ-VENDA VISEIRA ATHOS BULCÃO</span>
           </h2>
 
           <p className="font-sans text-base sm:text-lg text-[#ECE5D8]/85 font-light leading-relaxed max-w-2xl mx-auto">
@@ -136,7 +134,7 @@ export const ViseirasShowcase: React.FC = () => {
               className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#00F5D4] text-[#19100B] font-syne text-xs font-bold uppercase tracking-wider hover:bg-[#66FFEA] active:scale-95 transition-all shadow-[0_0_25px_rgba(0,245,212,0.4)]"
             >
               <Tag className="w-4 h-4 fill-[#19100B]" />
-              <span>Garantir Pré-Venda Athos Bulcão por R$ 69</span>
+              <span>Garantir Pré-Venda Athos Bulcão</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

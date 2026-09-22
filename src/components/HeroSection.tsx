@@ -68,15 +68,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSubscribeSuccess }) 
           </h1>
 
           <p className="font-sans text-sm sm:text-base text-[#ECE5D8]/80 font-light max-w-xl leading-relaxed">
-            Estamos preparando a nova loja oficial online da Canoeira. 
-            Em breve você poderá comprar nossas coleções de <strong>Movimento</strong>, <strong>Proteção</strong> e <strong>Pausa</strong> com entrega para todo o Brasil e pagamento facilitado via Pix e Cartão.
+            Estamos preparando o lançamento do novo site oficial de vendas da Canoeira. 
+            Em breve você poderá adquirir nossas coleções de <strong>Movimento</strong>, <strong>Proteção</strong> e <strong>Pausa</strong> online com entrega com rastreio para todo o Brasil.
           </p>
 
           {/* Badges: Pagamento & Entrega Brasil */}
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-syne uppercase tracking-wider text-[#ECE5D8]/70">
             <span className="flex items-center gap-1.5">
               <CreditCard className="w-4 h-4 text-[#00F5D4]" />
-              Pagamento Online em até 6x
+              Compra Online Segura
             </span>
             <span className="text-[#00F5D4]">•</span>
             <span className="flex items-center gap-1.5">
